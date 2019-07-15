@@ -19,7 +19,7 @@ const twitchClient = TwitchClient.withClientCredentials(clientId, clientSecret);
 var streamList = ["mL7support","yautjaridley"]
 var streamChan = [olafTest,"547923999552700436"]
 
-var commands = ["test","suppprt","gg","ping","update","kick","invite","help","lotto","flip","console","guildnum","live","reset","restart","clearchat","urban"];
+var commands = ["test","support","gg","ping","update","kick","invite","help","lotto","flip","console","guildnum","live","reset","restart","clearchat","urban"];
 
 /*
 const ow = require('overwatch-stats-api');
