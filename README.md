@@ -1,2 +1,0 @@
-# olaf
-olaf-bot
