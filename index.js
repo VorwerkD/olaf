@@ -77,6 +77,11 @@ input=msg.content.toLowerCase()//to make all inputs - either command or paramete
 UPDATES THE ROSTERS FILE
 */
 if (input.startsWith(prefix+"test")){
+const member = msg.mentions.members.first();
+var res = ""
+if(member == null){
+res = input.substring(4); 
+}
 (async() => {
     const data = await fs.readFileSync('array.txt','utf8');
   var newArr = data.split(',');
