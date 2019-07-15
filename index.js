@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const keep_alive = require('./keep_alive.js');
+//const keep_alive = require('./keep_alive.js');
 const FuzzySet = require('fuzzyset.js')
 const token = process.env.DISCORD_BOT_SECRET;
 var urban = require('urban');
