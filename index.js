@@ -72,10 +72,14 @@ var texts = ["filler","Ticket reset @ 6:30 PST\nDSTB- 42 :star:\nLSTB- 41 :star:
 var mainChans=['596613040879960065','596613066108698650','596613090557034497','596613114036748299']
 var recruitChans=['596613040762388480','596613065907109888','596613090900967440','596613113957187586']
 //messages
+
+
 client.on('message', msg => {
+	
 input=msg.content.toLowerCase()//to make all inputs - either command or parameters all uniform - if a command needs uppercase parameters etc, put above this line
 var inputRes =input.split(' ');
 var inputResCom= inputRes[0].substring(1);
+console.log(inputResCom);
 b = FuzzySet(commands);
 const inCom =b.get(inputResCom);
 const inCom2 = inCom[0];
