@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-//const keep_alive = require('./keep_alive.js');
 const FuzzySet = require('fuzzyset.js')
 const token = process.env.DISCORD_BOT_SECRET;
 var urban = require('urban');
@@ -10,10 +9,8 @@ var prefix="."
 const fs = require('fs');
 var data=[];
 //test
-var olafTest = '570738555773648897'
-
-  client.wait = require('util').promisify(setTimeout);
-
+var olafTest = '570738555773648897'//chan id
+client.wait = require('util').promisify(setTimeout);
 const TwitchClient = require('twitch').default;
 const clientId = process.env.TWITCH_CLIENT_ID;
 const clientSecret = process.env.TWITCH_CLIENT_SECRET;
@@ -35,16 +32,14 @@ const swapi = new ApiSwgohHelp({
     "username":process.env.SWGOH_HELP_USERNAME,
     "password":process.env.SWGOH_HELP_PASSWORD
 })
+(async() =>{
+      var acquiredToken = await swapi.connect()
+    })();
 //on
 client.on('ready', () => {
   console.log("logged in as : "+client.user.username);
   client.user.setActivity(prefix+'help', { type: 'LISTENING' 
   });
-
-  (async() =>{
-      var acquiredToken = await swapi.connect()
-    })();
-
     console.log("servers:")  
     client.guilds.forEach((guild)=>{
       console.log(" - "+guild.name)
