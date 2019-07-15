@@ -31,7 +31,7 @@ const ow = require('overwatch-stats-api');
 const swapi = new ApiSwgohHelp({
     "username":process.env.SWGOH_HELP_USERNAME,
     "password":process.env.SWGOH_HELP_PASSWORD
-})
+});
 (async() =>{
       var acquiredToken = await swapi.connect()
     })();
