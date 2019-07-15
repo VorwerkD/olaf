@@ -76,6 +76,22 @@ input=msg.content.toLowerCase()//to make all inputs - either command or paramete
 /*
 UPDATES THE ROSTERS FILE
 */
+if (input.startsWith(prefix+"test")){
+(async() => {
+    const data = await fs.readFileSync('array.txt','utf8');
+  var newArr = data.split(',');
+var names=[];
+for(var x = 0; x<newArr.length;x+=2){
+names.push(newArr[x]);
+}
+a = FuzzySet(names);
+const out = a.get(res)
+const out2=out[0];
+res = out2[1]
+console.log(out)
+msg.channel.send(out);
+})();
+}
 if (input.startsWith(prefix+"support")){
   msg.author.send("https://discord.gg/GUKXv7j")
   msg.react('✅')
