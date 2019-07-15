@@ -80,12 +80,10 @@ if(msg.content.startsWith(prefix)){
 input=msg.content.toLowerCase()//to make all inputs - either command or parameters all uniform - if a command needs uppercase parameters etc, put above this line
 var inputRes =input.split(' ');
 var inputResCom= inputRes[0].substring(1);
-console.log(inputResCom);
 b = FuzzySet(commands);
 const inCom =b.get(inputResCom);
 const inCom2 = inCom[0];
 input=inCom2[1];
-console.log(input);
 input=prefix+input+" "+inputRes[1];
 }
 if (input.startsWith(prefix+"test")){
