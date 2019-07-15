@@ -45,7 +45,7 @@ client.on('ready', () => {
       console.log(" - "+guild.name)
     });
   (async()=>{
-    update();}(();
+    update();})();
 });
 //join message
 
