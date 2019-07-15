@@ -19,7 +19,7 @@ const twitchClient = TwitchClient.withClientCredentials(clientId, clientSecret);
 var streamList = ["mL7support","yautjaridley"]
 var streamChan = [olafTest,"547923999552700436"]
 
-var commands = ["test","suppprt","gg","update","kick","invite","help","lotto","flip","console","guildnum","live","reset","restart","clearchat","urban"];
+var commands = ["test","suppprt","gg","ping","update","kick","invite","help","lotto","flip","console","guildnum","live","reset","restart","clearchat","urban"];
 
 /*
 const ow = require('overwatch-stats-api');
@@ -74,8 +74,10 @@ var recruitChans=['596613040762388480','596613065907109888','596613090900967440'
 //messages
 client.on('message', msg => {
 input=msg.content.toLowerCase()//to make all inputs - either command or parameters all uniform - if a command needs uppercase parameters etc, put above this line
+var inputRes =input.split(' ');
+var inputResCom= inputRes[0].substring(1);
 b = FuzzySet(commands);
-const inCom =b.get(input);
+const inCom =b.get(inputResCom);
 const inCom2 = inCom[0];
 input=inCom2[1];
 if (input.startsWith(prefix+"test")){
