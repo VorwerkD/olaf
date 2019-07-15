@@ -86,7 +86,7 @@ const inCom =b.get(inputResCom);
 const inCom2 = inCom[0];
 input=inCom2[1];
 console.log(input);
-input=prefix+input;
+input=prefix+input+" "+inputRes[1];
 }
 if (input.startsWith(prefix+"test")){
 var res = input.substring(6); 
