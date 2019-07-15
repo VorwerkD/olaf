@@ -43,8 +43,9 @@ client.on('ready', () => {
     console.log("servers:")  
     client.guilds.forEach((guild)=>{
       console.log(" - "+guild.name)
-    })
-  
+    });
+  (async()=>{
+    update();}(();
 });
 //join message
 
