@@ -73,15 +73,9 @@ var recruitChans=['596613040762388480','596613065907109888','596613090900967440'
 client.on('message', msg => {
 input=msg.content.toLowerCase()//to make all inputs - either command or parameters all uniform - if a command needs uppercase parameters etc, put above this line
 
-/*
-UPDATES THE ROSTERS FILE
-*/
 if (input.startsWith(prefix+"test")){
-const member = msg.mentions.members.first();
-var res = ""
-if(member == null){
-res = input.substring(4); 
-}
+var res = input.substring(6); 
+console.log(res);
 (async() => {
     const data = await fs.readFileSync('array.txt','utf8');
   var newArr = data.split(',');
@@ -96,11 +90,17 @@ res = out2[1]
 console.log(out)
 msg.channel.send(out);
 })();
+/*
+SUPPORT SERVER INVITE LINK
+*/
 }
 if (input.startsWith(prefix+"support")){
   msg.author.send("https://discord.gg/GUKXv7j")
   msg.react('✅')
-}
+}	
+/*
+UPDATES THE ROSTERS FILE
+*/
 if(input.startsWith(prefix+"update")){
   (async() =>{
 update();
