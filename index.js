@@ -9,7 +9,6 @@ var prefix="."
 const fs = require('fs');
 var data=[];
 var isUpdating
-//test
 var olafTest = '570738555773648897'//chan id
 client.wait = require('util').promisify(setTimeout);
 const TwitchClient = require('twitch').default;
