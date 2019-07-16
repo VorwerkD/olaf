@@ -69,10 +69,13 @@ var recruitChans=['596613040762388480','596613065907109888','596613090900967440'
 client.on('message', msg => {
 var input='';
 input=msg.content.toLowerCase()//to make all inputs - either command or parameters all uniform - if a command needs uppercase parameters etc, put above this line
-if(!checkCommand)
-input=''
-else
-findCommand(input)
+var inputRes =input.split(' ');
+var inputResCom= inputRes[0].substring(1);
+b = FuzzySet(commands);
+const inCom =b.get(inputResCom);
+const inCom2 = inCom[0];
+input=inCom2[1];
+input=prefix+input+" "+inputRes[1];
 if (input.startsWith(prefix+"test")){
 var res = input.substring(6); 
 console.log(res);
