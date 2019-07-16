@@ -28,7 +28,7 @@ const swapi = new ApiSwgohHelp({
     })();
 //on
 client.on('ready', () => {
-  console.log("logged in as : "+client.user.username+" is ready to go");
+  console.log("logged in as : "+client.user.username);
   client.user.setActivity(prefix+'help', { type: 'LISTENING' 
   });
     console.log("servers:")  
@@ -444,20 +444,6 @@ async function addAndRemoveRole(member, role) {
   await member.removeRole(role)
 }
 
-async function getGuild(code){
-  (async()=> {
-    let endpoint = 'guild';
-    let payload = {
-  allycode: code,
-  language: 'eng_us'
-}
-let { result, error, warning } = await swapi.fetchGuild( payload );
-//console.log( result[0] );
-return result[0];
-
-  })();
-}
-
 async function checkLive(streamName){
 const online = await isStreamLive(streamName);
     if(online){
@@ -501,7 +487,6 @@ new CronJob('0 */5 * * * * ', function(){
 })();
   
 }, null, true, 'America/New_York');
-
 
 function guildNum() {
   var x =0;
