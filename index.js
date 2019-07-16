@@ -21,14 +21,6 @@ var streamChan = [olafTest,"547923999552700436"]
 
 var commands = ["test","support","gg","ping","update","kick","invite","help","lotto","flip","console","guildnum","live","reset","restart","clearchat","urban"];
 
-/*
-const ow = require('overwatch-stats-api');
-(async () => {
-	const stats = await ow.getBasicInfo('Vorwerk-1157', 'pc');
-	console.log(stats.rank)
-})();
-*/
-
 const swapi = new ApiSwgohHelp({
     "username":process.env.SWGOH_HELP_USERNAME,
     "password":process.env.SWGOH_HELP_PASSWORD
@@ -76,16 +68,11 @@ var recruitChans=['596613040762388480','596613065907109888','596613090900967440'
 
 client.on('message', msg => {
 var input='';
-if(msg.content.startsWith(prefix)){
 input=msg.content.toLowerCase()//to make all inputs - either command or parameters all uniform - if a command needs uppercase parameters etc, put above this line
-var inputRes =input.split(' ');
-var inputResCom= inputRes[0].substring(1);
-b = FuzzySet(commands);
-const inCom =b.get(inputResCom);
-const inCom2 = inCom[0];
-input=inCom2[1];
-input=prefix+input+" "+inputRes[1];
-}
+if(!checkCommand)
+input=''
+else
+findCommand(input)
 if (input.startsWith(prefix+"test")){
 var res = input.substring(6); 
 console.log(res);
@@ -578,4 +565,22 @@ file.end();
 console.log("DONE")
 
 })(); 
+}
+
+function findCommand(input){
+var inputRes =input.split(' ');
+var inputResCom= inputRes[0].substring(1);
+b = FuzzySet(commands);
+const inCom =b.get(inputResCom);
+const inCom2 = inCom[0];
+input=inCom2[1];
+input=prefix+input+" "+inputRes[1];
+return input;
+}
+
+function checkCommand(input){
+    if(input.startsWith(prefix)){
+        return true;
+    }else
+    return false;
 }
