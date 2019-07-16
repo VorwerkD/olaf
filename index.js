@@ -8,6 +8,7 @@ const readline=require('readline');
 var prefix="."
 const fs = require('fs');
 var data=[];
+var isUpdating=false;
 //test
 var olafTest = '570738555773648897'//chan id
 client.wait = require('util').promisify(setTimeout);
@@ -542,6 +543,8 @@ client.channels.get('595255366644924440').fetchMessage(recruitChans[x]).then((ms
 }
 
 function update(){
+    if(!isUpdating){
+        isUpdating=true
   console.log("UPDATING");
   (async() => {
     let payload ={
@@ -568,6 +571,9 @@ file.end();
 console.log("DONE")
 
 })(); 
+isUpdating=false;
+}
+console.log("We are already updating")
 }
 
 function findCommand(input){
