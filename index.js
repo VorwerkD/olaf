@@ -4,10 +4,8 @@ const FuzzySet = require('fuzzyset.js')
 const token = process.env.DISCORD_BOT_SECRET;
 var urban = require('urban');
 const ApiSwgohHelp = require('api-swgoh-help');
-const readline=require('readline');
 var prefix="."
 const fs = require('fs');
-var data=[];
 var isUpdating
 var olafTest = '570738555773648897'//chan id
 client.wait = require('util').promisify(setTimeout);
@@ -30,7 +28,7 @@ const swapi = new ApiSwgohHelp({
     })();
 //on
 client.on('ready', () => {
-  console.log("logged in as : "+client.user.username);
+  console.log("logged in as : "+client.user.username+" is ready to go");
   client.user.setActivity(prefix+'help', { type: 'LISTENING' 
   });
     console.log("servers:")  
@@ -504,14 +502,6 @@ new CronJob('0 */5 * * * * ', function(){
   
 }, null, true, 'America/New_York');
 
-function inArr (value, array){
-if(array.indexOf(value)>0){
-  return true;
-}
-else{
-  return false;
-}
-}
 
 function guildNum() {
   var x =0;
@@ -575,22 +565,4 @@ console.log("DONE")
 isUpdating=false;
 }else
 console.log("We are already updating")
-}
-
-function findCommand(input){
-var inputRes =input.split(' ');
-var inputResCom= inputRes[0].substring(1);
-b = FuzzySet(commands);
-const inCom =b.get(inputResCom);
-const inCom2 = inCom[0];
-input=inCom2[1];
-input=prefix+input+" "+inputRes[1];
-return input;
-}
-
-function checkCommand(input){
-    if(input.startsWith(prefix)){
-        return true;
-    }else
-    return false;
 }
