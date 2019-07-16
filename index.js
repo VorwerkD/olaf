@@ -574,7 +574,7 @@ console.log("DONE")
 
 })(); 
 isUpdating=false;
-}
+}else
 console.log("We are already updating")
 }
 
