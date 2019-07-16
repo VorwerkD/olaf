@@ -80,7 +80,7 @@ input=inCom2[1];
 input=prefix+input+" "+inputRes[1];
 }
 if (input.startsWith(prefix+"test")){
-var res = input.substring(6); 
+var res = input.substring(7); 
 console.log(res);
 (async() => {
     const data = await fs.readFileSync('array.txt','utf8');
