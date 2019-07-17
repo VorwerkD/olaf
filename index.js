@@ -44,19 +44,14 @@ client.on('guildMemberAdd',member =>{
   if(member.guild.id=='484182766271856651'){
   member.guild.channels.get('567116459684397076').send("Welcome to Vorwerks Bot testing server "+member+". Enjoy your stay.\nPing Vorwerk if you need help with something.");
   if(!member.bot){
-    member.addRole('484848526757593119');
-    /*
+    member.addRole('484848526757593119');/*
     (async() =>{
       await addAndRemoveRole(member,'484848526757593119');
     })();*/
-  }
-
-}});
+  }}});
 var rosters=["Name","allyCode"]
 var numGuilds= 4;
 var names=["Names"]
-
-
 var codes = [135718294,466484534,399663774,861239843]
 var texts = ["filler","Ticket reset @ 6:30 PST\nDSTB- 42 :star:\nLSTB- 41 :star:\nGEOTB-12 :star:\nhttps://swgoh.gg/g/35906/phantomrebellion/","Ticket reset @ 7:30 CST\nDSTB- 34 :star:\nLSTB- 34 :star:\nGEOTB-7 :star:\nhttps://swgoh.gg/g/51323/phantomempire/","Ticket reset @ 6:30 CST\nDSTB- 34 :star:\nLSTB- 34 :star:\nGEOTB-9 :star:\nhttps://swgoh.gg/g/29918/phantomhavoc/","Ticket reset @ 6:30 PST\nDSTB- 5 :star:\nLSTB- ? :star:\nGEOTB-yet to be attempted\nhttps://swgoh.gg/g/61585/phantomrogue/"]
 var mainChans=['596613040879960065','596613066108698650','596613090557034497','596613114036748299']
@@ -122,9 +117,7 @@ res = input.substring(4);
 else{
 res = member.displayName.toLowerCase().replace(' {empire}','').replace(' {rebellion}','').replace(' {rogue}','').replace(' {havoc}','');
 }
-
-
-  (async() => {
+    (async() => {
     const data = await fs.readFileSync('array.txt','utf8');
   var newArr = data.split(',');
 var names=[];
@@ -137,29 +130,21 @@ if(res == 'brown')
 if(res == 'dips')
   res= 'dipsscanner';
 const out = a.get(res)
-const out2=out[0];
-res = out2[1];
-resNum = out2[0];
-console.log(out);
-console.log(res);
 var outMatch;
 var outName;
 var outScore;
+var resultsSent=false;
 for(var x =0; x<out.length;x++){
 outMatch=out[x];
 outName=outMatch[1];
 outScore=outMatch[0];
-console.log("Name: "+outName+" Score: "+outScore);
 if(outScore>=0.5){
-console.log("would be sent");
 var codeRec=newArr[newArr.indexOf(outName)+1];
 msg.channel.send("https://swgoh.gg/p/"+codeRec+"/")
-}else
+resultsSent=true;
+}else if(!resultsSent)
 msg.channel.send("This user was not found: Ensure the name is spelled correctly")
-}
-
-
-})();
+}})();
 }
 /*
 console
