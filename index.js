@@ -125,10 +125,10 @@ var names=[];
 for(var x = 0; x<newArr.length;x+=2){
 names.push(newArr[x]);
 }
-var names = getNames(res,names);
+var names2 = getNames(res,names);
 for(var x =0;x<names.length;x++){
-  if(name[x].startsWith("redo")){
-    var newName = name[x].substring(4,length-1)+characters.charAt(Math.floor(Math.random() * charactersLength));
+  if(names2[x].startsWith("redo")){
+    var newName = names2[x].substring(4,length-1)+characters.charAt(Math.floor(Math.random() * charactersLength));
     getNames(newName,names)
   }else
 var codeRec=newArr[newArr.indexOf(names[x])+1];
