@@ -73,7 +73,8 @@ input=prefix+input+" "+inputRes[1];
 }
 if (input.startsWith(prefix+"test")){
   (async()=>{
-    const subscriptions = await client.helix.subscriptions.getSubscriptions(getUserByName('RANKNoMoJa'));
+    var user = getUserByName('RANKNoMoJa');
+    const subscriptions = await client.helix.subscriptions.getSubscriptions(user.id);
     console.log(subscriptions);
   })();
 
