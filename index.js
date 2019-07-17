@@ -138,14 +138,15 @@ if(res == 'dips')
   res= 'dipsscanner';
 const out = a.get(res)
 const out2=out[0];
-res = out2[1]
-console.log(out)
+res = out2[1];
+resNum = out2[0];
+console.log(out);
 console.log(res);
 
 var codeRec=newArr[newArr.indexOf(res)+1];
 
 
-if(codeRec!="Name")
+if(resNum>=0.5)
 msg.channel.send("https://swgoh.gg/p/"+codeRec+"/")
 else
 msg.channel.send("This user was not found: Ensure the name is spelled correctly")
