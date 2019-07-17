@@ -56,6 +56,7 @@ var codes = [135718294,466484534,399663774,861239843]
 var texts = ["filler","Ticket reset @ 6:30 PST\nDSTB- 42 :star:\nLSTB- 41 :star:\nGEOTB-12 :star:\nhttps://swgoh.gg/g/35906/phantomrebellion/","Ticket reset @ 7:30 CST\nDSTB- 34 :star:\nLSTB- 34 :star:\nGEOTB-7 :star:\nhttps://swgoh.gg/g/51323/phantomempire/","Ticket reset @ 6:30 CST\nDSTB- 34 :star:\nLSTB- 34 :star:\nGEOTB-9 :star:\nhttps://swgoh.gg/g/29918/phantomhavoc/","Ticket reset @ 6:30 PST\nDSTB- 5 :star:\nLSTB- ? :star:\nGEOTB-yet to be attempted\nhttps://swgoh.gg/g/61585/phantomrogue/"]
 var mainChans=['596613040879960065','596613066108698650','596613090557034497','596613114036748299']
 var recruitChans=['596613040762388480','596613065907109888','596613090900967440','596613113957187586']
+var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 //messages
 
 
@@ -124,6 +125,16 @@ var names=[];
 for(var x = 0; x<newArr.length;x+=2){
 names.push(newArr[x]);
 }
+var names = getNames(res,names);
+for(var x =0;x<names.length;x++){
+  if(name[x].startsWith("redo")){
+    var newName = name[x].substring(4,length-1)+characters.charAt(Math.floor(Math.random() * charactersLength));
+    getNames(newName,names)
+  }else
+var codeRec=newArr[newArr.indexOf(names[x])+1];
+msg.channel.send("https://swgoh.gg/p/"+codeRec+"/")
+}
+/*
 a = FuzzySet(names);
 if(res == 'brown')
   res = 'brown discord 6964';
@@ -144,7 +155,7 @@ msg.channel.send("https://swgoh.gg/p/"+codeRec+"/")
 resultsSent=true;
 }else if(!resultsSent)
 msg.channel.send("This user was not found: Ensure the name is spelled correctly")
-}})();
+}*/})();
 }
 /*
 console
@@ -545,4 +556,34 @@ console.log("DONE")
 isUpdating=false;
 }else
 console.log("We are already updating")
+}
+
+function getNames(input,arrayInput){
+
+a = FuzzySet(arrayInput);
+if(input == 'brown')
+  input = 'brown discord 6964';
+if(input == 'dips')
+  input= 'dipsscanner';
+const out = a.get(input)
+var outMatch;
+var outName;
+var outScore;
+var output=[];
+var resultsSent=false;
+for(var x =0; x<out.length;x++){
+outMatch=out[x];
+outName=outMatch[1];
+outScore=outMatch[0];
+if(outScore==1){
+output.push("redo"+outName)
+}else if(outScore>=0.5&&outScore!=1){
+output.push(outName)
+//var codeRec=newArr[newArr.indexOf(outName)+1];
+//msg.channel.send("https://swgoh.gg/p/"+codeRec+"/")
+resultsSent=true;
+}
+//msg.channel.send("This user was not found: Ensure the name is spelled correctly")
+}
+return output;
 }
