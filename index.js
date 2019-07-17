@@ -152,12 +152,10 @@ outScore=outMatch[0];
 console.log("Name: "+outName+" Score: "+outScore);
 if(outScore>=0.5)
 console.log("would be sent");
+var codeRec=newArr[newArr.indexOf(outName)+1];
+msg.channel.send("https://swgoh.gg/p/"+codeRec2+"/")
 }
-var codeRec=newArr[newArr.indexOf(res)+1];
 
-
-if(resNum>=0.5)
-msg.channel.send("https://swgoh.gg/p/"+codeRec+"/")
 else
 msg.channel.send("This user was not found: Ensure the name is spelled correctly")
 })();
