@@ -1,7 +1,7 @@
 //bot stuffs
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const FuzzySet = require('fuzzyset.js')
+const FuzzySet = require('fuzzyset.js');
 const token = process.env.DISCORD_BOT_SECRET;
 var urban = require('urban');
 var prefix="."
@@ -71,15 +71,7 @@ const inCom2 = inCom[0];
 input=inCom2[1];
 input=prefix+input+" "+inputRes[1];
 }
-if (input.startsWith(prefix+"test")){
-  (async()=>{
-    const user = await twitchClient.kraken.users.getUserByName('RANKNoMoJa');
-    const user2 = await twitchClient.kraken.users.getUserByName('Vorwerk_D');
-    const subscriptions = await twitchClient.helix.subscriptions.getSubscriptionForUser(user,user2);
-    console.log(subscriptions);
-  })();
 
-}
 
 if (input.startsWith(prefix+"support"))
   msg.channel.send("Join Vorwerk's Server at: https://discord.gg/GUKXv7j");
