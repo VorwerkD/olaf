@@ -150,14 +150,15 @@ outMatch=out[x];
 outName=outMatch[1];
 outScore=outMatch[0];
 console.log("Name: "+outName+" Score: "+outScore);
-if(outScore>=0.5)
+if(outScore>=0.5){}
 console.log("would be sent");
 var codeRec=newArr[newArr.indexOf(outName)+1];
 msg.channel.send("https://swgoh.gg/p/"+codeRec2+"/")
+}else
+msg.channel.send("This user was not found: Ensure the name is spelled correctly")
 }
 
-else
-msg.channel.send("This user was not found: Ensure the name is spelled correctly")
+
 })();
 }
 /*
