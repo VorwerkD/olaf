@@ -418,12 +418,15 @@ const online = await isStreamLive(streamName);
       const stream = await getStream(streamName);
       const streamLive = await twitchClient.kraken.streams.getStreamByChannel(stream);
       const now = new Date();
+
       const dif = now-streamLive.startDate;
-      if (dif <130000)
-       return stream     
-      else
-        return null;
+      if (dif <130000){
+       return stream
       }
+      
+      }else{
+        return null;
+      }}
 
   new CronJob('*/2 * * * *', function(){
   (async() => {
@@ -518,6 +521,7 @@ console.log("We are already updating")
 }
 
 function getNames(input,arrayInput){
+
 a = FuzzySet(arrayInput);
 if(input == 'brown')
   input = 'brown discord 6964';
