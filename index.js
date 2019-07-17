@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-//const client = new Discord.Client();
+const client = new Discord.Client();
 const FuzzySet = require('fuzzyset.js')
 const token = process.env.DISCORD_BOT_SECRET;
 var urban = require('urban');
