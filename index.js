@@ -142,7 +142,17 @@ res = out2[1];
 resNum = out2[0];
 console.log(out);
 console.log(res);
-
+var outMatch;
+var outName;
+var outScore;
+for(var x =0; x<out.length;x++){
+outMatch=out[x];
+outName=outMatch[1];
+outScore=outMatch[0];
+console.log("Name: "+outName+" Score: "+outScore);
+if(outScore>=0.5)
+console.log("would be sent");
+}
 var codeRec=newArr[newArr.indexOf(res)+1];
 
 
