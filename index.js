@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const client = new Discord.Client();
+//const client = new Discord.Client();
 const FuzzySet = require('fuzzyset.js')
 const token = process.env.DISCORD_BOT_SECRET;
 var urban = require('urban');
@@ -466,8 +466,6 @@ new CronJob('0 0 3 * * * ', function(){
 
 new CronJob('0 */5 * * * * ', function(){
     update();
-})();
-  
 }, null, true, 'America/New_York');
 
 function guildNum() {
