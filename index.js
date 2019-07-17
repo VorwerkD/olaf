@@ -72,7 +72,11 @@ input=inCom2[1];
 input=prefix+input+" "+inputRes[1];
 }
 if (input.startsWith(prefix+"test")){
-const subscriptions = await client.helix.subscriptions.getSubscriptions(getUserByName('RANKNoMoJa'));
+  (async()=>{
+    const subscriptions = await client.helix.subscriptions.getSubscriptions(getUserByName('RANKNoMoJa'));
+    console.log(subscriptions);
+  })();
+
 }
 
 if (input.startsWith(prefix+"support"))
