@@ -6,7 +6,8 @@ var urban = require('urban');
 const ApiSwgohHelp = require('api-swgoh-help');
 var prefix="."
 const fs = require('fs');
-var isUpdating
+var isUpdating;
+var isUpdated;
 var olafTest = '570738555773648897'//chan id
 client.wait = require('util').promisify(setTimeout);
 const TwitchClient = require('twitch').default;
@@ -125,13 +126,13 @@ var names=[];
 for(var x = 0; x<newArr.length;x+=2){
 names.push(newArr[x]);
 }
-var names2 = getNames(res,names);
-for(var x =0;x<names.length;x++){
-  if(names2[x].startsWith("redo")){
-    var newName = names2[x].substring(4,names2[x].length-1)+characters.charAt(Math.floor(Math.random() * characters.length));
-    getNames(newName,names)
-  }else
-var codeRec=newArr[newArr.indexOf(names[x])+1];
+var matchedArray = getNames(res,names);
+for(var x =0;x<matchedArray.length;x++){
+  if(matchedArray[x].startsWith("redo")){
+    var newName = matchedArray[x].substring(4,matchedArray[x].length-1)+characters.charAt(Math.floor(Math.random() * characters.length));
+    var matchedArray = getNames(newName,names)
+  }
+var codeRec=newArr[newArr.indexOf(matchedArray[x])+1];
 msg.channel.send("https://swgoh.gg/p/"+codeRec+"/")
 }
 /*
@@ -525,8 +526,14 @@ client.channels.get('595255366644924440').fetchMessage(recruitChans[x]).then((ms
 }
 
 function update(){
-    if(!isUpdating){
-        isUpdating=true
+  (async() => {
+    const data = await fs.readFileSync('array.txt','utf8');
+  if (!data.includes(',')){
+    isUpdated=false;
+  }
+})();
+    if(!isUpdating&&!isUpdated){
+        isUpdating=true;
   console.log("UPDATING");
   (async() => {
     let payload ={
@@ -551,7 +558,7 @@ for(var x = 0 ; x<rosters.length;x++){
 }
 file.end();
 console.log("DONE")
-
+isUpdated=true;
 })(); 
 isUpdating=false;
 }else
