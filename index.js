@@ -1,25 +1,34 @@
+//bot stuffs
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const FuzzySet = require('fuzzyset.js')
 const token = process.env.DISCORD_BOT_SECRET;
 var urban = require('urban');
-const ApiSwgohHelp = require('api-swgoh-help');
 var prefix="."
 const fs = require('fs');
 var isUpdating;
 var isUpdated;
-var olafTest = '570738555773648897'//chan id
 client.wait = require('util').promisify(setTimeout);
+var CronJob = require('cron').CronJob;
+var commands = ["test","support","gg","ping","update","kick","invite","help","lotto","flip","console","guildnum","live","reset","restart","clearchat","urban"];
+var olafTest = '570738555773648897'//chan id
+//twitch stuffs
+var streamList = ["mL7support","yautjaridley"]
+var streamChan = [olafTest,"547923999552700436"]
 const TwitchClient = require('twitch').default;
 const clientId = process.env.TWITCH_CLIENT_ID;
 const clientSecret = process.env.TWITCH_CLIENT_SECRET;
 const twitchClient = TwitchClient.withClientCredentials(clientId, clientSecret);
-
-var streamList = ["mL7support","yautjaridley"]
-var streamChan = [olafTest,"547923999552700436"]
-
-var commands = ["test","support","gg","ping","update","kick","invite","help","lotto","flip","console","guildnum","live","reset","restart","clearchat","urban"];
-
+//swgoh stuffs
+const ApiSwgohHelp = require('api-swgoh-help');
+var rosters=["Name","allyCode"]
+var numGuilds= 4;
+var names=["Names"]
+var codes = [135718294,466484534,399663774,861239843]
+var texts = ["filler","Ticket reset @ 6:30 PST\nDSTB- 42 :star:\nLSTB- 41 :star:\nGEOTB-12 :star:\nhttps://swgoh.gg/g/35906/phantomrebellion/","Ticket reset @ 7:30 CST\nDSTB- 34 :star:\nLSTB- 34 :star:\nGEOTB-7 :star:\nhttps://swgoh.gg/g/51323/phantomempire/","Ticket reset @ 6:30 CST\nDSTB- 34 :star:\nLSTB- 34 :star:\nGEOTB-9 :star:\nhttps://swgoh.gg/g/29918/phantomhavoc/","Ticket reset @ 6:30 PST\nDSTB- 5 :star:\nLSTB- ? :star:\nGEOTB-yet to be attempted\nhttps://swgoh.gg/g/61585/phantomrogue/"]
+var mainChans=['596613040879960065','596613066108698650','596613090557034497','596613114036748299']
+var recruitChans=['596613040762388480','596613065907109888','596613090900967440','596613113957187586']
+var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 const swapi = new ApiSwgohHelp({
     "username":process.env.SWGOH_HELP_USERNAME,
     "password":process.env.SWGOH_HELP_PASSWORD
@@ -27,7 +36,7 @@ const swapi = new ApiSwgohHelp({
 (async() =>{
       var acquiredToken = await swapi.connect()
     })();
-//on
+//Bot Logged in
 client.on('ready', () => {
   console.log("logged in as : "+client.user.username);
   client.user.setActivity(prefix+'help', { type: 'LISTENING' 
@@ -39,8 +48,7 @@ client.on('ready', () => {
   (async()=>{
     update();})();
 });
-//join message
-
+//join messages
 client.on('guildMemberAdd',member =>{
   if(member.guild.id=='484182766271856651'){
   member.guild.channels.get('567116459684397076').send("Welcome to Vorwerks Bot testing server "+member+". Enjoy your stay.\nPing Vorwerk if you need help with something.");
@@ -50,17 +58,7 @@ client.on('guildMemberAdd',member =>{
       await addAndRemoveRole(member,'484848526757593119');
     })();*/
   }}});
-var rosters=["Name","allyCode"]
-var numGuilds= 4;
-var names=["Names"]
-var codes = [135718294,466484534,399663774,861239843]
-var texts = ["filler","Ticket reset @ 6:30 PST\nDSTB- 42 :star:\nLSTB- 41 :star:\nGEOTB-12 :star:\nhttps://swgoh.gg/g/35906/phantomrebellion/","Ticket reset @ 7:30 CST\nDSTB- 34 :star:\nLSTB- 34 :star:\nGEOTB-7 :star:\nhttps://swgoh.gg/g/51323/phantomempire/","Ticket reset @ 6:30 CST\nDSTB- 34 :star:\nLSTB- 34 :star:\nGEOTB-9 :star:\nhttps://swgoh.gg/g/29918/phantomhavoc/","Ticket reset @ 6:30 PST\nDSTB- 5 :star:\nLSTB- ? :star:\nGEOTB-yet to be attempted\nhttps://swgoh.gg/g/61585/phantomrogue/"]
-var mainChans=['596613040879960065','596613066108698650','596613090557034497','596613114036748299']
-var recruitChans=['596613040762388480','596613065907109888','596613090900967440','596613113957187586']
-var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 //messages
-
-
 client.on('message', msg => {
 var input='';
 if(msg.content.startsWith(prefix)){
@@ -162,42 +160,35 @@ msg.channel.send(streamer+" is live! they're playing "+stream.game+" at "+stream
     }
     else{
       msg.channel.send("Sorry, they are not streaming currently... :(");
-    }
-})();
-    
+    }})(); 
   }
-  
-  //flip
+  /*
+  FLIP COMMAND
+  */
     if (input.startsWith(prefix+"flip")) {
       
       if(Math.random() >= 0.5)
-      {msg.reply(`Heads!`)
-      }
-      else{
+      msg.reply(`Heads!`)
+      else
      msg.reply(`Tails!`)
     }
-}
-
 //ping
 if ((msg.author.id != client.user.id)&&(input.startsWith(prefix+"ping"))) {
  // Check if message is "!ping"
  			msg.channel.send("Pinging ...") // Placeholder for pinging ... 
 			.then((msg) => { // Resolve promise
 				msg.edit("Ping: " + (Date.now() - msg.createdTimestamp))
-        })
-        
-}
+        })}
 
 //lotto
 if (input.startsWith(prefix+"lotto")) {
  msg.reply("\nYour lotto digits: "+Math.floor(Math.random() * 70+1)+" "+Math.floor(Math.random() * 70+1)+" "+Math.floor(" "+Math.random() * 70+1)+" "+Math.floor(Math.random() * 70+1)+" "+Math.floor(Math.random() * 70+1)+"\nYour Mega Ball: "+Math.floor(Math.random() * 25+1))
- 
 }
 //invite
 if (input.startsWith(prefix+"invite")) {
  if(msg.author.id == 234346145806155776)
  {
-   msg.reply("https://discordapp.com/oauth2/authorize?&client_id=523260461932740620&scope=bot&permissions=0!")
+   msg.reply("https://discordapp.com/oauth2/authorize?&client_id=523260461932740620&scope=bot&permissions=93250!")
 }
     else(msg.reply("You do not have the required permissions."))
 }
@@ -327,7 +318,7 @@ urban.random().first(function(JSON) {
   var out=JSON.definition;
   var out2=out.replace(/\[([^\]]*)\]/g, "$1");
     msg.channel.send({embed: {
-    color: 3447003,
+    color: 0xac38f1,
     author: {
       name: client.user.username,
       icon_url: client.user.avatarURL
@@ -354,7 +345,7 @@ trollface.first(function(JSON) {
   var out2=out.replace(/\[([^\]]*)\]/g, "$1");
     
     msg.channel.send({embed: {
-    color: 3447003,
+    color: 0xac38f1,
     author: {
       name: client.user.username,
       icon_url: client.user.avatarURL
@@ -379,12 +370,6 @@ msg.channel.send("This word could not be found from UrbanDictionary.com");
 });
   }}
 
-if(input.includes("destiny")){
-msg.channel.send({
-    file: "https://cdn.discordapp.com/attachments/570738555773648897/586388396612648971/Z.png"
-});
-}
-
 });
 async function isStreamLive(userName) {
 	const user = await twitchClient.kraken.users.getUserByName(userName);
@@ -403,9 +388,6 @@ async function getStream(userName) {
 client.login(token);
 
 //CRON JOBS
-
-var CronJob = require('cron').CronJob;
-
 
 //empire
 new CronJob('0 30 19 * * *', function() {
@@ -436,15 +418,12 @@ const online = await isStreamLive(streamName);
       const stream = await getStream(streamName);
       const streamLive = await twitchClient.kraken.streams.getStreamByChannel(stream);
       const now = new Date();
-
       const dif = now-streamLive.startDate;
-      if (dif <130000){
-       return stream
-      }
-      
-      }else{
+      if (dif <130000)
+       return stream     
+      else
         return null;
-      }}
+      }
 
   new CronJob('*/2 * * * *', function(){
   (async() => {
@@ -539,7 +518,6 @@ console.log("We are already updating")
 }
 
 function getNames(input,arrayInput){
-
 a = FuzzySet(arrayInput);
 if(input == 'brown')
   input = 'brown discord 6964';
