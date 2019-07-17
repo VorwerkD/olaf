@@ -135,28 +135,7 @@ for(var x =0;x<matchedArray.length;x++){
 var codeRec=newArr[newArr.indexOf(matchedArray[x])+1];
 msg.channel.send("https://swgoh.gg/p/"+codeRec+"/")
 }
-/*
-a = FuzzySet(names);
-if(res == 'brown')
-  res = 'brown discord 6964';
-if(res == 'dips')
-  res= 'dipsscanner';
-const out = a.get(res)
-var outMatch;
-var outName;
-var outScore;
-var resultsSent=false;
-for(var x =0; x<out.length;x++){
-outMatch=out[x];
-outName=outMatch[1];
-outScore=outMatch[0];
-if(outScore>=0.5){
-var codeRec=newArr[newArr.indexOf(outName)+1];
-msg.channel.send("https://swgoh.gg/p/"+codeRec+"/")
-resultsSent=true;
-}else if(!resultsSent)
-msg.channel.send("This user was not found: Ensure the name is spelled correctly")
-}*/})();
+})();
 }
 /*
 console
@@ -486,11 +465,7 @@ new CronJob('0 0 3 * * * ', function(){
 }, null, true, 'America/New_York');
 
 new CronJob('0 */5 * * * * ', function(){
-    (async() => {
-    const data = await fs.readFileSync('array.txt','utf8');
-  if (!data.includes(',')){
     update();
-  }
 })();
   
 }, null, true, 'America/New_York');
