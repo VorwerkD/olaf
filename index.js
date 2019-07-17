@@ -534,7 +534,7 @@ console.log("DONE")
 isUpdated=true;
 })(); 
 isUpdating=false;
-}else if(!isUpdating&&isUpdated)
+}else if(!isUpdating)
 console.log("We are already updating")
 }
 
