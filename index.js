@@ -74,7 +74,7 @@ input=prefix+input+" "+inputRes[1];
 if (input.startsWith(prefix+"test")){
   (async()=>{
     const user = await twitchClient.kraken.users.getUserByName('RANKNoMoJa');
-    const subscriptions = await client.helix.subscriptions.getSubscriptionsPaginated(user);
+    const subscriptions = await twitchClient.helix.subscriptions.getSubscriptions(user);
     console.log(subscriptions);
   })();
 
