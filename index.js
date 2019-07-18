@@ -10,8 +10,13 @@ var isUpdating;
 var isUpdated;
 client.wait = require('util').promisify(setTimeout);
 var CronJob = require('cron').CronJob;
-var commands = ["help","support","ping","flip","lotto","kick","clearChat","live","lotto","urban","console","guildnum","console","gg","reset"];
-var commandHelp = ["You're reading it!","Join our support server!","Pongs!","Flips a coin","Gives you your lotto numbers- Doesn't gaurentte you win though :Wink;","kicks a valid user, just tag them `.kick @notVorwerk#6126` for example\nRequires Admin role","Clears the current channel of messages <14 days old add a number<100 to clear - defaults to 100 `.clearChat 50` for example \nRequires Admin role","check to see if the given twitch streamer is live `.live Vorwerk_D` for example","Searches urban dictionary for a word/phrase. Attach -r for a random word","Updates the guild numbers channels","Logs the input to the console ","Gives the swgoh.gg link of the requested user `.gg Vorwerk17` for example"]
+var commands = ["help","support","ping","flip","lotto","kick","clearChat","live","urban","console","guildnum","gg","reset"];
+var commandHelp = ["You're reading it!","Join our support server!",
+"Pongs!","Flips a coin","Gives you your lotto numbers- Doesn't gaurentte you win though :Wink;",
+"kicks a valid user, just tag them `.kick @notVorwerk#6126` for example\nRequires Admin role",
+"Clears the current channel of messages <14 days old add a number<100 to clear - defaults to 100 `.clearChat 50` for example \nRequires Admin role",
+"check to see if the given twitch streamer is live `.live Vorwerk_D` for example","Searches urban dictionary for a word/phrase. Attach -r for a random word",
+"Updates the guild numbers channels","Logs the input to the console ","Gives the swgoh.gg link of the requested user `.gg Vorwerk17` for example"]
 var olafTest = '570738555773648897'//chan id
 //twitch stuffs
 var streamList = ["mL7support","yautjaridley"]
@@ -194,6 +199,30 @@ if(input.startsWith(prefix+"kick")) {
   //help
 
   if(input.startsWith(prefix+"help")) {    
+   /* var x =0
+    msg.channel.send({embed: {
+    color: 0xac38f1,
+    author: {
+      name: client.user.username,
+      icon_url: client.user.avatarURL
+    },
+    title: "Command List: all commands are preceded by "+prefix,
+    fields: [
+        for(;x<commands.length,x++){
+            {name: commands[x],
+            value: commandHelp[x]
+        },}
+      {
+        name: "Other stuffs",
+        value: "Alerts for when Twitch streams go live, alerts for ticket resets, auto update guild numbers channels"
+      }
+    ],
+    timestamp: new Date(),
+    footer: {
+      icon_url: client.user.avatarURL,
+      text: "Made by Vorwerk 😊"
+}}
+  */
   const embed = new Discord.RichEmbed()
   .setTitle("Command List: all commands are preceded by"+prefix)
   .setAuthor(client.user.username,client.user.avatarURL)
@@ -208,7 +237,7 @@ if(input.startsWith(prefix+"kick")) {
   embed.addField(commands[x],
     commandHelp[x])
 }
-  msg.channel.send({embed});
+  message.channel.send({embed});
 }
   
 
