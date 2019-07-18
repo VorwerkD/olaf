@@ -229,7 +229,7 @@ if(input.startsWith(prefix+"kick")) {
   .setTimestamp()
   //.setURL("https://discord.js.org/#/docs/main/indev/class/RichEmbed")
   for( var x =0;x<commands.length;x++){
-  .addField(commands[x],
+  embed.addField(commands[x],
     commandHelp[x])
 }
   message.channel.send({embed});
