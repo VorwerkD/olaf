@@ -10,7 +10,8 @@ var isUpdating;
 var isUpdated;
 client.wait = require('util').promisify(setTimeout);
 var CronJob = require('cron').CronJob;
-
+var commands = ["help","support","ping","flip","lotto","kick","clearChat","live","lotto","urban","console","guildnum","console","gg","reset"];
+var commandHelp = ["You're reading it!","Join our support server!","Pongs!","Flips a coin","Gives you your lotto numbers- Doesn't gaurentte you win though :Wink;","kicks a valid user, just tag them `.kick @notVorwerk#6126` for example\nRequires Admin role","Clears the current channel of messages <14 days old add a number<100 to clear - defaults to 100 `.clearChat 50` for example \nRequires Admin role","check to see if the given twitch streamer is live `.live Vorwerk_D` for example","Searches urban dictionary for a word/phrase. Attach -r for a random word","Updates the guild numbers channels","Logs the input to the console ","Gives the swgoh.gg link of the requested user `.gg Vorwerk17` for example"]
 var olafTest = '570738555773648897'//chan id
 //twitch stuffs
 var streamList = ["mL7support","yautjaridley"]
@@ -200,8 +201,6 @@ if(input.startsWith(prefix+"kick")) {
       icon_url: client.user.avatarURL
     },
     title: "Command List: all commands are preceded by "+prefix,
-var commands = ["help","support","ping","flip","lotto","kick","clearChat","live","lotto","urban","console","guildnum","console","gg","reset"];
-var commandHelp = ["You're reading it!","Join our support server!","Pongs!","Flips a coin","Gives you your lotto numbers- Doesn't gaurentte you win though :Wink;","kicks a valid user, just tag them `.kick @notVorwerk#6126` for example\nRequires Admin role","Clears the current channel of messages <14 days old add a number<100 to clear - defaults to 100 `.clearChat 50` for example \nRequires Admin role","check to see if the given twitch streamer is live `.live Vorwerk_D` for example","Searches urban dictionary for a word/phrase. Attach -r for a random word","Updates the guild numbers channels","Logs the input to the console ","Gives the swgoh.gg link of the requested user `.gg Vorwerk17` for example"]
     fields: [{
         for(var x =0;x<commands.length,x++){
             name: commands[x],
