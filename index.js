@@ -194,7 +194,7 @@ if(input.startsWith(prefix+"kick")) {
   //help
 
   if(input.startsWith(prefix+"help")) {    
-    var x;
+    var x =0
     msg.channel.send({embed: {
     color: 0xac38f1,
     author: {
@@ -202,11 +202,11 @@ if(input.startsWith(prefix+"kick")) {
       icon_url: client.user.avatarURL
     },
     title: "Command List: all commands are preceded by "+prefix,
-    fields: [{
-        for(x=0;x<commands.length,x++){
-            name: commands[x],
+    fields: [
+        for(;x<commands.length,x++){
+            {name: commands[x],
             value: commandHelp[x]
-        }},
+        },}
       {
         name: "Other stuffs",
         value: "Alerts for when Twitch streams go live, alerts for ticket resets, auto update guild numbers channels"
