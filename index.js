@@ -221,20 +221,14 @@ if(input.startsWith(prefix+"kick")) {
   const embed = new Discord.RichEmbed()
   .setTitle("Command List: all commands are preceded by"+prefix)
   .setAuthor(client.user.username,client.user.avatarURL)
-  /*
-   * Alternatively, use "#00AE86", [0, 174, 134] or an integer number.
-   */
   .setColor(0xac38f1)
   .setDescription("This is the main body of text, it can hold 2048 characters.")
   .setFooter("Made by Vorwerk")
-  .setImage("http://i.imgur.com/yVpymuV.png")
+  //.setImage("http://i.imgur.com/yVpymuV.png")
   .setThumbnail(msg.author.avatarURL)
-  /*
-   * Takes a Date object, defaults to current date.
-   */
   .setTimestamp()
-  .setURL("https://discord.js.org/#/docs/main/indev/class/RichEmbed")
-  for ( var x =0;x<commands.length;x++){
+  //.setURL("https://discord.js.org/#/docs/main/indev/class/RichEmbed")
+  for( var x =0;x<commands.length;x++){
   .addField(commands[x],
     commandHelp[x])
 }
