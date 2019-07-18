@@ -10,7 +10,7 @@ var isUpdating;
 var isUpdated;
 client.wait = require('util').promisify(setTimeout);
 var CronJob = require('cron').CronJob;
-var commands = ["test","support","gg","ping","update","kick","invite","help","lotto","flip","console","guildnum","live","reset","restart","clearchat","urban"];
+
 var olafTest = '570738555773648897'//chan id
 //twitch stuffs
 var streamList = ["mL7support","yautjaridley"]
@@ -26,9 +26,9 @@ var numGuilds= 4;
 var names=["Names"]
 var codes = [135718294,466484534,399663774,861239843]
 var texts = ["filler","Ticket reset @ 6:30 PST\nDSTB- 42 :star:\nLSTB- 41 :star:\nGEOTB-12 :star:\nhttps://swgoh.gg/g/35906/phantomrebellion/","Ticket reset @ 7:30 CST\nDSTB- 34 :star:\nLSTB- 34 :star:\nGEOTB-7 :star:\nhttps://swgoh.gg/g/51323/phantomempire/","Ticket reset @ 6:30 CST\nDSTB- 34 :star:\nLSTB- 34 :star:\nGEOTB-9 :star:\nhttps://swgoh.gg/g/29918/phantomhavoc/","Ticket reset @ 6:30 PST\nDSTB- 5 :star:\nLSTB- ? :star:\nGEOTB-yet to be attempted\nhttps://swgoh.gg/g/61585/phantomrogue/"]
-var mainChans=['596613040879960065','596613066108698650','596613090557034497','596613114036748299']
-var recruitChans=['596613040762388480','596613065907109888','596613090900967440','596613113957187586']
-var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+var mainChans=['596613040879960065','596613066108698650','596613090557034497','596613114036748299']//message ids to edit
+var recruitChans=['596613040762388480','596613065907109888','596613090900967440','596613113957187586']//message ids to edit
+var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 const swapi = new ApiSwgohHelp({
     "username":process.env.SWGOH_HELP_USERNAME,
     "password":process.env.SWGOH_HELP_PASSWORD
@@ -200,54 +200,13 @@ if(input.startsWith(prefix+"kick")) {
       icon_url: client.user.avatarURL
     },
     title: "Command List: all commands are preceded by "+prefix,
-
+var commands = ["help","support","ping","flip","lotto","kick","clearChat","live","lotto","urban","console","guildnum","console","gg","reset"];
+var commandHelp = ["You're reading it!","Join our support server!","Pongs!","Flips a coin","Gives you your lotto numbers- Doesn't gaurentte you win though :Wink;","kicks a valid user, just tag them `.kick @notVorwerk#6126` for example\nRequires Admin role","Clears the current channel of messages <14 days old add a number<100 to clear - defaults to 100 `.clearChat 50` for example \nRequires Admin role","check to see if the given twitch streamer is live `.live Vorwerk_D` for example","Searches urban dictionary for a word/phrase. Attach -r for a random word","Updates the guild numbers channels","Logs the input to the console ","Gives the swgoh.gg link of the requested user `.gg Vorwerk17` for example"]
     fields: [{
-        name: "help",
-        value: "You're reading it!"
-      },{
-        name: "support",
-        value: "Join our support server!"
-      },
-      {
-        name: "ping",
-        value: "Pongs!"
-      },
-      {
-        name: "flip",
-        value: "Flips a coin"
-      },
-      {
-        name: "lotto",
-        value: "gives your lotto numbers- Doesn't gaurentee you win though :wink:"
-      },
-      {
-        name: "kick",
-        value: "kicks a valid user, just tag them `.kick @notVorwerk#6126` for example\nRequires Admin role"
-      },
-      {
-        name: "clearChat",
-        value:"Clears the current channel of messages <14 days old add a number<100 to clear - defaults to 100 `.clearChat 50` for example \nRequires Admin role"
-      },
-      {
-        name: "live",
-        value: "check to see if the given twitch streamer is live `.live Vorwerk_D` for example"
-      },
-      {
-        name: "urban",
-        value: "Searches urban dictionary for a word/phrase. Attach -r for a random word"
-      },
-      {
-        name: "guildnum",
-        value: "Updates the guild numbers channels"
-      },
-      {
-        name: "console",
-        value: "Logs the input to the console "
-      },
-      {
-        name: "gg",
-        value: "Gives the swgoh.gg link of the requested user `.gg Vorwerk17` for example"
-      },
+        for(var x =0;x<commands.length,x++){
+            name: commands[x],
+            value: commandHelp[x]
+        },
       {
         name: "Other stuffs",
         value: "Alerts for when Twitch streams go live, alerts for ticket resets, auto update guild numbers channels"
@@ -263,7 +222,7 @@ if(input.startsWith(prefix+"kick")) {
   
   }
 
-  if((input.startsWith(prefix+"restart")||input.startsWith(prefix+"reset"))&&(msg.author.id==234346145806155776)) {
+  if(input.startsWith(prefix+"reset")&&(msg.author.id==234346145806155776)) {
     console.log('Resetting...'+" In server: "+msg.channel.guild)
     msg.channel.send('Resetting...')
     .then(msg => client.destroy())
