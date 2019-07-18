@@ -4,7 +4,6 @@ const client = new Discord.Client();
 const FuzzySet = require('fuzzyset.js');
 const token = process.env.DISCORD_BOT_SECRET;
 var urban = require('urban');
-var another = require('./methods.js');
 var prefix="."
 const fs = require('fs');
 var isUpdating;
@@ -47,7 +46,7 @@ client.on('ready', () => {
       console.log(" - "+guild.name)
     });
   (async()=>{
-    methods.methods.update();})();
+  update();})();
 });
 //join messages
 client.on('guildMemberAdd',member =>{
@@ -81,7 +80,7 @@ UPDATES THE ROSTERS FILE
 */
 if(input.startsWith(prefix+"update")){
   (async() =>{
-methods.methods.update();
+update();
 msg.react('✅');
     })();
 }
@@ -420,12 +419,12 @@ const online = await isStreamLive(streamName);
 //'0 0 */3 * * '
 new CronJob('0 0 3 * * * ', function(){
   guildNum();
-  methods.methods.update();
+  update();
   
 }, null, true, 'America/New_York');
 
 new CronJob('0 */5 * * * * ', function(){
-    methods.methods.update();
+    update();
 }, null, true, 'America/New_York');
 
 function guildNum() {
