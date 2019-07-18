@@ -205,7 +205,7 @@ if(input.startsWith(prefix+"kick")) {
         for(var x =0;x<commands.length,x++){
             name: commands[x],
             value: commandHelp[x]
-        },
+        }},
       {
         name: "Other stuffs",
         value: "Alerts for when Twitch streams go live, alerts for ticket resets, auto update guild numbers channels"
