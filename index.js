@@ -1,10 +1,10 @@
 //bot stuffs
-//test PUSH
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const FuzzySet = require('fuzzyset.js');
 const token = process.env.DISCORD_BOT_SECRET;
 var urban = require('urban');
+var another = require('./methods.js');
 var prefix="."
 const fs = require('fs');
 var isUpdating;
@@ -35,7 +35,7 @@ const swapi = new ApiSwgohHelp({
     "password":process.env.SWGOH_HELP_PASSWORD
 });
 (async() =>{
-      var acquiredToken = await swapi.connect()
+      var acquiredToken = await swapi.connect();
     })();
 //Bot Logged in
 client.on('ready', () => {
@@ -47,7 +47,7 @@ client.on('ready', () => {
       console.log(" - "+guild.name)
     });
   (async()=>{
-    update();})();
+    methods.methods.update();})();
 });
 //join messages
 client.on('guildMemberAdd',member =>{
@@ -81,7 +81,7 @@ UPDATES THE ROSTERS FILE
 */
 if(input.startsWith(prefix+"update")){
   (async() =>{
-update();
+methods.methods.update();
 msg.react('✅');
     })();
 }
@@ -280,10 +280,8 @@ if(input.startsWith(prefix+"kick")) {
       var res = input.split(" ");
       
       var num=res[1];
-      if (num==undefined){
+      if (num==undefined)
         num=100;
-      }
-      //
       console.log(msg.author.username+" is clearing messages in: "+msg.channel.guild)
         msg.channel.bulkDelete(num)
   .then(messages => console.log(`Bulk deleted ${messages.size} messages`))
@@ -422,12 +420,12 @@ const online = await isStreamLive(streamName);
 //'0 0 */3 * * '
 new CronJob('0 0 3 * * * ', function(){
   guildNum();
-  update();
+  methods.methods.update();
   
 }, null, true, 'America/New_York');
 
 new CronJob('0 */5 * * * * ', function(){
-    update();
+    methods.methods.update();
 }, null, true, 'America/New_York');
 
 function guildNum() {
