@@ -198,31 +198,7 @@ if(input.startsWith(prefix+"kick")) {
 
   //help
 
-  if(input.startsWith(prefix+"help")) {    
-   /* var x =0
-    msg.channel.send({embed: {
-    color: 0xac38f1,
-    author: {
-      name: client.user.username,
-      icon_url: client.user.avatarURL
-    },
-    title: "Command List: all commands are preceded by "+prefix,
-    fields: [
-        for(;x<commands.length,x++){
-            {name: commands[x],
-            value: commandHelp[x]
-        },}
-      {
-        name: "Other stuffs",
-        value: "Alerts for when Twitch streams go live, alerts for ticket resets, auto update guild numbers channels"
-      }
-    ],
-    timestamp: new Date(),
-    footer: {
-      icon_url: client.user.avatarURL,
-      text: "Made by Vorwerk 😊"
-}}
-  */
+  if(input.startsWith(prefix+"help")) {
   const embed = new Discord.RichEmbed()
   .setTitle("Command List: all commands are preceded by"+prefix)
   .setAuthor(client.user.username,client.user.avatarURL)
@@ -237,7 +213,7 @@ if(input.startsWith(prefix+"kick")) {
   embed.addField(commands[x],
     commandHelp[x])
 }
-  message.channel.send({embed});
+  msg.channel.send({embed});
 }
   
 
