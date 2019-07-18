@@ -194,7 +194,7 @@ if(input.startsWith(prefix+"kick")) {
   //help
 
   if(input.startsWith(prefix+"help")) {    
-    var x =0
+    var x;
     msg.channel.send({embed: {
     color: 0xac38f1,
     author: {
@@ -203,7 +203,7 @@ if(input.startsWith(prefix+"kick")) {
     },
     title: "Command List: all commands are preceded by "+prefix,
     fields: [{
-        for(;x<commands.length,x++){
+        for(x=0;x<commands.length,x++){
             name: commands[x],
             value: commandHelp[x]
         }},
