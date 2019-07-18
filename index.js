@@ -10,7 +10,7 @@ var isUpdating;
 var isUpdated;
 client.wait = require('util').promisify(setTimeout);
 var CronJob = require('cron').CronJob;
-var commands = ["help","support","ping","flip","lotto","kick","clearChat","live","urban","console","guildnum","gg","reset"];
+var commands = ["help","support","ping","flip","lotto","kick","clearChat","live","urban","guildnum","console","gg","reset"];
 var commandHelp = ["You're reading it!","Join our support server!",
 "Pongs!","Flips a coin","Gives you your lotto numbers- Doesn't gaurentte you win though :wink:",
 "kicks a valid user, just tag them `.kick @notVorwerk#6126` for example\nRequires Admin role",
