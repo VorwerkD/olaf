@@ -1,5 +1,23 @@
+const FuzzySet = require('fuzzyset.js');
+const ApiSwgohHelp = require('api-swgoh-help');
+var rosters=["Name","allyCode"]
+var numGuilds= 4;
+var names=["Names"]
+var codes = [135718294,466484534,399663774,861239843]
+var texts = ["filler","Ticket reset @ 6:30 PST\nDSTB- 42 :star:\nLSTB- 41 :star:\nGEOTB-12 :star:\nhttps://swgoh.gg/g/35906/phantomrebellion/","Ticket reset @ 7:30 CST\nDSTB- 34 :star:\nLSTB- 34 :star:\nGEOTB-7 :star:\nhttps://swgoh.gg/g/51323/phantomempire/","Ticket reset @ 6:30 CST\nDSTB- 34 :star:\nLSTB- 34 :star:\nGEOTB-9 :star:\nhttps://swgoh.gg/g/29918/phantomhavoc/","Ticket reset @ 6:30 PST\nDSTB- 5 :star:\nLSTB- ? :star:\nGEOTB-yet to be attempted\nhttps://swgoh.gg/g/61585/phantomrogue/"]
+var mainChans=['596613040879960065','596613066108698650','596613090557034497','596613114036748299']
+var recruitChans=['596613040762388480','596613065907109888','596613090900967440','596613113957187586']
+var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+const swapi = new ApiSwgohHelp({
+    "username":process.env.SWGOH_HELP_USERNAME,
+    "password":process.env.SWGOH_HELP_PASSWORD
+});
+(async() =>{
+      var acquiredToken = await swapi.connect();
+    })();
+
 var methods = {
-	function getNames(input,arrayInput){
+	getNames: function(input,arrayInput){
 
 a = FuzzySet(arrayInput);
 if(input == 'brown')
@@ -24,7 +42,7 @@ resultsSent=true;
 }}
 return output;
 },
-	function update(){
+	update: function(){
   (async() => {
     const data = await fs.readFileSync('array.txt','utf8');
   if (!data.includes(',')){
