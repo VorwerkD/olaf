@@ -196,27 +196,6 @@ if(input.startsWith(prefix+"kick")) {
     .catch(error => msg.reply(`Sorry, an error occured.`))
   }
 
-  //help
-
-  if(input.startsWith(prefix+"help")) {
-  const embed = new Discord.RichEmbed()
-  .setTitle("Command List:
-  .setAuthor(client.user.username,client.user.avatarURL)
-  .setColor(0xac38f1)
-  .setDescription("All Commands are preceded by "+prefix)
-  .setFooter("Made by Vorwerk")
-  //.setImage("http://i.imgur.com/yVpymuV.png")
-  .setThumbnail(msg.author.avatarURL)
-  .setTimestamp()
-  //.setURL("https://discord.js.org/#/docs/main/indev/class/RichEmbed")
-  for( var x =0;x<commands.length;x++){
-  embed.addField(commands[x],
-    commandHelp[x])
-}
-  msg.channel.send({embed});
-}
-  
-
   if(input.startsWith(prefix+"reset")&&(msg.author.id==234346145806155776)) {
     console.log('Resetting...'+" In server: "+msg.channel.guild)
     msg.channel.send('Resetting...')
@@ -300,6 +279,25 @@ msg.channel.send("This word could not be found from UrbanDictionary.com");
   }
 });
   }}
+  
+//help
+  if(input.startsWith(prefix+"help")) {
+  const embed = new Discord.RichEmbed()
+  .setTitle("Command List: ")
+  .setAuthor(client.user.username,client.user.avatarURL)
+  .setColor(0xac38f1)
+  .setDescription("All Commands are preceded by "+prefix)
+  .setFooter("Made by Vorwerk")
+  //.setImage("http://i.imgur.com/yVpymuV.png")
+  .setThumbnail(msg.author.avatarURL)
+  .setTimestamp()
+  //.setURL("https://discord.js.org/#/docs/main/indev/class/RichEmbed")
+  for( var x =0;x<commands.length;x++){
+  embed.addField(commands[x],
+    commandHelp[x])
+}
+  msg.channel.send({embed});
+}
 
 });
 async function isStreamLive(userName) {
