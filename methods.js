@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const FuzzySet = require('fuzzyset.js');
 const ApiSwgohHelp = require('api-swgoh-help');
 var rosters=["Name","allyCode"]
@@ -43,6 +44,35 @@ resultsSent=true;
 return output;
 },
 	update: function(){
+=======
+var methods = {
+	function getNames(input,arrayInput){
+
+a = FuzzySet(arrayInput);
+if(input == 'brown')
+  input = 'brown discord 6964';
+if(input == 'dips')
+  input= 'dipsscanner';
+const out = a.get(input)
+var outMatch;
+var outName;
+var outScore;
+var output=[];
+var resultsSent=false;
+for(var x =0; x<out.length;x++){
+outMatch=out[x];
+outName=outMatch[1];
+outScore=outMatch[0];
+if(outScore==1){
+output.push("redo"+outName)
+}else if(outScore>=0.5&&outScore!=1){
+output.push(outName);
+resultsSent=true;
+}}
+return output;
+},
+	function update(){
+>>>>>>> refs/heads/master
   (async() => {
     const data = await fs.readFileSync('array.txt','utf8');
   if (!data.includes(',')){
