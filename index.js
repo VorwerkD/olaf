@@ -10,8 +10,8 @@ var isUpdating;
 var isUpdated;
 client.wait = require('util').promisify(setTimeout);
 var CronJob = require('cron').CronJob;
-var commands = ["help","support","ping","flip","lotto","kick","clearChat","live","urban","guildnum","console","gg","reset","update"];
-var commandHelp = ["You're reading it!","Join our support server!",
+var commands = ["help","ping","flip","lotto","kick","clearChat","live","urban","guildnum","console","gg","reset","update"];
+var commandHelp = ["You're reading it!",
 "Pongs!","Flips a coin","Gives you your lotto numbers- Doesn't gaurentte you win though :wink:",
 "kicks a valid user, just tag them `.kick @notVorwerk#6126` for example\nRequires Admin role",
 "Clears the current channel of messages <14 days old add a number<100 to clear - defaults to 100 `.clearChat 50` for example \nRequires Admin role",
@@ -77,10 +77,6 @@ const inCom2 = inCom[0];
 input=inCom2[1];
 input=prefix+input+" "+inputRes[1];
 }
-
-
-if (input.startsWith(prefix+"support"))
-  msg.channel.send("Join Vorwerk's Server at: https://discord.gg/GUKXv7j");
 /*
 UPDATES THE ROSTERS FILE
 */
@@ -169,15 +165,6 @@ if ((msg.author.id != client.user.id)&&(input.startsWith(prefix+"ping"))) {
 if (input.startsWith(prefix+"lotto")) {
  msg.reply("\nYour lotto digits: "+Math.floor(Math.random() * 70+1)+" "+Math.floor(Math.random() * 70+1)+" "+Math.floor(" "+Math.random() * 70+1)+" "+Math.floor(Math.random() * 70+1)+" "+Math.floor(Math.random() * 70+1)+"\nYour Mega Ball: "+Math.floor(Math.random() * 25+1))
 }
-//invite
-if (input.startsWith(prefix+"invite")) {
- if(msg.author.id == 234346145806155776)
- {
-   msg.reply("https://discordapp.com/oauth2/authorize?&client_id=523260461932740620&scope=bot&permissions=93250!")
-}
-    else(msg.reply("You do not have the required permissions."))
-}
-
 //kick
 if(input.startsWith(prefix+"kick")) {
   if(!msg.member.roles.some(r=>["Admin"].includes(r.name)) )
@@ -296,8 +283,8 @@ msg.channel.send("This word could not be found from UrbanDictionary.com");
   embed.addField(commands[x],
     commandHelp[x])
 }
-.addField("Join Vorwerk's Server at: https://discord.gg/GUKXv7j")
-.addField("Invite this bot to other servers with https://discordapp.com/oauth2/authorize?&client_id=523260461932740620&scope=bot&permissions=93250!")
+embed.addField("Join Vorwerk's Server at: https://discord.gg/GUKXv7j")
+embed.addField("Invite this bot to other servers with https://discordapp.com/oauth2/authorize?&client_id=523260461932740620&scope=bot&permissions=93250!")
   msg.channel.send({embed});
 }
 
