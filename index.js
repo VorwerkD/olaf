@@ -296,6 +296,8 @@ msg.channel.send("This word could not be found from UrbanDictionary.com");
   embed.addField(commands[x],
     commandHelp[x])
 }
+.addField("Join Vorwerk's Server at: https://discord.gg/GUKXv7j")
+.addField("Invite this bot to other servers with https://discordapp.com/oauth2/authorize?&client_id=523260461932740620&scope=bot&permissions=93250!")
   msg.channel.send({embed});
 }
 
