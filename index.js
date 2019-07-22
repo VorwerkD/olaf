@@ -28,7 +28,7 @@ const twitchClient = TwitchClient.withClientCredentials(clientId, clientSecret);
 //swgoh stuffs
 const ApiSwgohHelp = require('api-swgoh-help');
 var rosters=["Name","allyCode"]
-var numGuilds= 4;
+var numGuilds= 5;
 var names=["Names"]
 var codes = [135718294,466484534,399663774,861239843,484271262]
 var texts = ["filler","Ticket reset @ 6:30 PST\nDSTB- 42 :star:\nLSTB- 41 :star:\nGEOTB-16 :star:\nhttps://swgoh.gg/g/35906/phantomrebellion/","Ticket reset @ 7:30 CST\nDSTB- 34 :star:\nLSTB- 37 :star:\nGEOTB-7 :star:\nhttps://swgoh.gg/g/51323/phantomempire/","Ticket reset @ 6:30 CST\nDSTB- 34 :star:\nLSTB- 34 :star:\nGEOTB-9 :star:\nhttps://swgoh.gg/g/29918/phantomhavoc/","Ticket reset @ 6:30 PST\nDSTB- 5 :star:\nLSTB- ? :star:\nGEOTB-yet to be attempted\nhttps://swgoh.gg/g/61585/phantomrogue/","Ticket reset @ 6:30 EST\nDSTB-? \nLSTB-? :star: \n GEOTB-? :star:\nhttps://swgoh.gg/g/61714/shadowchamber-bravo/"]
