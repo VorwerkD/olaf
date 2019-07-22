@@ -10,13 +10,13 @@ var isUpdating;
 var isUpdated;
 client.wait = require('util').promisify(setTimeout);
 var CronJob = require('cron').CronJob;
-var commands = ["help","ping","flip","lotto","kick","clearChat","live","urban","guildnum","console","gg","reset","update"];
+var commands = ["help","ping","flip","lotto","kick","clearChat","live","urban","guildnum","console","gg","reset","update","test"];
 var commandHelp = ["You're reading it!",
 "Pongs!","Flips a coin","Gives you your lotto numbers- Doesn't gaurentte you win though :wink:",
 "kicks a valid user, just tag them `.kick @notVorwerk#6126` for example\nRequires Admin role",
 "Clears the current channel of messages <14 days old add a number<100 to clear - defaults to 100 `.clearChat 50` for example \nRequires Admin role",
 "check to see if the given twitch streamer is live `.live Vorwerk_D` for example","Searches urban dictionary for a word/phrase. Attach -r for a random word",
-"Updates the guild numbers channels","Logs the input to the console ","Gives the swgoh.gg link of the requested user `.gg Vorwerk17` for example","shuts down and resets the bots login. Vorwerk only","Manually updates the cached guilds"]
+"Updates the guild numbers channels","Logs the input to the console ","Gives the swgoh.gg link of the requested user `.gg Vorwerk17` for example","shuts down and resets the bots login. Vorwerk only","Manually updates the cached guilds","A test command"]
 var olafTest = '570738555773648897'//chan id
 //twitch stuffs
 var streamList = ["mL7support","yautjaridley"]
@@ -30,8 +30,8 @@ const ApiSwgohHelp = require('api-swgoh-help');
 var rosters=["Name","allyCode"]
 var numGuilds= 4;
 var names=["Names"]
-var codes = [135718294,466484534,399663774,861239843]
-var texts = ["filler","Ticket reset @ 6:30 PST\nDSTB- 42 :star:\nLSTB- 41 :star:\nGEOTB-12 :star:\nhttps://swgoh.gg/g/35906/phantomrebellion/","Ticket reset @ 7:30 CST\nDSTB- 34 :star:\nLSTB- 34 :star:\nGEOTB-7 :star:\nhttps://swgoh.gg/g/51323/phantomempire/","Ticket reset @ 6:30 CST\nDSTB- 34 :star:\nLSTB- 34 :star:\nGEOTB-9 :star:\nhttps://swgoh.gg/g/29918/phantomhavoc/","Ticket reset @ 6:30 PST\nDSTB- 5 :star:\nLSTB- ? :star:\nGEOTB-yet to be attempted\nhttps://swgoh.gg/g/61585/phantomrogue/"]
+var codes = [135718294,466484534,399663774,861239843]//,484271262]
+var texts = ["filler","Ticket reset @ 6:30 PST\nDSTB- 42 :star:\nLSTB- 41 :star:\nGEOTB-12 :star:\nhttps://swgoh.gg/g/35906/phantomrebellion/","Ticket reset @ 7:30 CST\nDSTB- 34 :star:\nLSTB- 34 :star:\nGEOTB-7 :star:\nhttps://swgoh.gg/g/51323/phantomempire/","Ticket reset @ 6:30 CST\nDSTB- 34 :star:\nLSTB- 34 :star:\nGEOTB-9 :star:\nhttps://swgoh.gg/g/29918/phantomhavoc/","Ticket reset @ 6:30 PST\nDSTB- 5 :star:\nLSTB- ? :star:\nGEOTB-yet to be attempted\nhttps://swgoh.gg/g/61585/phantomrogue/"]//,"Ticket reset @ 6:30 EST\nDSTB-? \nLSTB-? :star: \n GEOTB-? :star:\nhttps://swgoh.gg/g/61714/shadowchamber-bravo/"]
 var mainChans=['596613040879960065','596613066108698650','596613090557034497','596613114036748299']//message ids to edit
 var recruitChans=['596613040762388480','596613065907109888','596613090900967440','596613113957187586']//message ids to edit
 var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -80,6 +80,10 @@ input=prefix+input+" "+inputRes[1];
 /*
 UPDATES THE ROSTERS FILE
 */
+if(input.startsWith(prefix+"test")){
+  client.channels.get('485246576751673354').send("test");
+  client.channels.get('595255366644924440').send("test");
+}
 if(input.startsWith(prefix+"update")){
   (async() =>{
 update();
