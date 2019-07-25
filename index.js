@@ -19,8 +19,8 @@ var commandHelp = ["You're reading it!",
 "Updates the guild numbers channels","Logs the input to the console ","Gives the swgoh.gg link of the requested user `.gg Vorwerk17` for example","shuts down and resets the bots login. Vorwerk only","Manually updates the cached guilds","A test command"]
 var olafTest = '570738555773648897'//chan id
 //twitch stuffs
-var streamList = ["mL7support","yautjaridley"]
-var streamChan = [olafTest,"547923999552700436"]
+var streamList = ["mL7support","yautjaridley","Vorwerk_D"]
+var streamChan = [olafTest,"547923999552700436",olafTest]
 const TwitchClient = require('twitch').default;
 const clientId = process.env.TWITCH_CLIENT_ID;
 const clientSecret = process.env.TWITCH_CLIENT_SECRET;
