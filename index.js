@@ -29,10 +29,10 @@ const twitchClient = TwitchClient.withClientCredentials(clientId, clientSecret);
 const ApiSwgohHelp = require('api-swgoh-help');
 var rosters=["Name","allyCode"]
 var names=["Names"]
-var codes = [135718294,466484534,399663774,861239843,484271262]
-var texts = ["filler","Ticket reset @ 6:30 PST\nDSTB- 42 :star:\nLSTB- 41 :star:\nGEOTB-16 :star:\nhttps://swgoh.gg/g/35906/phantomrebellion/","Ticket reset @ 7:30 CST\nDSTB- 34 :star:\nLSTB- 37 :star:\nGEOTB-7 :star:\nhttps://swgoh.gg/g/51323/phantomempire/","Ticket reset @ 6:30 CST\nDSTB- 34 :star:\nLSTB- 34 :star:\nGEOTB-9 :star:\nhttps://swgoh.gg/g/29918/phantomhavoc/","Ticket reset @ 6:30 PST\nDSTB- 5 :star:\nLSTB- ? :star:\nGEOTB- 6\nhttps://swgoh.gg/g/61585/phantomrogue/","Ticket reset @ 6:30 EST\nDSTB-? \nLSTB-? :star: \n GEOTB-? :star:\nhttps://swgoh.gg/g/61714/shadowchamber-bravo/"]
-var mainChans=['596613040879960065','596613066108698650','596613090557034497','596613114036748299','602869523741409310']//message ids to edit
-var recruitChans=['596613040762388480','596613065907109888','596613090900967440','596613113957187586','602869523661455381']//message ids to edit
+var codes = [135718294,466484534,399663774,861239843,484271262,922288553]
+var texts = ["filler","Ticket reset @ 6:30 PST\nDSTB- 42 :star:\nLSTB- 41 :star:\nGEOTB-16 :star:\nhttps://swgoh.gg/g/35906/phantomrebellion/","Ticket reset @ 7:30 CST\nDSTB- 34 :star:\nLSTB- 37 :star:\nGEOTB-7 :star:\nhttps://swgoh.gg/g/51323/phantomempire/","Ticket reset @ 6:30 CST\nDSTB- 34 :star:\nLSTB- 40 :star:\nGEOTB-9 :star:\nhttps://swgoh.gg/g/29918/phantomhavoc/","Ticket reset @ 6:30 PST\nDSTB- 5 :star:\nLSTB- ? :star:\nGEOTB- 6\nhttps://swgoh.gg/g/61585/phantomrogue/","Ticket reset @ 6:30 EST\nDSTB-? \nLSTB-? :star: \n GEOTB-? :star:\nhttps://swgoh.gg/g/61714/shadowchamber-bravo/","Ticket reset @ 6:30 EST\nDSTB-? \nLSTB-? :star: \n GEOTB-? :star:\nhttps://swgoh.gg/g/63155/phantom-uprising/"]
+var mainChans=['596613040879960065','596613066108698650','596613090557034497','596613114036748299','602869523741409310','604044611995828247']//message ids to edit
+var recruitChans=['596613040762388480','596613065907109888','596613090900967440','596613113957187586','602869523661455381','604044611505094657']//message ids to edit
 var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 const swapi = new ApiSwgohHelp({
     "username":process.env.SWGOH_HELP_USERNAME,
