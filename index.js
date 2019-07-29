@@ -213,6 +213,7 @@ if(input.startsWith(prefix+"kick")) {
 if(input.startsWith(prefix+"urban")) {
   var res = input.substring(prefix.length+6);
   trollface = urban(res);
+  console.log(res);
   if(res===('-r')){
 urban.random().first(function(JSON) {
   var out=JSON.definition;
