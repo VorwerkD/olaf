@@ -68,6 +68,7 @@ client.on('message', msg => {
 var input='';
 if(msg.content.startsWith(prefix)){
 input=msg.content.toLowerCase()//to make all inputs - either command or parameters all uniform - if a command needs uppercase parameters etc, put above this line
+var oldInput = input;
 var inputRes =input.split(' ');
 var inputResCom= inputRes[0].substring(1);
 b = FuzzySet(commands);
@@ -211,7 +212,7 @@ if(input.startsWith(prefix+"kick")) {
     }}
 //urban
 if(input.startsWith(prefix+"urban")) {
-  var res = input.substring(prefix.length+6);
+  var res = oldInput.substring(prefix.length+6);
   trollface = urban(res);
   console.log(res);
   if(res===('-r')){
