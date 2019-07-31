@@ -74,8 +74,13 @@ var inputResCom= inputRes[0].substring(1);
 b = FuzzySet(commands);
 const inCom =b.get(inputResCom);
 const inCom2 = inCom[0];
+if(inCom2[0]>=0.625){
 input=inCom2[1];
 input=prefix+input+" "+inputRes[1];
+}
+else{
+  console.log("not a command")
+}
 }
 /*
 UPDATES THE ROSTERS FILE
