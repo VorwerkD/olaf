@@ -492,9 +492,8 @@ return output;
 
 
 function listMembers(member){
-  if(member.bot)
+  if(member.user.bot)
     return
     else
     console.log(member.user.username)
-  
 }
