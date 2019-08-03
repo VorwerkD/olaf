@@ -89,9 +89,10 @@ if(input.startsWith(prefix+"test")){
   if(msg.author.id==234346145806155776){
  /* client.channels.get('485246576751673354').send("test");
   client.channels.get('595255366644924440').send("test");*/
-const list = client.guilds.get("483433483109138433"); 
-list.members.forEach(listMembers);
+
 (async() => {
+  const list = client.guilds.get("483433483109138433"); 
+  list.members.forEach(listMembers);
     const data = await fs.readFileSync('array.txt','utf8');
   var newArr = data.split(',');
 var names=[];
