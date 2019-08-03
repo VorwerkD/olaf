@@ -491,7 +491,7 @@ return output;
 
 
 function listMembers(member){
-  if(!meber.bot){
+  if(!member.bot){
     console.log(member.nickname)
   }
 }
