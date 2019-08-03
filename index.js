@@ -90,7 +90,10 @@ if(input.startsWith(prefix+"test")){
  /* client.channels.get('485246576751673354').send("test");
   client.channels.get('595255366644924440').send("test");*/
 const list = client.guilds.get("484182766271856651"); 
-list.members.forEach(member => console.log(member.user.username)); 
+list.members.forEach(member => 
+if(member!=bot){
+  console.log(member.user.username)
+}); 
 (async() => {
     const data = await fs.readFileSync('array.txt','utf8');
   var newArr = data.split(',');
