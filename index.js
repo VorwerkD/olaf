@@ -491,8 +491,12 @@ return output;
 
 function listMembers(member){
   if(!member.user.bot){
-    var memberName = member.displayName.toLowerCase().replace(' {empire}','').replace(' {rebellion}','').replace(' {rogue}','').replace(' {havoc}','').replace(' {order}','').replace(' {uprising}','');
-    console.log(memberName)
+    if(member.displayName.includes(' {røgue}'))
+    {
+      console.log(member.displayName);
+    }
+    var memberName = member.displayName.toLowerCase().replace(' {empire}','').replace(' {rebellion}','').replace(' {rogue}','').replace(' {havoc}','').replace(' {order}','').replace(' {uprising}','').replace(' {røgue}','');
+    //if(names)
+    //console.log(memberName)
   }
-  
 }
