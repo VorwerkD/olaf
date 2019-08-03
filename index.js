@@ -89,18 +89,16 @@ if(input.startsWith(prefix+"test")){
   if(msg.author.id==234346145806155776){
  /* client.channels.get('485246576751673354').send("test");
   client.channels.get('595255366644924440').send("test");*/
-
 (async() => {
-  const list = client.guilds.get("483433483109138433"); 
-  list.members.forEach(listMembers);
     const data = await fs.readFileSync('array.txt','utf8');
   var newArr = data.split(',');
 var names=[];
 for(var x = 0; x<newArr.length;x+=2){
 names.push(newArr[x]);
 }
-
 })();
+ const list = client.guilds.get("483433483109138433"); 
+  list.members.forEach(listMembers);
   }
 }
 
@@ -492,8 +490,9 @@ return output;
 
 
 function listMembers(member){
-  if(member.user.bot)
-    return
-    else
-    console.log(member.user.username)
+  if(!member.user.bot){
+    var memberName = member.displayName.toLowerCase().replace(' {empire}','').replace(' {rebellion}','').replace(' {rogue}','').replace(' {havoc}','');
+    console.log(memberName)
+  }
+  
 }
