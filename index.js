@@ -491,7 +491,7 @@ return output;
 
 function listMembers(member){
   if(!member.user.bot){
-    var memberName = member.displayName.toLowerCase().replace(' {empire}','').replace(' {rebellion}','').replace(' {rogue}','').replace(' {havoc}','');
+    var memberName = member.displayName.toLowerCase().replace(' {empire}','').replace(' {rebellion}','').replace(' {rogue}','').replace(' {havoc}','').replace(' {order}','').replace(' {uprising}','');
     console.log(memberName)
   }
   
