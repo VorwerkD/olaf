@@ -493,6 +493,6 @@ return output;
 
 function listMembers(member){
   if(!member.bot){
-    console.log(member.nickname)
+    console.log(member.user.username)
   }
 }
