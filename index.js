@@ -114,15 +114,15 @@ for(var x = 0; x<names.length;x++){
   console.log(names[x]);
   discordNot.push(names[x]);
 }}
-var names1 = names.slice(0,names.length/2);
-var names2= names.slice(names.length/2,names.length);
-var allianceUsers1 = allianceUsers.slice(0,allianceUsers.length/2);
-var allianceUsers2 = allianceUsers.slice(allianceUsers.length/2,allianceUsers.length);
+var names1 = discordNot.slice(0,names.length/2);
+var names2= discordNot.slice(names.length/2,names.length);
+var allianceUsers1 = gameNot.slice(0,allianceUsers.length/2);
+var allianceUsers2 = gameNot.slice(allianceUsers.length/2,allianceUsers.length);
 
 msg.channel.send("INGAME NAMES NOT IN DISCORD")
 msg.channel.send(names1);
 msg.channel.send(names2);
-msg.channel.send("Discord names not in game");
+msg.channel.send("DISCORD USERS NOT IN GAME");
 msg.channel.send(allianceUsers1);
 msg.channel.send(allianceUsers2);
 
