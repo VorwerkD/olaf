@@ -28,7 +28,8 @@ const twitchClient = TwitchClient.withClientCredentials(clientId, clientSecret);
 //swgoh stuffs
 const ApiSwgohHelp = require('api-swgoh-help');
 var rosters=["Name","allyCode"]
-var names=["Names"]
+var names=["Names"];
+var allianceUsers=[];
 var codes = [135718294,466484534,399663774,861239843,484271262,922288553]
 var texts = ["filler","Ticket reset @ 6:30 PST\nDSTB- 42 :star:\nLSTB- 41 :star:\nGEOTB-16 :star:\nhttps://swgoh.gg/g/35906/phantomrebellion/","Ticket reset @ 7:30 CST\nDSTB- 34 :star:\nLSTB- 37 :star:\nGEOTB-7 :star:\nhttps://swgoh.gg/g/51323/phantomempire/","Ticket reset @ 6:30 CST\nDSTB- 34 :star:\nLSTB- 40 :star:\nGEOTB-9 :star:\nhttps://swgoh.gg/g/29918/phantomhavoc/","Ticket reset @ 6:30 PST\nDSTB- 5 :star:\nLSTB- ? :star:\nGEOTB- 6\nhttps://swgoh.gg/g/61585/phantomrogue/","Ticket reset @ 6:30 EST\nDSTB-? :star: \nLSTB-? :star: \n GEOTB-? :star:\nhttps://swgoh.gg/g/61714/shadowchamber-bravo/","Ticket reset @ 6:30 EST\nDSTB-? :star: \nLSTB-? :star: \n GEOTB-? :star:\nhttps://swgoh.gg/g/63155/phantom-uprising/"]
 var mainChans=['596613040879960065','596613066108698650','596613090557034497','596613114036748299','602869523741409310','604044611995828247']//message ids to edit
@@ -89,6 +90,8 @@ if(input.startsWith(prefix+"test")){
   if(msg.author.id==234346145806155776){
  /* client.channels.get('485246576751673354').send("test");
   client.channels.get('595255366644924440').send("test");*/
+const list = client.guilds.get("483433483109138433"); 
+list.members.forEach(listMembers);
 (async() => {
     const data = await fs.readFileSync('array.txt','utf8');
   var newArr = data.split(',');
@@ -96,9 +99,15 @@ var names=[];
 for(var x = 0; x<newArr.length;x+=2){
 names.push(newArr[x]);
 }
+for(var x = 0 ; x<allianceUsers.length;x++){
+  if(!names.includes(allianceUsers[x]))
+  console.log(allianceUsers[x]);
+}
+for(var x = 0; x<names.length;x++){
+  if(!allainceUsers.includes(names[x]))
+  console.log(names[x]);
+}
 })();
- const list = client.guilds.get("483433483109138433"); 
-  list.members.forEach(listMembers);
   }
 }
 
@@ -491,12 +500,7 @@ return output;
 
 function listMembers(member){
   if(!member.user.bot){
-    if(member.displayName.includes(' {røgue}'))
-    {
-      console.log(member.displayName);
-    }
     var memberName = member.displayName.toLowerCase().replace(' {empire}','').replace(' {rebellion}','').replace(' {rogue}','').replace(' {havoc}','').replace(' {order}','').replace(' {uprising}','').replace(' {røgue}','');
-    //if(names)
-    //console.log(memberName)
+    allianceUsers.push(memberName);
   }
 }
