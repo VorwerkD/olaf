@@ -104,7 +104,7 @@ for(var x = 0 ; x<allianceUsers.length;x++){
   console.log(allianceUsers[x]);
 }
 for(var x = 0; x<names.length;x++){
-  if(!allainceUsers.includes(names[x]))
+  if(!allianceUsers.includes(names[x]))
   console.log(names[x]);
 }
 })();
@@ -464,6 +464,8 @@ for(var x = 0 ; x<rosters.length;x++){
 }
 file.end();
 console.log("DONE")
+client.user.setActivity(prefix+'help ✔️', { type: 'LISTENING' 
+  });
 isUpdated=true;
 })(); 
 isUpdating=false;
