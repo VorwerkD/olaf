@@ -101,15 +101,22 @@ for(var x = 0; x<newArr.length;x+=2){
 names.push(newArr[x]);
 }
 console.log("DISCORD NAMES NOT IN GAME");
+var gameNot=[];
 for(var x = 0 ; x<allianceUsers.length;x++){
-  if(!names.includes(allianceUsers[x]))
+  if(!names.includes(allianceUsers[x])){
   console.log(allianceUsers[x]);
-}
+  gameNot.push(allianceUsers[x]);
+}}
 console.log("IN GAME NAMES NOT IN DISCORD");
+var discordNot=[];
 for(var x = 0; x<names.length;x++){
-  if(!allianceUsers.includes(names[x]))
+  if(!allianceUsers.includes(names[x])){
   console.log(names[x]);
-}
+  discordNot.push(names[x]);
+}}
+msg.channel.send("INGAME NAMES NOT IN DISCORD\n"+names)
+msg.channel.send("Discord names not in game\n"+allianceUsers)
+
 })();
   }
 }
