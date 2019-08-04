@@ -485,7 +485,7 @@ names.push(name);
 var file = fs.createWriteStream('array.txt');
 file.on('error', function(err) { /* error handling */ });
 for(var x = 0 ; x<rosters.length;x++){
- file.write(rosters[x]+",");
+ file.write(rosters[x].replace(' ','')+",");
 }
 file.end();
 console.log("DONE")
@@ -527,7 +527,7 @@ return output;
 
 function listMembers(member){
   if(!member.user.bot){
-    var memberName = member.displayName.toLowerCase().replace(' {empire}','').replace(' {rebellion}','').replace(' {rogue}','').replace(' {havoc}','').replace(' {order}','').replace(' {uprising}','').replace(' {røgue}','');
+    var memberName = member.displayName.toLowerCase().replace(' {empire}','').replace(' {rebellion}','').replace(' {rogue}','').replace(' {havoc}','').replace(' {order}','').replace(' {uprising}','').replace(' {røgue}','').replace(' ','');
     allianceUsers.push(memberName);
   }
 }
