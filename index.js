@@ -487,7 +487,7 @@ file.on('error', function(err) { /* error handling */ });
 for(var x = 0 ; x<rosters.length;x++){
   var toBeWrite= rosters[x];
   if(typeof toBeWrite === 'string')
-  var toBeWrite=output.replace(' ','');
+  var toBeWrite=toBeWrite.replace(' ','');
  file.write(toBeWrite+",");
 }
 file.end();
