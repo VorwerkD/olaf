@@ -35,7 +35,7 @@ var texts = ["filler",
 "Ticket reset @ 6:30 PST\nDSTB- 45 :star:\nLSTB- 41 :star:\nGEOTB-16 :star:\nhttps://swgoh.gg/g/35906/phantomrebellion/",
 "Ticket reset @ 7:30 CST\nDSTB- 34 :star:\nLSTB- 37 :star:\nGEOTB-12 :star:\nhttps://swgoh.gg/g/51323/phantomempire/",
 "Ticket reset @ 6:30 CST\nDSTB- 41 :star:\nLSTB- 41 :star:\nGEOTB-9 :star:\nhttps://swgoh.gg/g/29918/phantomhavoc/",
-"Ticket reset @ 6:30 PST\nDSTB- 5 :star:\nLSTB- ? :star:\nGEOTB- 6\nhttps://swgoh.gg/g/61585/phantomrogue/",
+"Ticket reset @ 6:30 PST\nDSTB- 5 :star:\nLSTB- ? :star:\nGEOTB- 6 :star: \nhttps://swgoh.gg/g/61585/phantomrogue/",
 "Ticket reset @ 6:30 EST\nDSTB-? :star: \nLSTB-? :star: \n GEOTB-14 :star:\nhttps://swgoh.gg/g/61714/phantomorder/",
 "Ticket reset @ 6:30 EST\nDSTB-30 :star: \nLSTB-? :star: \n GEOTB-? :star:\nhttps://swgoh.gg/g/63155/phantom-uprising/"]
 var mainChans=['596613040879960065','596613066108698650','596613090557034497','596613114036748299','602869523741409310','604044611995828247']//message ids to edit
