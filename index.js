@@ -485,7 +485,8 @@ names.push(name);
 var file = fs.createWriteStream('array.txt');
 file.on('error', function(err) { /* error handling */ });
 for(var x = 0 ; x<rosters.length;x++){
-  var output= rosters[x];
+  var toBeWrite= rosters[x];
+  if(typeof toBeWrite === 'string')
   var toBeWrite=output.replace(' ','');
  file.write(toBeWrite+",");
 }
