@@ -86,6 +86,7 @@ else{
 /*
 UPDATES THE ROSTERS FILE
 */
+//FLAG
 if(input.startsWith(prefix+"test")){
   if(msg.author.id==234346145806155776){
  /* client.channels.get('485246576751673354').send("test");
@@ -99,10 +100,12 @@ var names=[];
 for(var x = 0; x<newArr.length;x+=2){
 names.push(newArr[x]);
 }
+console.log("DISCORD NAMES NOT IN GAME");
 for(var x = 0 ; x<allianceUsers.length;x++){
   if(!names.includes(allianceUsers[x]))
   console.log(allianceUsers[x]);
 }
+console.log("IN GAME NAMES NOT IN DISCORD");
 for(var x = 0; x<names.length;x++){
   if(!allianceUsers.includes(names[x]))
   console.log(names[x]);
