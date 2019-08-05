@@ -59,8 +59,6 @@ client.on('ready', () => {
     });
   (async()=>{
   update();})();
-  var testClient = client.fetchUser('116901947428044808',true);
-  console.log(testClient)
 });
 //join messages
 client.on('guildMemberAdd',member =>{
@@ -137,7 +135,13 @@ msg.channel.send(allianceUsers2);
 })();
   }
 }
-
+if(input.startsWith(prefix+"reverse")){
+  res = input.substring(9); 
+  var splitString = res.split("");
+    var reverseArray = splitString.reverse();
+    var joinArray = reverseArray.join("");
+    msg.reply(joinArray);
+}
 
 if(input.startsWith(prefix+"update")){
   (async() =>{
