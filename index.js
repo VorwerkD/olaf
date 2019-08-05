@@ -59,7 +59,7 @@ client.on('ready', () => {
     });
   (async()=>{
   update();})();
-  var testClient = client.fetchUser('116901947428044809',true);
+  var testClient = client.fetchUser('116901947428044808',true);
   console.log(testClient)
 });
 //join messages
