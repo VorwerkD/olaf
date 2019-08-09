@@ -10,17 +10,17 @@ var isUpdating;
 var isUpdated;
 client.wait = require('util').promisify(setTimeout);
 var CronJob = require('cron').CronJob;
-var commands = ["help","ping","flip","lotto","kick","clearChat","live","urban","guildnum","console","gg","reset","update","test"];
+var commands = ["help","ping","flip","lotto","kick","clearChat","live","urban","guildnum","console","gg","reset","update","reverse","test"];
 var commandHelp = ["You're reading it!",
 "Pongs!","Flips a coin","Gives you your lotto numbers- Doesn't gaurentte you win though :wink:",
 "kicks a valid user, just tag them `.kick @notVorwerk#6126` for example\nRequires Admin role",
 "Clears the current channel of messages <14 days old add a number<100 to clear - defaults to 100 `.clearChat 50` for example \nRequires Admin role",
 "check to see if the given twitch streamer is live `.live Vorwerk_D` for example","Searches urban dictionary for a word/phrase. Attach -r for a random word",
-"Updates the guild numbers channels","Logs the input to the console ","Gives the swgoh.gg link of the requested user `.gg Vorwerk17` for example","shuts down and resets the bots login. Vorwerk only","Manually updates the cached guilds","A test command"]
+"Updates the guild numbers channels","Logs the input to the console ","Gives the swgoh.gg link of the requested user `.gg Vorwerk17` for example","shuts down and resets the bots login. Vorwerk only","Manually updates the cached guilds","Reverses your input","A test command"]
 var olafTest = '570738555773648897'//chan id
 //twitch stuffs
-var streamList = ["mL7support","yautjaridley","Vorwerk_D"]
-var streamChan = [olafTest,"547923999552700436",olafTest]
+var streamList = ["yautjaridley","Vorwerk_D"]
+var streamChan = ["547923999552700436",olafTest]
 const TwitchClient = require('twitch').default;
 const clientId = process.env.TWITCH_CLIENT_ID;
 const clientSecret = process.env.TWITCH_CLIENT_SECRET;
@@ -30,7 +30,7 @@ const ApiSwgohHelp = require('api-swgoh-help');
 var rosters=["Name","allyCode"]
 var names=["Names"];
 var allianceUsers=[];
-var codes = [135718294,466484534,399663774,861239843,484271262,922288553]
+var codes = [135718294,466484534,399663774,618277879,484271262,922288553]
 var texts = ["filler",
 "Ticket reset @ 6:30 PST\nDSTB- 45 :star:\nLSTB- 41 :star:\nGEOTB-16 :star:\nhttps://swgoh.gg/g/35906/phantomrebellion/",
 "Ticket reset @ 7:30 CST\nDSTB- 34 :star:\nLSTB- 37 :star:\nGEOTB-12 :star:\nhttps://swgoh.gg/g/51323/phantomempire/",
