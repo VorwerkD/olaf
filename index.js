@@ -174,6 +174,9 @@ for(var x =0;x<matchedArray.length;x++){
     var newName = matchedArray[x].substring(4,matchedArray[x].length-1)+characters.charAt(Math.floor(Math.random() * characters.length));
     var matchedArray = getNames(newName,names)
   }
+if(matchedArray.length==0){
+  msg.channel.send("No user found, try again");
+}
 var codeRec=newArr[newArr.indexOf(matchedArray[x])+1];
 msg.channel.send("https://swgoh.gg/p/"+codeRec+"/")
 }
