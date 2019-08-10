@@ -161,6 +161,9 @@ res = input.substring(4);
 else{
 res = member.displayName.toLowerCase().replace(' {empire}','').replace(' {rebellion}','').replace(' {rogue}','').replace(' {havoc}','');
 }
+if(res==""){
+msg.channel.send("No input detected, please input or mention a valid user")
+return}
     (async() => {
     const data = await fs.readFileSync('array.txt','utf8');
   var newArr = data.split(',');
@@ -170,7 +173,7 @@ names.push(newArr[x]);
 }
 var matchedArray = getNames(res,names);
 if(matchedArray.length==0){
-  msg.channel.send("No user found, try again");
+  msg.channel.send("No user found, please input or mention a valid user");
 }
 for(var x =0;x<matchedArray.length;x++){
   if(matchedArray[x].startsWith("redo")){
