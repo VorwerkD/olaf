@@ -169,14 +169,14 @@ for(var x = 0; x<newArr.length;x+=2){
 names.push(newArr[x]);
 }
 var matchedArray = getNames(res,names);
+if(matchedArray.length==0){
+  msg.channel.send("No user found, try again");
+}
 for(var x =0;x<matchedArray.length;x++){
   if(matchedArray[x].startsWith("redo")){
     var newName = matchedArray[x].substring(4,matchedArray[x].length-1)+characters.charAt(Math.floor(Math.random() * characters.length));
     var matchedArray = getNames(newName,names)
   }
-if(matchedArray.length==0){
-  msg.channel.send("No user found, try again");
-}
 var codeRec=newArr[newArr.indexOf(matchedArray[x])+1];
 msg.channel.send("https://swgoh.gg/p/"+codeRec+"/")
 }
