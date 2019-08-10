@@ -161,7 +161,7 @@ res = input.substring(4);
 else{
 res = member.displayName.toLowerCase().replace(' {empire}','').replace(' {rebellion}','').replace(' {rogue}','').replace(' {havoc}','');
 }
-if(res==""){
+if(res==null){
 msg.channel.send("No input detected, please input or mention a valid user")
 return}
     (async() => {
