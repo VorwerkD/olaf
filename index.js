@@ -145,6 +145,11 @@ var date = joinDate.getDate();
 var month = joinDate.getMonth();
 var year = joinDate.getFullYear();
   dateString = (month+1)+ "/" +date + "/" + year;
+  console.log(dateString);
+  console.log(user);
+  console.log(guild)
+  console.log(guildUser)
+  console.log(highestRoleUser)
 const embed = new Discord.RichEmbed()
   .setTitle("User Stats:")
   .setAuthor(client.user.username,client.user.avatarURL)
