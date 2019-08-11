@@ -10,13 +10,13 @@ var isUpdating;
 var isUpdated;
 client.wait = require('util').promisify(setTimeout);
 var CronJob = require('cron').CronJob;
-var commands = ["help","ping","flip","lotto","kick","clearChat","live","urban","guildnum","console","gg","reset","update","reverse","test"];
+var commands = ["help","ping","flip","lotto","kick","clearChat","live","urban","guildnum","console","gg","reset","update","reverse","test","user"];
 var commandHelp = ["You're reading it!",
 "Pongs!","Flips a coin","Gives you your lotto numbers- Doesn't gaurentte you win though :wink:",
 "kicks a valid user, just tag them `.kick @notVorwerk#6126` for example\nRequires Admin role",
 "Clears the current channel of messages <14 days old add a number<100 to clear - defaults to 100 `.clearChat 50` for example \nRequires Admin role",
 "check to see if the given twitch streamer is live `.live Vorwerk_D` for example","Searches urban dictionary for a word/phrase. Attach -r for a random word",
-"Updates the guild numbers channels","Logs the input to the console ","Gives the swgoh.gg link of the requested user `.gg Vorwerk17` for example","shuts down and resets the bots login. Vorwerk only","Manually updates the cached guilds","Reverses your input","A test command"]
+"Updates the guild numbers channels","Logs the input to the console ","Gives the swgoh.gg link of the requested user `.gg Vorwerk17` for example","shuts down and resets the bots login. Vorwerk only","Manually updates the cached guilds","Reverses your input","A test command","Gives information on the user"]
 var olafTest = '570738555773648897'//chan id
 //twitch stuffs
 var streamList = ["yautjaridley","Vorwerk_D"]
@@ -134,7 +134,33 @@ msg.channel.send(allianceUsers2);
 
 })();
   }
+}//user
+if(input.startsWith(prefix+"user")){
+  const user = msg.author
+  const guild =msg.guild
+  const guildUser=guild.fetchMember(user)
+  var joinDate=guildUser.joinedAt;
+var date = joinDate.getDate();
+var month = joinDate.getMonth();
+var year = joinDate.getFullYear();
+  dateString = (month+1)+ "/" +date + "/" + year;
+const embed = new Discord.RichEmbed()
+  .setTitle("User Stats:")
+  .setAuthor(client.user.username,client.user.avatarURL)
+  .setColor(guildUser.highestRole.color)
+  .setDescription("Some basic user stats WIP")
+  .setFooter("Made by Vorwerk")
+  //.setImage("http://i.imgur.com/yVpymuV.png")
+  .setThumbnail(msg.author.avatarURL)
+  .setTimestamp()
+  .addField("Highest Role: ",guildUser.highestRole)
+  .addField("Joined at: ",dateString)
+  .addField("ALL ROLES WIP",guildUser.roles)
+  .addField("ID: ",guildUser.id)
+    //.setURL("https://discord.js.org/#/docs/main/indev/class/RichEmbed"
+  msg.channel.send({embed});
 }
+//reverse
 if(input.startsWith(prefix+"reverse")){
   res = input.substring(9); 
   var splitString = res.split("");
