@@ -139,7 +139,8 @@ if(input.startsWith(prefix+"user")){
   const user = msg.author.id
   const guild =msg.guild
   const guildUser=guild.fetchMember(user)
-  var joinDate=new Date(guildUser.joinedAt);
+  const guildMessageUser=msg.guild.member(user)
+  var joinDate=new Date(guildMessageUser.joinedAt);
 var date = joinDate.getDate();
 var month = joinDate.getMonth();
 var year = joinDate.getFullYear();
@@ -147,15 +148,15 @@ var year = joinDate.getFullYear();
 const embed = new Discord.RichEmbed()
   .setTitle("User Stats:")
   .setAuthor(client.user.username,client.user.avatarURL)
-  .setColor(guildUser.displayColor)
+  .setColor(guildMessageUser.displayColor)
   .setDescription("Some basic user stats WIP")
   .setFooter("Made by Vorwerk")
   //.setImage("http://i.imgur.com/yVpymuV.png")
   .setThumbnail(msg.author.avatarURL)
   .setTimestamp()
   .addField("Joined at: ",dateString)
-  .addField("ALL ROLES WIP",guildUser.roles)
-  .addField("ID: ",guildUser.id)
+  .addField("ALL ROLES WIP",guildMessageUser.roles)
+  .addField("ID: ",guildMessageUser.id)
     //.setURL("https://discord.js.org/#/docs/main/indev/class/RichEmbed"
   msg.channel.send({embed});
 }
