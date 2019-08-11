@@ -136,7 +136,7 @@ msg.channel.send(allianceUsers2);
   }
 }//user
 if(input.startsWith(prefix+"user")){
-  const user = msg.author
+  const user = msg.author.id
   const guild =msg.guild
   const guildUser=guild.fetchMember(user)
   var joinDate=new Date(guildUser.joinedAt);
