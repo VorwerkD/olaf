@@ -139,6 +139,7 @@ if(input.startsWith(prefix+"user")){
   const user = msg.author
   const guild =msg.guild
   const guildUser=guild.fetchMember(user)
+  const highestRoleUser=guildUser.highestRole
   var joinDate=new Date(guildUser.joinedAt);
 var date = joinDate.getDate();
 var month = joinDate.getMonth();
@@ -147,7 +148,7 @@ var year = joinDate.getFullYear();
 const embed = new Discord.RichEmbed()
   .setTitle("User Stats:")
   .setAuthor(client.user.username,client.user.avatarURL)
-  .setColor(guildUser.highestRole.color)
+  .setColor(highestRoleUser.color)
   .setDescription("Some basic user stats WIP")
   .setFooter("Made by Vorwerk")
   //.setImage("http://i.imgur.com/yVpymuV.png")
