@@ -139,7 +139,7 @@ if(input.startsWith(prefix+"user")){
   const user = msg.author
   const guild =msg.guild
   const guildUser=guild.fetchMember(user)
-  var joinDate=guildUser.joinedAt;
+  var joinDate=new Date(guildUser.joinedAt);
 var date = joinDate.getDate();
 var month = joinDate.getMonth();
 var year = joinDate.getFullYear();
