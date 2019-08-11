@@ -139,27 +139,20 @@ if(input.startsWith(prefix+"user")){
   const user = msg.author
   const guild =msg.guild
   const guildUser=guild.fetchMember(user)
-  const highestRoleUser=guildUser.highestRole
   var joinDate=new Date(guildUser.joinedAt);
 var date = joinDate.getDate();
 var month = joinDate.getMonth();
 var year = joinDate.getFullYear();
   dateString = (month+1)+ "/" +date + "/" + year;
-  console.log(dateString);
-  console.log(user);
-  console.log(guild)
-  console.log(guildUser)
-  console.log(highestRoleUser)
 const embed = new Discord.RichEmbed()
   .setTitle("User Stats:")
   .setAuthor(client.user.username,client.user.avatarURL)
-  .setColor(highestRoleUser.color)
+  .setColor(guildUser.displayColor)
   .setDescription("Some basic user stats WIP")
   .setFooter("Made by Vorwerk")
   //.setImage("http://i.imgur.com/yVpymuV.png")
   .setThumbnail(msg.author.avatarURL)
   .setTimestamp()
-  .addField("Highest Role: ",guildUser.highestRole)
   .addField("Joined at: ",dateString)
   .addField("ALL ROLES WIP",guildUser.roles)
   .addField("ID: ",guildUser.id)
