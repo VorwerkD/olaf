@@ -144,11 +144,8 @@ msg.channel.send(allianceUsers2);
     }
 let { result, error, warning } = await swapi.fetchEvents( payload );
 var events = result.events
-//console.log(events[7]);
-//console.log(events[7].instanceList);
-msg.channel.send("Events has "+events.length+" events stored in it\nPadme's event is: ");
-msg.channel.send(events[7]);
-msg.channel.send(events[7].isntanceList);
+console.log(events[7]);
+console.log(events[7].instanceList);
 
   })();
   }
