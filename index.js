@@ -158,7 +158,7 @@ var listEndTime=list[y].endTime;
 console.log("starts: "+listStartTime);
 console.log("ends: "+listEndTime);
 if(milliseconds<listEndTime&&milliseconds>listStartTime){
-	liveEvents.push("event: "+events[x].nameKey)
+	liveEvents.push(events[x].nameKey)
   console.log("BING");
 }
 }
@@ -171,7 +171,7 @@ const embed = new Discord.RichEmbed()
   .setFooter("Made by Vorwerk")
   .setTimestamp()
   for(var z=0;z<liveEvents.length;z++){
-  embed.addField(liveEvents[z])
+  embed.addField("Event "+z,liveEvents[z])
 }
 msg.channel.send({embed})
   })();
