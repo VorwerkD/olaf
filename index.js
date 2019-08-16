@@ -94,9 +94,9 @@ UPDATES THE ROSTERS FILE
 */
 //FLAG
 if(input.startsWith(prefix+"test")){
-  if(msg.author.id==234346145806155776){
+  if(msg.author.id==234346145806155776){/*
  /* client.channels.get('485246576751673354').send("test");
-  client.channels.get('595255366644924440').send("test");*/
+  client.channels.get('595255366644924440').send("test");
 const list = client.guilds.get("483433483109138433"); 
 list.members.forEach(listMembers);
 (async() => {
@@ -133,12 +133,20 @@ msg.channel.send(allianceUsers1);
 msg.channel.send(allianceUsers2);
 
 })();
-  }
+  }*/
+
+  (async() =>{
+    let payload = {
+  language: 'eng_us'
+    }
+let { result, error, warning } = await swapi.fetch( 'events',  payload );
+console.log(result);
+  })();
+
 }//user
 if(input.startsWith(prefix+"user")){
   const user = msg.author.id
   const guild =msg.guild
-  const guildUser=guild.fetchMember(user)
   const guildMessageUser=msg.guild.member(user)
   var joinDate=new Date(guildMessageUser.joinedAt);
 var date = joinDate.getDate();
