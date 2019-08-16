@@ -166,7 +166,7 @@ if(milliseconds<listEndTime&&milliseconds>listStartTime){
 console.log(liveEvents);
 var textBlock="";
 for(var z=0;z<liveEvents.length;z++){
-  textBlock+=liveEvents[x]+" ";
+  textBlock+=liveEvents[z]+" ";
 }
 const embed = new Discord.RichEmbed()
   .setTitle("Live Events:")
