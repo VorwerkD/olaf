@@ -149,8 +149,9 @@ var events = result.events
 for(var x = 0; x<events.length;x++){
 console.log("EVENT "+x+" :");
 console.log(events[x].nameKey);
-console.log(events[x].instanceList.startTime);
-console.log(events[x].instanceList.endTime);
+console.log(events[x].instanceList);
+var list = events[x].instanceList
+console.log(list.length);
 }
   })();
   }
