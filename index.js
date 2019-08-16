@@ -142,7 +142,7 @@ msg.channel.send(allianceUsers2);
 let { result, error, warning } = await swapi.fetch( 'events',  payload );
 console.log(result);
   })();
-
+  }
 }//user
 if(input.startsWith(prefix+"user")){
   const user = msg.author.id
