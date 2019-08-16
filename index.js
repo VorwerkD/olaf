@@ -170,7 +170,7 @@ const embed = new Discord.RichEmbed()
   .setFooter("Made by Vorwerk")
   .setTimestamp()
 for(var z=0;z<liveEvents.length;z++){
-embed.addField(liveEvents[x],"")
+embed.addField(liveEvents[z],"")
 }
 msg.channel.send({embed})
   })();
