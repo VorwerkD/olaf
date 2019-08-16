@@ -139,7 +139,7 @@ msg.channel.send(allianceUsers2);
     let payload = {
   language: 'eng_us'
     }
-let { result, error, warning } = await swapi.fetch( 'events',  payload );
+let { result, error, warning } = await swapi.fetchEvents( payload );
 console.log(result);
   })();
   }
