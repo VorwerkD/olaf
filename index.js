@@ -1,5 +1,4 @@
 //bot stuffs
-//
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const FuzzySet = require('fuzzyset.js');
@@ -144,6 +143,7 @@ msg.channel.send(allianceUsers2);
     }
 let { result, error, warning } = await swapi.fetchEvents( payload );
 var events = result.events
+var liveEvents =[];
 //console.log(events[7].nameKey);
 //console.log(events[7].instanceList);
 var milliseconds = (new Date).getTime();
@@ -158,10 +158,12 @@ var listEndTime=list[y].endTime;
 console.log("starts: "+listStartTime);
 console.log("ends: "+listEndTime);
 if(milliseconds<listEndTime&&milliseconds>listStartTime){
-	console.log("BING");
+	liveEvents.push(events[x].nameKey)
+  console.log("BING");
 }
 }
 }
+console.log(liveEvents);
   })();
   }
 }//user
