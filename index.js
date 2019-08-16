@@ -146,15 +146,20 @@ let { result, error, warning } = await swapi.fetchEvents( payload );
 var events = result.events
 //console.log(events[7].nameKey);
 //console.log(events[7].instanceList);
+var milliseconds = (new Date).getTime();
 for(var x = 0; x<events.length;x++){
 console.log("EVENT "+x+" :");
 console.log(events[x].nameKey);
 //console.log(events[x].instanceList);
 var list = events[x].instanceList
 for(var y = 0; y<list.length;y++){
-console.log("starts: "+list[y].startTime);
-console.log("ends: "+list[y].endTime);
-
+var listStartTime=list[y].startTime;
+var listEndTime=list[y].endTime;
+console.log("starts: "+listStartTime);
+console.log("ends: "+listEndTime);
+if(milliseconds<listEndTime&&milliseconds>listStartTime){
+	console.log("BING");
+}
 }
 }
   })();
