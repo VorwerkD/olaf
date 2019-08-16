@@ -137,7 +137,8 @@ msg.channel.send(allianceUsers2);
 
   (async() =>{
     let payload = {
-  language: 'eng_us'
+  language: 'eng_us',
+  collection: 'eventSamplingList'
     }
 let { result, error, warning } = await swapi.fetchEvents( payload );
 console.log(result);
