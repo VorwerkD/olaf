@@ -143,7 +143,8 @@ msg.channel.send(allianceUsers2);
     }
 let { result, error, warning } = await swapi.fetchEvents( payload );
 var events = result.events
-console.log(events);
+console.log(events[0]);
+console.log(events[0].instanceList);
   })();
   }
 }//user
