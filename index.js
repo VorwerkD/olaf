@@ -152,8 +152,8 @@ console.log(events[x].nameKey);
 //console.log(events[x].instanceList);
 var list = events[x].instanceList
 for(var y = 0; y<list.length;y++){
-console.log("starts: "+list[x].startTime);
-console.log("ends: "+list[x].endTime);
+console.log("starts: "+list[y].startTime);
+console.log("ends: "+list[y].endTime);
 
 }
 }
