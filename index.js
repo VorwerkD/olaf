@@ -149,9 +149,13 @@ var events = result.events
 for(var x = 0; x<events.length;x++){
 console.log("EVENT "+x+" :");
 console.log(events[x].nameKey);
-console.log(events[x].instanceList);
+//console.log(events[x].instanceList);
 var list = events[x].instanceList
-console.log(list.length);
+for(var y = 0; y<list.length;y++){
+console.log("starts: "+list[x].startTime);
+console.log("ends: "+list[x].endTime);
+
+}
 }
   })();
   }
