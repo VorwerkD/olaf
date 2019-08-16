@@ -164,6 +164,15 @@ if(milliseconds<listEndTime&&milliseconds>listStartTime){
 }
 }
 console.log(liveEvents);
+const embed = new Discord.RichEmbed()
+  .setTitle("Live Events:")
+  .setAuthor(client.user.username,client.user.avatarURL)
+  .setFooter("Made by Vorwerk")
+  .setTimestamp()
+for(var z=0;z<liveEvents.length;z++){
+embed.addField(liveEvents[x],"")
+}
+msg.channel.send({embed})
   })();
   }
 }//user
