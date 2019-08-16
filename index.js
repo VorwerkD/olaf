@@ -158,22 +158,21 @@ var listEndTime=list[y].endTime;
 console.log("starts: "+listStartTime);
 console.log("ends: "+listEndTime);
 if(milliseconds<listEndTime&&milliseconds>listStartTime){
-	liveEvents.push(events[x].nameKey)
+	liveEvents.push("event: "+events[x].nameKey)
   console.log("BING");
 }
 }
 }
 console.log(liveEvents);
-var textBlock="";
-for(var z=0;z<liveEvents.length;z++){
-  textBlock+=liveEvents[z]+" ";
-}
+
 const embed = new Discord.RichEmbed()
   .setTitle("Live Events:")
   .setAuthor(client.user.username,client.user.avatarURL)
   .setFooter("Made by Vorwerk")
   .setTimestamp()
-  .addField(textBlock)
+  for(var z=0;z<liveEvents.length;z++){
+  embed.addField(liveEvents[z])
+}
 msg.channel.send({embed})
   })();
   }
