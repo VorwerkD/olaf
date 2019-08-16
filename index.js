@@ -489,6 +489,7 @@ var dateString = (month+1)+ "/" +date + "/" + year;
   language: 'eng_us'
 }//
 let { result, error, warning } = await swapi.fetchGuild( payload );
+console.log(result);
 var guildGp =result[0].gp/1000000
 var roundGp=guildGp.toFixed(1)
 client.channels.get('485246576751673354').fetchMessage(mainChans[x]).then((msg) => {
