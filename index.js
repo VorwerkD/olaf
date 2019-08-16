@@ -158,8 +158,10 @@ var listEndTime=list[y].endTime;
 console.log("starts: "+listStartTime);
 console.log("ends: "+listEndTime);
 if(milliseconds<listEndTime&&milliseconds>listStartTime){
+  if((!nameKey.contains("MODS"))&&(!nameKey.contains("Commander"))){
 	liveEvents.push(events[x].nameKey)
   console.log("BING");
+  }
 }
 }
 }
@@ -171,7 +173,7 @@ const embed = new Discord.RichEmbed()
   .setFooter("Made by Vorwerk")
   .setTimestamp()
   for(var z=0;z<liveEvents.length;z++){
-  embed.addField("Event "+z,liveEvents[z])
+  embed.addField("Event "+(z+1),liveEvents[z])
 }
 msg.channel.send({embed})
   })();
