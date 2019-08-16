@@ -151,6 +151,7 @@ console.log("EVENT "+x+" :");
 console.log(events[x].nameKey);
 console.log(events[x].instanceList);
 }
+msg.channel.send(events[7].displayStartTime);
   })();
   }
 }//user
