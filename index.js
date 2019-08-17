@@ -144,6 +144,7 @@ msg.channel.send(allianceUsers2);
 let { result, error, warning } = await swapi.fetchEvents( payload );
 var events = result.events
 var liveEvents =[];
+var liveEventsDes=[];
 //console.log(events[7].nameKey);
 //console.log(events[7].instanceList);
 var milliseconds = (new Date).getTime();
@@ -151,6 +152,7 @@ for(var x = 0; x<events.length;x++){
 console.log("EVENT "+x+" :");
 console.log(events[x].nameKey);
 var eventName = events[x].nameKey
+var eventDes = events[x].summaryKey
 //console.log(events[x].instanceList);
 var list = events[x].instanceList
 for(var y = 0; y<list.length;y++){
@@ -161,6 +163,7 @@ console.log("ends: "+listEndTime);
 if(milliseconds<listEndTime&&milliseconds>listStartTime){
   if((!eventName.includes("MODS"))&&(!eventName.includes("Commander"))){
 	liveEvents.push(eventName)
+  liveEventsDes.push(eventDes)
   console.log("BING");
   }
 }
@@ -175,7 +178,7 @@ const embed = new Discord.RichEmbed()
   .setFooter("Made by Vorwerk")
   .setTimestamp()
   for(var z=0;z<liveEvents.length;z++){
-  embed.addField("Event "+(z+1),liveEvents[z])
+  embed.addField(liveEvents[z],liveEventsDes[z])
 }
 msg.channel.send({embed})
   })();
