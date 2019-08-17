@@ -150,6 +150,7 @@ var milliseconds = (new Date).getTime();
 for(var x = 0; x<events.length;x++){
 console.log("EVENT "+x+" :");
 console.log(events[x].nameKey);
+var eventName = events[x].nameKey
 //console.log(events[x].instanceList);
 var list = events[x].instanceList
 for(var y = 0; y<list.length;y++){
@@ -158,8 +159,8 @@ var listEndTime=list[y].endTime;
 console.log("starts: "+listStartTime);
 console.log("ends: "+listEndTime);
 if(milliseconds<listEndTime&&milliseconds>listStartTime){
-  if((!events[x].nameKey.contains("MODS"))&&(!events[x].nameKey.contains("Commander"))){
-	liveEvents.push(events[x].nameKey)
+  if((!eventName.contains("MODS"))&&(!eventName.contains("Commander"))){
+	liveEvents.push(eventName)
   console.log("BING");
   }
 }
