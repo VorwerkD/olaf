@@ -141,7 +141,13 @@ msg.channel.send(allianceUsers2);
   enums:'true',
   structure:'true'
     }
+    let payload2 = {
+      language: 'eng_us',
+      collection : 'eventSamplingList'
+    }
 let { result, error, warning } = await swapi.fetchEvents( payload );
+let { result2, error2, warning2} = await swapi.fetchData(payload2);
+console.log(result2);
 var events = result.events
 var liveEvents =[];
 var liveEventsDes=[];
@@ -149,8 +155,8 @@ var liveEventsDes=[];
 //console.log(events[7].instanceList);
 var milliseconds = (new Date).getTime();
 for(var x = 0; x<events.length;x++){
-console.log("EVENT "+x+" :");
-console.log(events[x].nameKey);
+//console.log("EVENT "+x+" :");
+//console.log(events[x].nameKey);
 var eventName = events[x].nameKey
 var eventDes = events[x].summaryKey
 //console.log(events[x].instanceList);
@@ -158,8 +164,8 @@ var list = events[x].instanceList
 for(var y = 0; y<list.length;y++){
 var listStartTime=list[y].startTime;
 var listEndTime=list[y].endTime;
-console.log("starts: "+listStartTime);
-console.log("ends: "+listEndTime);
+//console.log("starts: "+listStartTime);
+//console.log("ends: "+listEndTime);
 if(milliseconds<listEndTime&&milliseconds>listStartTime){
   if((!eventName.includes("MODS"))&&(!eventName.includes("Commander"))){
 	liveEvents.push(eventName)
@@ -169,8 +175,8 @@ if(milliseconds<listEndTime&&milliseconds>listStartTime){
 }
 }
 }
-console.log(events[7]);
-console.log(liveEvents);
+//console.log(events[7]);
+//console.log(liveEvents);
 
 const embed = new Discord.RichEmbed()
   .setTitle("Live Events:")
