@@ -158,7 +158,7 @@ var listEndTime=list[y].endTime;
 console.log("starts: "+listStartTime);
 console.log("ends: "+listEndTime);
 if(milliseconds<listEndTime&&milliseconds>listStartTime){
-  if((!nameKey.contains("MODS"))&&(!nameKey.contains("Commander"))){
+  if((!events[x].nameKey.contains("MODS"))&&(!events[x].nameKey.contains("Commander"))){
 	liveEvents.push(events[x].nameKey)
   console.log("BING");
   }
