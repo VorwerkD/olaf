@@ -166,6 +166,7 @@ if(milliseconds<listEndTime&&milliseconds>listStartTime){
 }
 }
 }
+console.log(events[7]);
 console.log(liveEvents);
 
 const embed = new Discord.RichEmbed()
