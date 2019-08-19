@@ -123,8 +123,6 @@ var listEndTime=list[y].endTime;
 var isDeleting =false;
 if(milliseconds<listEndTime&&milliseconds>listStartTime){
   if((!eventName.includes("MODS"))&&(!eventName.includes("Commander"))){
-    eventName.replace(\[(.*?)\],'')
-    eventDes.repalce(\[(.*?)\],'')
   /*for(var x = 0; x<eventName.length;x++){
 var checkChar = eventName.charAt(x);
 if(checkChar=='['){
