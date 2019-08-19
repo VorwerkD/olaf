@@ -94,60 +94,14 @@ UPDATES THE ROSTERS FILE
 */
 //FLAG
 if(input.startsWith(prefix+"test")){
-  if(msg.author.id==234346145806155776){/*
- /* client.channels.get('485246576751673354').send("test");
-  client.channels.get('595255366644924440').send("test");
-const list = client.guilds.get("483433483109138433"); 
-list.members.forEach(listMembers);
-(async() => {
-    const data = await fs.readFileSync('array.txt','utf8');
-  var newArr = data.split(',');
-var names=[];
-for(var x = 0; x<newArr.length;x+=2){
-names.push(newArr[x]);
-}
-console.log("DISCORD NAMES NOT IN GAME");
-var gameNot=[];
-for(var x = 0 ; x<allianceUsers.length;x++){
-  if(!names.includes(allianceUsers[x])){
-  console.log(allianceUsers[x]);
-  gameNot.push(allianceUsers[x]);
-}}
-console.log("IN GAME NAMES NOT IN DISCORD");
-var discordNot=[];
-for(var x = 0; x<names.length;x++){
-  if(!allianceUsers.includes(names[x])){
-  console.log(names[x]);
-  discordNot.push(names[x]);
-}}
-var names1 = discordNot.slice(0,names.length/2);
-var names2= discordNot.slice(names.length/2,names.length);
-var allianceUsers1 = gameNot.slice(0,allianceUsers.length/2);
-var allianceUsers2 = gameNot.slice(allianceUsers.length/2,allianceUsers.length);
-
-msg.channel.send("INGAME NAMES NOT IN DISCORD")
-msg.channel.send(names1);
-msg.channel.send(names2);
-msg.channel.send("DISCORD USERS NOT IN GAME");
-msg.channel.send(allianceUsers1);
-msg.channel.send(allianceUsers2);
-
-})();
-  }*/
-
+  if(msg.author.id==234346145806155776){
   (async() =>{
     let payload = {
   language: 'eng_us',
   enums:'true',
   structure:'true'
     }
-    let payload2 = {
-      language: 'eng_us',
-      collection : 'eventSamplingList'
-    }
 let { result, error, warning } = await swapi.fetchEvents( payload );
-let { result2, error2, warning2} = await swapi.fetchData(payload2);
-console.log(result2);
 var events = result.events
 var liveEvents =[];
 var liveEventsDes=[];
@@ -166,11 +120,32 @@ var listStartTime=list[y].startTime;
 var listEndTime=list[y].endTime;
 //console.log("starts: "+listStartTime);
 //console.log("ends: "+listEndTime);
+var isDeleting =false;
 if(milliseconds<listEndTime&&milliseconds>listStartTime){
   if((!eventName.includes("MODS"))&&(!eventName.includes("Commander"))){
+  for(var x = 0; x<eventName.length;x++){
+var checkChar = charAt(x);
+if(checkChar=='['){
+  isDeleting=true
+}if(checkChar==']'){
+  isDeleting=false
+  eventName.replace(charAt(x),'');
+}if(isDeleting){
+  eventName.replace(charAt(x),'');
+}}
+for(var x = 0; x<eventDes.length;x++){
+var checkChar = charAt(x);
+if(checkChar=='['){
+  isDeleting=true
+}if(checkChar==']'){
+  isDeleting=false
+  eventDes.replace(charAt(x),'');
+}if(isDeleting){
+  eventDes.replace(charAt(x),'');
+}}
 	liveEvents.push(eventName)
   liveEventsDes.push(eventDes)
-  console.log("BING");
+  //console.log("BING");
   }
 }
 }
@@ -627,3 +602,42 @@ function listMembers(member){
     allianceUsers.push(memberName);
   }
 }
+/* client.channels.get('485246576751673354').send("test");
+  client.channels.get('595255366644924440').send("test");
+const list = client.guilds.get("483433483109138433"); 
+list.members.forEach(listMembers);
+(async() => {
+    const data = await fs.readFileSync('array.txt','utf8');
+  var newArr = data.split(',');
+var names=[];
+for(var x = 0; x<newArr.length;x+=2){
+names.push(newArr[x]);
+}
+console.log("DISCORD NAMES NOT IN GAME");
+var gameNot=[];
+for(var x = 0 ; x<allianceUsers.length;x++){
+  if(!names.includes(allianceUsers[x])){
+  console.log(allianceUsers[x]);
+  gameNot.push(allianceUsers[x]);
+}}
+console.log("IN GAME NAMES NOT IN DISCORD");
+var discordNot=[];
+for(var x = 0; x<names.length;x++){
+  if(!allianceUsers.includes(names[x])){
+  console.log(names[x]);
+  discordNot.push(names[x]);
+}}
+var names1 = discordNot.slice(0,names.length/2);
+var names2= discordNot.slice(names.length/2,names.length);
+var allianceUsers1 = gameNot.slice(0,allianceUsers.length/2);
+var allianceUsers2 = gameNot.slice(allianceUsers.length/2,allianceUsers.length);
+
+msg.channel.send("INGAME NAMES NOT IN DISCORD")
+msg.channel.send(names1);
+msg.channel.send(names2);
+msg.channel.send("DISCORD USERS NOT IN GAME");
+msg.channel.send(allianceUsers1);
+msg.channel.send(allianceUsers2);
+
+})();
+  }*/
