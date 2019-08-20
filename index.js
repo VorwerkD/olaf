@@ -123,26 +123,8 @@ var listEndTime=list[y].endTime;
 var isDeleting =false;
 if(milliseconds<listEndTime&&milliseconds>listStartTime){
   if((!eventName.includes("MODS"))&&(!eventName.includes("Commander"))){
-  /*for(var x = 0; x<eventName.length;x++){
-var checkChar = eventName.charAt(x);
-if(checkChar=='['){
-  isDeleting=true
-}if(checkChar==']'){
-  isDeleting=false
-  eventName.replace(charAt(x),'');
-}if(isDeleting){
-  eventName.replace(charAt(x),'');
-}}
-for(var x = 0; x<eventDes.length;x++){
-var checkChar = eventDes.charAt(x);
-if(checkChar=='['){
-  isDeleting=true
-}if(checkChar==']'){
-  isDeleting=false
-  eventDes.replace(charAt(x),'');
-}if(isDeleting){
-  eventDes.replace(charAt(x),'');
-}}*/
+  eventName.replace(\[(.*?)\],'')
+  eventDes.replace(\[(.*?)\],'')
 	liveEvents.push(eventName)
   liveEventsDes.push(eventDes)
   //console.log("BING");
