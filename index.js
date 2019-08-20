@@ -93,6 +93,7 @@ else{
 UPDATES THE ROSTERS FILE
 */
 //FLAG
+var regex = \[(.*?)\];
 if(input.startsWith(prefix+"test")){
   if(msg.author.id==234346145806155776){
   (async() =>{
@@ -123,8 +124,8 @@ var listEndTime=list[y].endTime;
 var isDeleting =false;
 if(milliseconds<listEndTime&&milliseconds>listStartTime){
   if((!eventName.includes("MODS"))&&(!eventName.includes("Commander"))){
-  eventName.replace(\[(.*?)\],'')
-  eventDes.replace(\[(.*?)\],'')
+  eventName.replace(regex,'')
+  eventDes.replace(regex,'')
 	liveEvents.push(eventName)
   liveEventsDes.push(eventDes)
   //console.log("BING");
