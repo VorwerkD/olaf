@@ -32,12 +32,12 @@ var names=["Names"];
 var allianceUsers=[];
 var codes = [135718294,466484534,399663774,618277879,484271262,922288553]
 var texts = ["filler",
-"Ticket reset @ 6:30 PST\nDSTB- 45 :star:\nLSTB- 41 :star:\nGEOTB-16 :star:\nhttps://swgoh.gg/g/35906/phantomrebellion/",
-"Ticket reset @ 7:30 CST\nDSTB- 34 :star:\nLSTB- 37 :star:\nGEOTB-12 :star:\nhttps://swgoh.gg/g/51323/phantomempire/",
-"Ticket reset @ 6:30 CST\nDSTB- 41 :star:\nLSTB- 41 :star:\nGEOTB-9 :star:\nhttps://swgoh.gg/g/29918/phantomhavoc/",
-"Ticket reset @ 6:30 PST\nDSTB- 5 :star:\nLSTB- ? :star:\nGEOTB- 6 :star: \nhttps://swgoh.gg/g/61585/phantomrogue/",
-"Ticket reset @ 6:30 EST\nDSTB-? :star: \nLSTB-? :star: \n GEOTB-14 :star:\nhttps://swgoh.gg/g/61714/phantomorder/",
-"Ticket reset @ 6:30 EST\nDSTB-30 :star: \nLSTB-? :star: \n GEOTB-? :star:\nhttps://swgoh.gg/g/63155/phantom-uprising/"]
+"Ticket reset @ 6:30 PST\nDSTB- 45 :star:\nLSTB- 41 :star:\nGEOTB- 16 :star:\nhttps://swgoh.gg/g/35906/phantomrebellion/",
+"Ticket reset @ 7:30 CST\nDSTB- 34 :star:\nLSTB- 37 :star:\nGEOTB- 12 :star:\nhttps://swgoh.gg/g/51323/phantomempire/",
+"Ticket reset @ 6:30 CST\nDSTB- 41 :star:\nLSTB- 41 :star:\nGEOTB- 9 :star:\nhttps://swgoh.gg/g/29918/phantomhavoc/",
+"Ticket reset @ 6:30 PST\nDSTB- 5 :star:\nLSTB- 30 :star:\nGEOTB- 6 :star: \nhttps://swgoh.gg/g/61585/phantomrogue/",
+"Ticket reset @ 6:30 EST\nDSTB- ? :star: \nLSTB- ? :star: \n GEOTB- 17 :star:\nhttps://swgoh.gg/g/61714/phantomorder/",
+"Ticket reset @ 6:30 EST\nDSTB- 30 :star: \nLSTB- 28 :star: \n GEOTB- ? :star:\nhttps://swgoh.gg/g/63155/phantom-uprising/"]
 var mainChans=['596613040879960065','596613066108698650','596613090557034497','596613114036748299','602869523741409310','604044611995828247']//message ids to edit
 var recruitChans=['596613040762388480','596613065907109888','596613090900967440','596613113957187586','602869523661455381','604044611505094657']//message ids to edit
 var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
