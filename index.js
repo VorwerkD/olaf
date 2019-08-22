@@ -124,8 +124,8 @@ var listEndTime=list[y].endTime;
 var isDeleting =false;
 if(milliseconds<listEndTime&&milliseconds>listStartTime){
   if((!eventName.includes("MODS"))&&(!eventName.includes("Commander"))){
-  eventName.replace(/\[([\d\w]+)\]/g,'test')
-  eventDes.replace(/\[([\d\w]+)\]/g,'test')
+  eventName.replace(/\[([\d\w]+)\]/g,'')
+  eventDes.replace(/\[([\d\w]+)\]/g,'')
 	liveEvents.push(eventName)
   liveEventsDes.push(eventDes)
   //console.log("BING");
