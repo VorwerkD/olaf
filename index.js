@@ -21,6 +21,14 @@ var olafTest = '570738555773648897'//chan id
 //twitch stuffs
 var streamList = ["yautjaridley","Vorwerk_D"]
 var streamChan = ["547923999552700436",olafTest]
+var daysOfWeek = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+var activities = ["Before Reset:Complete Arnea Battles\nAfter Reset:Spend Cantina Energy",
+"Before Reset:Spend Cantina Energy\nAfter Reset:Spend Energy on Light Side Battles",
+"Before Reset:Spend Energy on Light Side Battles\nAfter Reset:Complete Galactic War",
+"Before Reset:Complete Galactic War\nAfter Reset:Spend Energy on Hard Mode Battles",
+"Before Reset:Spend Normla Energy on Hard Mode Battles\nAfter Reset:Complete Challenges",
+"Before Reset:Complete Challenges\nAfter Reset:Spend Energy on Dark Side Battles",
+"Before Reset:Spend Energy on Dark Side Battles\nAfter Reset:Complete Arena Battles"];
 const TwitchClient = require('twitch').default;
 const clientId = process.env.TWITCH_CLIENT_ID;
 const clientSecret = process.env.TWITCH_CLIENT_SECRET;
@@ -108,8 +116,8 @@ var liveEvents =[];
 var liveEventsDes=[];
 var milliseconds = (new Date).getTime();
 var day = (new Date).getDay();
-liveEvents.push("Today is: ");
-liveEventsDes.push(dayConvert(day));
+liveEvents.push("Today is: "+dayConvert(day));
+liveEventsDes.push("The Guild Activity today is: "+activities[day]);
 for(var x = 0; x<events.length;x++){
 var eventName = events[x].nameKey
 var eventDes = events[x].summaryKey
@@ -583,27 +591,7 @@ function listMembers(member){
 }
 
 function dayConvert(day){
-  if(day=0){
-    day="Sunday";
-  }
-  else if(day=1){
-    day ="Monday";
-  }
-  else if(day=2){
-    day = "Tuesday";
-  }
-  else if(day=3){
-    day="Wednesday";
-  }
-  else if(day=4){
-    day="Thursday";
-  }
-  else if(day=5){
-    day="Friday";
-  }
-  else if(day=6){
-    day="Saturday";
-  }
+  day = daysOfWeek[day]
   return day;
 }
 /* client.channels.get('485246576751673354').send("test");
