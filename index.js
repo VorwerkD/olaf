@@ -26,7 +26,7 @@ var activities = ["\nBefore Reset:Complete Arnea Battles\nAfter Reset:Spend Cant
 "\nBefore Reset:Spend Cantina Energy\nAfter Reset:Spend Energy on Light Side Battles",
 "\nBefore Reset:Spend Energy on Light Side Battles\nAfter Reset:Complete Galactic War",
 "\nBefore Reset:Complete Galactic War\nAfter Reset:Spend Energy on Hard Mode Battles",
-"\nBefore Reset:Spend Normla Energy on Hard Mode Battles\nAfter Reset:Complete Challenges",
+"\nBefore Reset:Spend Normal Energy on Hard Mode Battles\nAfter Reset:Complete Challenges",
 "\nBefore Reset:Complete Challenges\nAfter Reset:Spend Energy on Dark Side Battles",
 "\nBefore Reset:Spend Energy on Dark Side Battles\nAfter Reset:Complete Arena Battles"];
 const TwitchClient = require('twitch').default;
