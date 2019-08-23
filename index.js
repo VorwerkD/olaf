@@ -22,13 +22,13 @@ var olafTest = '570738555773648897'//chan id
 var streamList = ["yautjaridley","Vorwerk_D"]
 var streamChan = ["547923999552700436",olafTest]
 var daysOfWeek = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-var activities = ["Before Reset:Complete Arnea Battles\nAfter Reset:Spend Cantina Energy",
-"Before Reset:Spend Cantina Energy\nAfter Reset:Spend Energy on Light Side Battles",
-"Before Reset:Spend Energy on Light Side Battles\nAfter Reset:Complete Galactic War",
-"Before Reset:Complete Galactic War\nAfter Reset:Spend Energy on Hard Mode Battles",
-"Before Reset:Spend Normla Energy on Hard Mode Battles\nAfter Reset:Complete Challenges",
-"Before Reset:Complete Challenges\nAfter Reset:Spend Energy on Dark Side Battles",
-"Before Reset:Spend Energy on Dark Side Battles\nAfter Reset:Complete Arena Battles"];
+var activities = ["\nBefore Reset:Complete Arnea Battles\nAfter Reset:Spend Cantina Energy",
+"\nBefore Reset:Spend Cantina Energy\nAfter Reset:Spend Energy on Light Side Battles",
+"\nBefore Reset:Spend Energy on Light Side Battles\nAfter Reset:Complete Galactic War",
+"\nBefore Reset:Complete Galactic War\nAfter Reset:Spend Energy on Hard Mode Battles",
+"\nBefore Reset:Spend Normla Energy on Hard Mode Battles\nAfter Reset:Complete Challenges",
+"\nBefore Reset:Complete Challenges\nAfter Reset:Spend Energy on Dark Side Battles",
+"\nBefore Reset:Spend Energy on Dark Side Battles\nAfter Reset:Complete Arena Battles"];
 const TwitchClient = require('twitch').default;
 const clientId = process.env.TWITCH_CLIENT_ID;
 const clientSecret = process.env.TWITCH_CLIENT_SECRET;
