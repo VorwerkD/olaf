@@ -606,7 +606,7 @@ if(milliseconds<listEndTime&&milliseconds>listStartTime){
 //console.log(liveEvents);
 
 const embed = new Discord.RichEmbed()
-  .setTitle("SWGOH Today:"+dayString)
+  .setTitle("__SWGOH Today: "+dayString+"__")
   .setAuthor(client.user.username,client.user.avatarURL)
   .setFooter("Made by Vorwerk")
   .setTimestamp()
