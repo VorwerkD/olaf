@@ -22,6 +22,7 @@ var olafTest = '570738555773648897'//chan id
 var streamList = ["yautjaridley","Vorwerk_D"]
 var streamChan = ["547923999552700436",olafTest]
 var daysOfWeek = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+var months=["January","Febuary","March","April","May","June","July","August","September","October","November","December"]
 var activities = ["\nBefore Reset:Complete Arnea Battles\nAfter Reset:Spend Cantina Energy",
 "\nBefore Reset:Spend Cantina Energy\nAfter Reset:Spend Energy on Light Side Battles",
 "\nBefore Reset:Spend Energy on Light Side Battles\nAfter Reset:Complete Galactic War",
@@ -105,60 +106,7 @@ UPDATES THE ROSTERS FILE
 var regex = /\[([\d\w]+)\]/g;
 if(input.startsWith(prefix+"test")){
   if(msg.author.id==234346145806155776){
-  (async() =>{
-    let payload = {
-  language: 'eng_us',
-  enums:'true',
-  structure:'true'
-    }
-let { result, error, warning } = await swapi.fetchEvents( payload );
-var events = result.events
-var liveEvents =[];
-var liveEventsDes=[];
-var milliseconds = (new Date).getTime();
-var currentDate = new Date();
-var day = currentDate.getDay();
-var date = currentDate.getDate();
-var month = currentDate.getMonth();
-var year = currentDate.getFullYear();
-
-var dateString = (month+1)+ "/" +date + "/" + year;
-liveEvents.push(wakeups[day]);
-liveEventsDes.push("Lets get those tickets in! 1 energy = 1 ticket !\nThe more tickets we earn means the more often we raid!")
-liveEvents.push("Today is: "+dayConvert(day));
-liveEventsDes.push("The Guild Activity today is: "+activities[day]);
-for(var x = 0; x<events.length;x++){
-var eventName = events[x].nameKey
-var eventDes = events[x].summaryKey
-var list = events[x].instanceList
-for(var y = 0; y<list.length;y++){
-var listStartTime=list[y].startTime;
-var listEndTime=list[y].endTime;
-var isDeleting =false;
-if(milliseconds<listEndTime&&milliseconds>listStartTime){
-  if((!eventName.includes("MODS"))&&(!eventName.includes("Commander"))){
-  var pushedName= eventName.replace(/\[([\d\w\-\/]+)\]/g,'').replace(/\\n/g," ")
-  var pushedDes=eventDes.replace(/\[([\d\w\-\/]+)\]/g,'').replace(/\\n/g," ")
-	liveEvents.push(pushedName)
-  liveEventsDes.push(pushedDes)
-  //console.log("BING");
-  }
-}
-}
-}
-//console.log(events[7]);
-//console.log(liveEvents);
-
-const embed = new Discord.RichEmbed()
-  .setTitle("Live Events:")
-  .setAuthor(client.user.username,client.user.avatarURL)
-  .setFooter("Made by Vorwerk")
-  .setTimestamp()
-  for(var z=0;z<liveEvents.length;z++){
-  embed.addField(liveEvents[z],liveEventsDes[z])
-}
-msg.channel.send({embed})
-  })();
+    dailyEvents(olafTest);
   }
 }//user
 if(input.startsWith(prefix+"user")){
@@ -602,6 +550,66 @@ function listMembers(member){
 function dayConvert(day){
   day = daysOfWeek[day]
   return day;
+}
+function monthConvert(month){
+  month = months[month];
+  return month;
+}
+function dailyEvents(chanID){
+(async() =>{
+    let payload = {
+  language: 'eng_us',
+  enums:'true',
+  structure:'true'
+    }
+let { result, error, warning } = await swapi.fetchEvents( payload );
+var events = result.events
+var liveEvents =[];
+var liveEventsDes=[];
+var milliseconds = (new Date).getTime();
+var currentDate = new Date();
+var day = currentDate.getDay();
+var date = currentDate.getDate();
+var month = currentDate.getMonth();
+var year = currentDate.getFullYear();
+
+var dateString = (month+1)+ "/" +date + "/" + year;
+liveEvents.push(wakeups[day]);
+liveEventsDes.push("Lets get those tickets in! 1 energy = 1 ticket !\nThe more tickets we earn means the more often we raid!")
+liveEvents.push("Today is: "+dayConvert(day)+" the "+date+"th of "+monthConvert(month+1));
+liveEventsDes.push("The Guild Activity today is: "+activities[day]);
+for(var x = 0; x<events.length;x++){
+var eventName = events[x].nameKey
+var eventDes = events[x].summaryKey
+var list = events[x].instanceList
+for(var y = 0; y<list.length;y++){
+var listStartTime=list[y].startTime;
+var listEndTime=list[y].endTime;
+var isDeleting =false;
+if(milliseconds<listEndTime&&milliseconds>listStartTime){
+  if((!eventName.includes("MODS"))&&(!eventName.includes("Commander"))){
+  var pushedName= eventName.replace(/\[([\d\w\-\/]+)\]/g,'').replace(/\\n/g," ")
+  var pushedDes=eventDes.replace(/\[([\d\w\-\/]+)\]/g,'').replace(/\\n/g," ")
+	liveEvents.push(pushedName)
+  liveEventsDes.push(pushedDes)
+  //console.log("BING");
+  }
+}
+}
+}
+//console.log(events[7]);
+//console.log(liveEvents);
+
+const embed = new Discord.RichEmbed()
+  .setTitle("Live Events:")
+  .setAuthor(client.user.username,client.user.avatarURL)
+  .setFooter("Made by Vorwerk")
+  .setTimestamp()
+  for(var z=0;z<liveEvents.length;z++){
+  embed.addField(liveEvents[z],liveEventsDes[z])
+}
+client.channels.get(chanID).send({embed})
+  })();
 }
 /* client.channels.get('485246576751673354').send("test");
   client.channels.get('595255366644924440').send("test");
