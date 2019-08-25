@@ -29,6 +29,7 @@ var activities = ["\nBefore Reset:Complete Arnea Battles\nAfter Reset:Spend Cant
 "\nBefore Reset:Spend Normal Energy on Hard Mode Battles\nAfter Reset:Complete Challenges",
 "\nBefore Reset:Complete Challenges\nAfter Reset:Spend Energy on Dark Side Battles",
 "\nBefore Reset:Spend Energy on Dark Side Battles\nAfter Reset:Complete Arena Battles"];
+var wakeups=["Morning Phantom!","Monday morning, you sure look fine.","You will never have this day again Phantom so make it count!","Rise up and attack the day with enthusiasm!","Rise and shine Phantom","Happy Friday Phantom! It's almost the weekend!","Happy Weekend Phantom, enjoy the days off"];
 const TwitchClient = require('twitch').default;
 const clientId = process.env.TWITCH_CLIENT_ID;
 const clientSecret = process.env.TWITCH_CLIENT_SECRET;
@@ -115,7 +116,15 @@ var events = result.events
 var liveEvents =[];
 var liveEventsDes=[];
 var milliseconds = (new Date).getTime();
-var day = (new Date).getDay();
+var currentDate = new Date();
+var day = currentDate.getDay();
+var date = currentDate.getDate();
+var month = currentDate.getMonth();
+var year = currentDate.getFullYear();
+
+var dateString = (month+1)+ "/" +date + "/" + year;
+liveEvents.push(wakeups[day]);
+liveEventsDes.push("Lets get those tickets in! 1 energy = 1 ticket !\nThe more tickets we earn means the more often we raid!")
 liveEvents.push("Today is: "+dayConvert(day));
 liveEventsDes.push("The Guild Activity today is: "+activities[day]);
 for(var x = 0; x<events.length;x++){
