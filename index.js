@@ -23,13 +23,14 @@ var streamList = ["yautjaridley","Vorwerk_D"]
 var streamChan = ["547923999552700436",olafTest]
 var daysOfWeek = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 var months=["January","Febuary","March","April","May","June","July","August","September","October","November","December"]
-var activities = ["\nBefore Reset:Complete Arnea Battles\nAfter Reset:Spend Cantina Energy",
-"\nBefore Reset:Spend Cantina Energy\nAfter Reset:Spend Energy on Light Side Battles",
-"\nBefore Reset:Spend Energy on Light Side Battles\nAfter Reset:Complete Galactic War",
-"\nBefore Reset:Complete Galactic War\nAfter Reset:Spend Energy on Hard Mode Battles",
-"\nBefore Reset:Spend Normal Energy on Hard Mode Battles\nAfter Reset:Complete Challenges",
-"\nBefore Reset:Complete Challenges\nAfter Reset:Spend Energy on Dark Side Battles",
-"\nBefore Reset:Spend Energy on Dark Side Battles\nAfter Reset:Complete Arena Battles"];
+var activities = ["\nBefore Reset: Complete Arena Battles\nAfter Reset: Spend Cantina Energy",
+"\nBefore Reset: Spend Cantina Energy\nAfter Reset: Spend Energy on Light Side Battles",
+"\nBefore Reset: Spend Energy on Light Side Battles\nAfter Reset: Complete Galactic War",
+"\nBefore Reset: Complete Galactic War\nAfter Reset: Spend Energy on Hard Mode Battles",
+"\nBefore Reset: Spend Normal Energy on Hard Mode Battles\nAfter Reset: Complete Challenges",
+"\nBefore Reset: Complete Challenges\nAfter Reset: Spend Energy on Dark Side Battles",
+"\nBefore Reset: Spend Energy on Dark Side Battles\nAfter Reset: Complete Arena Battles"
+];
 var wakeups=["Morning Phantom!","Monday morning, you sure look fine.","You will never have this day again Phantom so make it count!","Rise up and attack the day with enthusiasm!","Rise and shine Phantom","Happy Friday Phantom! It's almost the weekend!","Happy Weekend Phantom, enjoy the days off"];
 const TwitchClient = require('twitch').default;
 const clientId = process.env.TWITCH_CLIENT_ID;
@@ -435,6 +436,10 @@ new CronJob('0 0 3 * * * ', function(){
 
 new CronJob('0 */5 * * * * ', function(){
     update();
+}, null, true, 'America/New_York');
+
+new CronJob('0 30 5 * * *',function(){
+  dailyEvents('614475604871348224');
 }, null, true, 'America/New_York');
 
 function guildNum() {
