@@ -580,7 +580,7 @@ var year = currentDate.getFullYear();
 var dayString = dayConvert(day)+", "+date+"th of "+monthConvert(month);
 var dateString = (month+1)+ "/" +date + "/" + year;
 liveEvents.push(wakeups[day]);
-liveEventsDes.push("Lets get those tickets in! 1 LS/DS/Cantina energy = 1 ticket !\nThe more tickets we earn means the more often we raid!\n"+activities[day]);
+liveEventsDes.push("Lets get those tickets in! 1 LS/DS/Cantina energy = 1 ticket !\nThe more tickets we earn means the more often we raid!\nThe Guild Activity today is: "+activities[day]);
 //liveEvents.push("Today is: "+dayConvert(day)+" the "+date+"th of "+monthConvert(month)+"\nThe Guild Activity today is:");
 //liveEventsDes.push(activities[day]);
 for(var x = 0; x<events.length;x++){
