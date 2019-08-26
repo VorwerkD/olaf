@@ -145,7 +145,8 @@ if(input.startsWith(prefix+"reverse")){
 
 if(input.startsWith(prefix+"update")){
   (async() =>{
-update().then(msg.react('✅'));
+update();
+msg.react('✅');
     })();
 }
 /*
