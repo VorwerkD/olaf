@@ -438,7 +438,7 @@ new CronJob('0 */5 * * * * ', function(){
     update();
 }, null, true, 'America/New_York');
 
-new CronJob('0 30 5 * * *',function(){
+new CronJob('0 30 6 * * *',function(){
   dailyEvents('614475604871348224');
 }, null, true, 'America/New_York');
 
