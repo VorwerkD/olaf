@@ -99,7 +99,7 @@ input=prefix+input+" "+inputRes[1];
 else{
   console.log("not a command")
 }
-if(msg.author.id=='234346145806155776'){
+if(msg.author.id=='398271224326914051'){
   msg.reply("Screw you didy, here's what you asked for:")
 }
 }
