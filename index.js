@@ -1,5 +1,4 @@
 //bot stuffs
-//
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const FuzzySet = require('fuzzyset.js');
@@ -99,6 +98,9 @@ input=prefix+input+" "+inputRes[1];
 }
 else{
   console.log("not a command")
+}
+if(msg.author.id=='234346145806155776'){
+  msg.reply("Screw you didy, here's what you asked for:")
 }
 }
 /*
@@ -591,9 +593,8 @@ var list = events[x].instanceList
 for(var y = 0; y<list.length;y++){
 var listStartTime=list[y].startTime;
 var listEndTime=list[y].endTime;
-var isDeleting =false;
 if(milliseconds<listEndTime&&milliseconds>listStartTime){
-  if((!eventName.includes("MODS"))&&(!eventName.includes("Commander"))){
+  if((!eventName.includes("MODS"))&&(!eventName.includes("Commander")&&(!eventName.includes("TEST"))&&(!eventName.includes("TERRITORY")))){
   var pushedName= eventName.replace(/\[([\d\w\-\/]+)\]/g,'').replace(/\\n/g," ")
   var pushedDes=eventDes.replace(/\[([\d\w\-\/]+)\]/g,'').replace(/\\n/g," ")
 	liveEvents.push(pushedName)
