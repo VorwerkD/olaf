@@ -80,7 +80,15 @@ client.on('guildMemberAdd',member =>{
     (async() =>{
       await addAndRemoveRole(member,'484848526757593119');
     })();*/
-  }}});
+  }}
+  if(member.guild.id=='483433483109138433'){
+guildNum();
+  }
+  });
+  client.on('guildMemberRemove',member=>{
+if(member.guild.id=='483433483109138433'){
+  guildNum();
+}});
 //messages
 client.on('message', msg => {
 var input='';
@@ -100,7 +108,7 @@ else{
   console.log("not a command")
 }
 if(msg.author.id=='398271224326914051'){
-  msg.reply("Screw you didy, here's what you asked for:")
+  msg.reply("Screw you Didy, here's what you asked for:")
 }
 }
 /*
@@ -463,6 +471,7 @@ let { result, error, warning } = await swapi.fetchGuild( payload );
 console.log(result);
 var guildGp =result[0].gp/1000000
 var roundGp=guildGp.toFixed(1)
+console.log(result.raid)
 client.channels.get('485246576751673354').fetchMessage(mainChans[x]).then((msg) => {
 // Resolve promise
 				msg.edit(result[0].name+" -\n"+result[0].members+"/50 "+roundGp+"mil gp\n"+texts[x]+"\nUpdated on "+dateString)
