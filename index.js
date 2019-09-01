@@ -471,7 +471,9 @@ let { result, error, warning } = await swapi.fetchGuild( payload );
 console.log(result);
 var guildGp =result[0].gp/1000000
 var roundGp=guildGp.toFixed(1)
-console.log(result[0].raid)
+var raids=(result[0].raid)
+console.log(result[0].raid.sith_raid)
+console.log(raids.sith_raid)
 client.channels.get('485246576751673354').fetchMessage(mainChans[x]).then((msg) => {
 // Resolve promise
 				msg.edit(result[0].name+" -\n"+result[0].members+"/50 "+roundGp+"mil gp\n"+texts[x]+"\nUpdated on "+dateString)
