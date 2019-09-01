@@ -43,12 +43,12 @@ var names=["Names"];
 var allianceUsers=[];
 var codes = [135718294,466484534,399663774,618277879,484271262,922288553]
 var texts = ["filler",
-"600 Tickets Daily\nTicket reset @ 6:30 PST\nDSTB- 45 :star:\nLSTB- 41 :star:\nGEOTB- 16 :star:",
-"600 Tickets Daily\nTicket reset @ 7:30 CST\nDSTB- 34 :star:\nLSTB- 37 :star:\nGEOTB- 12 :star:",
-"600 Tickets Daily\nTicket reset @ 6:30 CST\nDSTB- 41 :star:\nLSTB- 41 :star:\nGEOTB- 9 :star:",
-"400 Tickets Daily\nTicket reset @ 6:30 PST\nDSTB- 5 :star:\nLSTB- 30 :star:\nGEOTB- 6 :star:",
-"600 Tickets Daily\nTicket reset @ 6:30 EST\nDSTB- ? :star: \nLSTB- ? :star: \n GEOTB- 17 :star:",
-"400 Tickets Daily\nTicket reset @ 6:30 EST\nDSTB- 30 :star: \nLSTB- 28 :star: \n GEOTB- ? :star:"]
+"600 Tickets Daily\nTicket reset @ 6:30 PST\nDSTB- 45 :star:\nLSTB- 41 :star:\nGEOTB- 18 :star:",//rebellion
+"600 Tickets Daily\nTicket reset @ 7:30 CST\nDSTB- 34 :star:\nLSTB- 37 :star:\nGEOTB- 13 :star:",//empire
+"600 Tickets Daily\nTicket reset @ 6:30 CST\nDSTB- 41 :star:\nLSTB- 41 :star:\nGEOTB- 9 :star:",//havoc
+"400 Tickets Daily\nTicket reset @ 6:30 PST\nDSTB- 31 :star:\nLSTB- 30 :star:\nGEOTB- 6 :star:",//rogue
+"600 Tickets Daily\nTicket reset @ 6:30 EST\nDSTB- ? :star: \nLSTB- ? :star: \n GEOTB- 18 :star:",//order
+"400 Tickets Daily\nTicket reset @ 6:30 EST\nDSTB- 30 :star: \nLSTB- 28 :star: \n GEOTB- ? :star:"]//uprising
 var ggLink = ["filler",
 "\nhttps://swgoh.gg/g/35906/phantomrebellion/",
 "\nhttps://swgoh.gg/g/51323/phantomempire/",
@@ -488,7 +488,7 @@ client.channels.get('485246576751673354').fetchMessage(mainChans[x]).then((msg) 
 				msg.edit(result[0].name+" -\n"+result[0].members+"/50 "+roundGp+"mil gp\n"+texts[x]+"\nHSTR:"+hstrCheck+ggLink[x]+"\nUpdated on "+dateString)
         });    
 client.channels.get('595255366644924440').fetchMessage(recruitChans[x]).then((msg) => { // Resolve promise
-				msg.edit(result[0].name+" -\n"+result[0].members+"/50 "+roundGp+"mil gp\n"+texts[x]+"\nUpdated on "+dateString)
+				msg.edit(result[0].name+" -\n"+result[0].members+"/50 "+roundGp+"mil gp\n"+texts[x]+"\nHSTR:"+hstrCheck+ggLink[x]+"\nUpdated on "+dateString)
         });
         x+=1;
     }  
