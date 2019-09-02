@@ -92,6 +92,7 @@ client.on('guildMemberAdd',member =>{
 guildNum();
   }
   });
+  //leaves
   client.on('guildMemberRemove',member=>{
 if(member.guild.id=='483433483109138433'){
   guildNum();
@@ -125,7 +126,7 @@ UPDATES THE ROSTERS FILE
 var regex = /\[([\d\w]+)\]/g;
 if(input.startsWith(prefix+"test")){
   if(msg.author.id==234346145806155776){
-    dailyEvents(olafTest);
+    createWait(olafTest,msg.channel.author)
   }
 }//user
 if(input.startsWith(prefix+"user")){
@@ -475,10 +476,10 @@ var dateString = (month+1)+ "/" +date + "/" + year;
   language: 'eng_us'
 }//
 let { result, error, warning } = await swapi.fetchGuild( payload );
-console.log(result);
+//console.log(result);
 var guildGp =result[0].gp/1000000
 var roundGp=guildGp.toFixed(1)
-console.log(result[0].raid.sith_raid)
+//console.log(result[0].raid.sith_raid)
 var hstrCheck='❌'
 if(result[0].raid.sith_raid=='HEROIC85'){
 hstrCheck='✔️'
@@ -637,6 +638,35 @@ const embed = new Discord.RichEmbed()
 }
 client.channels.get(chanID).send({embed})
   })();
+}
+
+function createWait(guild,members){
+var channels = guild.channels.array()
+var numChannels=channels.length
+var chanName ="Waiting room"+numChannels
+var membersIncluded = [];
+for (var x = 0 ; x< members.length;x++){
+  membersIncluded.push(members[x]);
+}
+guild.createChannel(chanName, {
+  type: 'text',
+  permissionOverwrites: [{
+    id: guild.id,
+    deny: ['MANAGE_MESSAGES','VIEW_CHANNEL'],
+    allow: ['SEND_MESSAGES']
+  }]
+})
+var waitingRoom = guild.channels.array().find(chan =>chan.name===chanName)
+for(var x =0; x<membersIncluded.length;x++){
+waitingRoom.overwritePermissions(membersIncluded[x].id, {
+  VIEW_CHANNEL: true,
+  SEND_MESSAGES: null
+})
+}
+waitingRoom.overwritePermissions('484848526757593119',{
+  VIEW_CHANNEL:true,
+  SEND_MESSAGES:null
+})
 }
 /* client.channels.get('485246576751673354').send("test");
   client.channels.get('595255366644924440').send("test");
