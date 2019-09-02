@@ -126,7 +126,8 @@ UPDATES THE ROSTERS FILE
 var regex = /\[([\d\w]+)\]/g;
 if(input.startsWith(prefix+"test")){
   if(msg.author.id==234346145806155776){
-    createWait(olafTest,msg.channel.author)
+    var members =[client.users.get('234346145806155776'),client.users.get('116901947428044809')]
+    createWait(olafTest,members)
   }
 }//user
 if(input.startsWith(prefix+"user")){
