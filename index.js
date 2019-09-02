@@ -641,9 +641,9 @@ client.channels.get(chanID).send({embed})
 }
 
 function createWait(guild,members){
-var channels = guild.channel.size
-var numChannels=channels.length
-var chanName ="Waiting room"+numChannels
+//var channels = guild.channel.size
+//var numChannels=channels.length
+var chanName ="Waiting room"
 var membersIncluded = [];
 for (var x = 0 ; x< members.length;x++){
   membersIncluded.push(members[x]);
@@ -656,7 +656,7 @@ guild.createChannel(chanName, {
     allow: ['SEND_MESSAGES']
   }]
 })
-var waitingRoom = guild.channels.array().find(chan =>chan.name===chanName)
+var waitingRoom=guild.channels.find(channel => channel.name === chanName)
 for(var x =0; x<membersIncluded.length;x++){
 waitingRoom.overwritePermissions(membersIncluded[x].id, {
   VIEW_CHANNEL: true,
@@ -666,7 +666,7 @@ waitingRoom.overwritePermissions(membersIncluded[x].id, {
 waitingRoom.overwritePermissions('484848526757593119',{
   VIEW_CHANNEL:true,
   SEND_MESSAGES:null
-})
+}))
 }
 /* client.channels.get('485246576751673354').send("test");
   client.channels.get('595255366644924440').send("test");
