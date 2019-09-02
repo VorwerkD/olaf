@@ -641,7 +641,7 @@ client.channels.get(chanID).send({embed})
 }
 
 function createWait(guild,members){
-var channels = guild.channels.array()
+var channels = guild.channel.size
 var numChannels=channels.length
 var chanName ="Waiting room"+numChannels
 var membersIncluded = [];
