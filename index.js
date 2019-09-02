@@ -45,7 +45,7 @@ var codes = [135718294,466484534,399663774,618277879,484271262,922288553]
 var texts = ["filler",
 "600 Tickets Daily\nTicket reset @ 6:30 PST\nDSTB- 45 :star:\nLSTB- 41 :star:\nGEOTB- 18 :star:",//rebellion
 "600 Tickets Daily\nTicket reset @ 7:30 CST\nDSTB- 34 :star:\nLSTB- 37 :star:\nGEOTB- 13 :star:",//empire
-"600 Tickets Daily\nTicket reset @ 6:30 CST\nDSTB- 41 :star:\nLSTB- 41 :star:\nGEOTB- 9 :star:",//havoc
+"600 Tickets Daily\nTicket reset @ 6:30 CST\nDSTB- 41 :star:\nLSTB- 41 :star:\nGEOTB- 13 :star:",//havoc
 "400 Tickets Daily\nTicket reset @ 6:30 PST\nDSTB- 31 :star:\nLSTB- 30 :star:\nGEOTB- 6 :star:",//rogue
 "600 Tickets Daily\nTicket reset @ 6:30 EST\nDSTB- ? :star: \nLSTB- ? :star: \n GEOTB- 18 :star:",//order
 "400 Tickets Daily\nTicket reset @ 6:30 EST\nDSTB- 30 :star: \nLSTB- 28 :star: \n GEOTB- ? :star:"]//uprising
