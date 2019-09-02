@@ -666,7 +666,7 @@ waitingRoom.overwritePermissions(membersIncluded[x].id, {
 waitingRoom.overwritePermissions('484848526757593119',{
   VIEW_CHANNEL:true,
   SEND_MESSAGES:null
-}))
+})
 }
 /* client.channels.get('485246576751673354').send("test");
   client.channels.get('595255366644924440').send("test");
