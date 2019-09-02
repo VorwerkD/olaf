@@ -126,8 +126,28 @@ UPDATES THE ROSTERS FILE
 var regex = /\[([\d\w]+)\]/g;
 if(input.startsWith(prefix+"test")){
   if(msg.author.id==234346145806155776){
-    var members =[client.users.get('234346145806155776'),client.users.get('116901947428044809')]
-    createWait(olafTest,members)
+    var guild = msg.guild
+    var members =[client.users.get('234346145806155776'),client.users.get('116901947428044809'),client.users.get('484182817010614283')]
+    var chanName ="Waiting room"
+guild.createChannel(chanName, {
+  type: 'text',
+  permissionOverwrites: [{
+    id: guild.id,
+    deny: ['MANAGE_MESSAGES','VIEW_CHANNEL'],
+    allow: ['SEND_MESSAGES']
+  }]
+})
+var waitingRoom=guild.channels.find(channel => channel.name === chanName)
+for(var x =0; x<members.length;x++){
+waitingRoom.overwritePermissions(members[x].id, {
+  VIEW_CHANNEL: true,
+  SEND_MESSAGES: null
+})
+}
+waitingRoom.overwritePermissions('484848526757593119',{
+  VIEW_CHANNEL:true,
+  SEND_MESSAGES:null
+})
   }
 }//user
 if(input.startsWith(prefix+"user")){
@@ -644,30 +664,7 @@ client.channels.get(chanID).send({embed})
 function createWait(guild,members){
 //var channels = guild.channel.size
 //var numChannels=channels.length
-var chanName ="Waiting room"
-var membersIncluded = [];
-for (var x = 0 ; x< members.length;x++){
-  membersIncluded.push(members[x]);
-}
-guild.createChannel(chanName, {
-  type: 'text',
-  permissionOverwrites: [{
-    id: guild.id,
-    deny: ['MANAGE_MESSAGES','VIEW_CHANNEL'],
-    allow: ['SEND_MESSAGES']
-  }]
-})
-var waitingRoom=guild.channels.find(channel => channel.name === chanName)
-for(var x =0; x<membersIncluded.length;x++){
-waitingRoom.overwritePermissions(membersIncluded[x].id, {
-  VIEW_CHANNEL: true,
-  SEND_MESSAGES: null
-})
-}
-waitingRoom.overwritePermissions('484848526757593119',{
-  VIEW_CHANNEL:true,
-  SEND_MESSAGES:null
-})
+
 }
 /* client.channels.get('485246576751673354').send("test");
   client.channels.get('595255366644924440').send("test");
