@@ -131,7 +131,6 @@ if(input.startsWith(prefix+"test")){
     var chanName ="Waiting room";
 //console.log(guild);
 (async()=>{
-guild.createChannel(chanName,"text",perms)
 var perms = [{
   id:'484848526757593119',
   deny:[VIEW_CHANNEL,SEND_MESSAGES]
@@ -144,6 +143,7 @@ perms.push({
   id:members[x].id,
   allow:[VIEW_CHANNEL,SEND_MESSAGES]});
 }
+guild.createChannel(chanName,"text",perms)
 /*
 chan.overwritePermissions(client.users.get(members[x].id), {
   VIEW_CHANNEL: true,
