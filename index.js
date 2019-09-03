@@ -126,8 +126,8 @@ UPDATES THE ROSTERS FILE
 var regex = /\[([\d\w]+)\]/g;
 if(input.startsWith(prefix+"test")){
   if(msg.author.id==234346145806155776){
-    console.log(msg.mentions)
-    var members=msg.mentions;
+    console.log(msg.mentions.users)
+    var members=msg.mentions.users;
     var guild = msg.guild
     //var members =[client.users.get('234346145806155776'),client.users.get('116901947428044809'),client.users.get('484182817010614283')]
     var chanName ="Waiting room";
