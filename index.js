@@ -129,7 +129,7 @@ if(input.startsWith(prefix+"test")){
     var guild = msg.guild
     var members =[client.users.get('234346145806155776'),client.users.get('116901947428044809'),client.users.get('484182817010614283')]
     var chanName ="Waiting room"
-console.log(guild)
+console.log(guild);
 (async()=>{
 var chan = guild.createChannel(chanName,"text");
 var waitingRoom=chan
