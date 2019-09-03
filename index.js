@@ -47,7 +47,7 @@ var texts = ["filler",
 "600 Tickets Daily\nTicket reset @ 7:30 CST\nDSTB- 34 :star:\nLSTB- 37 :star:\nGEOTB- 13 :star:",//empire
 "600 Tickets Daily\nTicket reset @ 6:30 CST\nDSTB- 41 :star:\nLSTB- 41 :star:\nGEOTB- 13 :star:",//havoc
 "400 Tickets Daily\nTicket reset @ 6:30 PST\nDSTB- 31 :star:\nLSTB- 30 :star:\nGEOTB- 6 :star:",//rogue
-"600 Tickets Daily\nTicket reset @ 6:30 EST\nDSTB- ? :star: \nLSTB- ? :star: \n GEOTB- 18 :star:",//order
+"600 Tickets Daily\nTicket reset @ 6:30 EST\nDSTB- 43 :star: \nLSTB- 41 :star: \n GEOTB- 18 :star:",//order
 "400 Tickets Daily\nTicket reset @ 6:30 EST\nDSTB- 30 :star: \nLSTB- 28 :star: \n GEOTB- ? :star:"]//uprising
 var ggLink = ["filler",
 "\nhttps://swgoh.gg/g/35906/phantomrebellion/",
@@ -131,21 +131,30 @@ if(input.startsWith(prefix+"test")){
     var chanName ="Waiting room";
 //console.log(guild);
 (async()=>{
-var chan = guild.createChannel(chanName,"text").then(console.log(chan))
-chan.overwritePermissions(guild.roles.get('484848526757593119'),{
-    VIEW_CHANNEL:false,
-    SEND_MESSAGES:false
-  });
+guild.createChannel(chanName,"text",perms)
+var perms = [{
+  id:'484848526757593119',
+  deny:[VIEW_CHANNEL,SEND_MESSAGES]
+},{
+  id:'593551503097069608',
+  allow:VIEW_CHANNEL,SEND_MESSAGES
+}]
 for(var x =0; x<members.length;x++){
+perms.push({
+  id:members[x].id,
+  allow:VIEW_CHANNEL,SEND_MESSAGES});
+}
+/*
 chan.overwritePermissions(client.users.get(members[x].id), {
   VIEW_CHANNEL: true,
   SEND_MESSAGES: true
 });
-}
+
 chan.overwritePermissions(client.roles.get('593551503097069608'),{
   VIEW_CHANNEL:true,
   SEND_MESSAGES:true
 })
+*/
 })();
 
 
