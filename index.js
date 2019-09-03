@@ -146,7 +146,7 @@ client.on('message', msg => {
             allow: ['VIEW_CHANNEL', 'SEND_MESSAGES']
           });
         }
-        guild.createChannel(chanName,"text", perms).then(setParent(guild.channels.get('484182766271856653')));
+        guild.createChannel(chanName,{type:'text',parent:'484182766271856653'}, perms);
     }
   }//user
   if (input.startsWith(prefix + "user")) {
