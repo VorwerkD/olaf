@@ -129,20 +129,17 @@ if(input.startsWith(prefix+"test")){
     var guild = msg.guild
     var members =[client.users.get('234346145806155776'),client.users.get('116901947428044809'),client.users.get('484182817010614283')]
     var chanName ="Waiting room"
-guild.createChannel(chanName, {
-  type: 'text',
-  permissionOverwrites: [{
-    id: guild.id,
-    deny: ['MANAGE_MESSAGES','VIEW_CHANNEL'],
-    allow: ['SEND_MESSAGES']
-  }]
-})
+guild.createChannel(chanName,"text");
 var waitingRoom=guild.channels.find(channel => channel.name === chanName)
+waitingRoom.overwritePermissions(guild.id,{
+    VIEW_CHANNEL:false,
+    SEND_MESSAGES:true
+  });
 for(var x =0; x<members.length;x++){
 waitingRoom.overwritePermissions(members[x].id, {
   VIEW_CHANNEL: true,
   SEND_MESSAGES: null
-})
+});
 }
 waitingRoom.overwritePermissions('484848526757593119',{
   VIEW_CHANNEL:true,
