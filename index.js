@@ -132,7 +132,7 @@ if(input.startsWith(prefix+"test")){
 //console.log(guild);
 (async()=>{
 var perms = [{
-  id:'484848526757593119',
+  id:guild.defaultRole.id,
   deny:['VIEW_CHANNEL','SEND_MESSAGES']
 },{
   id:'593551503097069608',
