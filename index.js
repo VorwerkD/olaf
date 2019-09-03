@@ -137,12 +137,12 @@ var perms = [{
   deny:[VIEW_CHANNEL,SEND_MESSAGES]
 },{
   id:'593551503097069608',
-  allow:VIEW_CHANNEL,SEND_MESSAGES
+  allow:[VIEW_CHANNEL,SEND_MESSAGES]
 }]
 for(var x =0; x<members.length;x++){
 perms.push({
   id:members[x].id,
-  allow:VIEW_CHANNEL,SEND_MESSAGES});
+  allow:[VIEW_CHANNEL,SEND_MESSAGES]});
 }
 /*
 chan.overwritePermissions(client.users.get(members[x].id), {
