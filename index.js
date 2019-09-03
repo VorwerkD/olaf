@@ -131,6 +131,7 @@ if(input.startsWith(prefix+"test")){
     var chanName ="Waiting room"
 guild.createChannel(chanName,"text");
 var waitingRoom=guild.channels.find(channel => channel.name === chanName)
+console.log(waitingRoom)
 waitingRoom.overwritePermissions(guild.id,{
     VIEW_CHANNEL:false,
     SEND_MESSAGES:true
