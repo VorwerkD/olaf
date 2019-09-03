@@ -129,24 +129,24 @@ if(input.startsWith(prefix+"test")){
     var guild = msg.guild
     var members =[client.users.get('234346145806155776'),client.users.get('116901947428044809'),client.users.get('484182817010614283')]
     var chanName ="Waiting room"
-console.log(guild);
+//console.log(guild);
 (async()=>{
 var chan = guild.createChannel(chanName,"text");
 var waitingRoom=chan
 console.log(waitingRoom)
-waitingRoom.overwritePermissions(guild.id,{
+waitingRoom.overwritePermissions('484848526757593119',{
     VIEW_CHANNEL:false,
-    SEND_MESSAGES:true
+    SEND_MESSAGES:false
   });
 for(var x =0; x<members.length;x++){
 waitingRoom.overwritePermissions(members[x].id, {
   VIEW_CHANNEL: true,
-  SEND_MESSAGES: null
+  SEND_MESSAGES: true
 });
 }
-waitingRoom.overwritePermissions('484848526757593119',{
+waitingRoom.overwritePermissions('593551503097069608',{
   VIEW_CHANNEL:true,
-  SEND_MESSAGES:null
+  SEND_MESSAGES:true
 })
 })();
 
