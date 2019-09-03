@@ -130,8 +130,8 @@ if(input.startsWith(prefix+"test")){
     var members =[client.users.get('234346145806155776'),client.users.get('116901947428044809'),client.users.get('484182817010614283')]
     var chanName ="Waiting room"
 console.log(guild)
-guild.createChannel(chanName,"text");
-var waitingRoom=guild.channels.find(channel => channel.name === chanName)
+var chan = guild.createChannel(chanName,"text");
+var waitingRoom=chan
 console.log(waitingRoom)
 waitingRoom.overwritePermissions(guild.id,{
     VIEW_CHANNEL:false,
