@@ -142,9 +142,7 @@ perms.push({
   id:members[x].id,
   allow:['VIEW_CHANNEL','SEND_MESSAGES']});
 }
-guild.createChannel(chanName,"text",perms).then(chan=>{
-  chan.setParent('618478995096469525');
-});
+guild.createChannel(chanName,{type:"text",parent:"618478995096469525"},perms);
 
 })();
 
