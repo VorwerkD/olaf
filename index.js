@@ -124,15 +124,11 @@ UPDATES THE ROSTERS FILE
 */
 //FLAG
 var regex = /\[([\d\w]+)\]/g;
-if(input.startsWith(prefix+"test")){
+if(input.startsWith(prefix+"createchan")){
   if(msg.author.id==234346145806155776){
-    //console.log(msg.mentions.members)
     var members=msg.mentions.members.array();
-    console.log(members.length)
     var guild = msg.guild
-    //var members =[client.users.get('234346145806155776'),client.users.get('116901947428044809'),client.users.get('484182817010614283')]
     var chanName ="Waiting room";
-//console.log(guild);
 (async()=>{
 var perms = [{
   id:guild.defaultRole.id,
@@ -146,18 +142,10 @@ perms.push({
   id:members[x].id,
   allow:['VIEW_CHANNEL','SEND_MESSAGES']});
 }
-guild.createChannel(chanName,"text",perms)
-/*
-chan.overwritePermissions(client.users.get(members[x].id), {
-  VIEW_CHANNEL: true,
-  SEND_MESSAGES: true
+guild.createChannel(chanName,"text",perms).then(chan=>{
+  chan.setParent('618478995096469525');
 });
 
-chan.overwritePermissions(client.roles.get('593551503097069608'),{
-  VIEW_CHANNEL:true,
-  SEND_MESSAGES:true
-})
-*/
 })();
 
 
