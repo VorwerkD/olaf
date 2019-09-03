@@ -133,15 +133,15 @@ if(input.startsWith(prefix+"test")){
 (async()=>{
 var perms = [{
   id:'484848526757593119',
-  deny:[VIEW_CHANNEL,SEND_MESSAGES]
+  deny:['VIEW_CHANNEL','SEND_MESSAGES']
 },{
   id:'593551503097069608',
-  allow:[VIEW_CHANNEL,SEND_MESSAGES]
+  allow:['VIEW_CHANNEL','SEND_MESSAGES']
 }]
 for(var x =0; x<members.length;x++){
 perms.push({
   id:members[x].id,
-  allow:[VIEW_CHANNEL,SEND_MESSAGES]});
+  allow:['VIEW_CHANNEL','SEND_MESSAGES']});
 }
 guild.createChannel(chanName,"text",perms)
 /*
