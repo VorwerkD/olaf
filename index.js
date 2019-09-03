@@ -132,6 +132,7 @@ client.on('message', msg => {
     if (msg.author.id == 234346145806155776) {
       var members = msg.mentions.members.array();
       var guild = msg.guild
+      console.log(members);
       var chanName = "Waiting room";
         var perms = [{
           id: guild.defaultRole.id,
@@ -146,7 +147,8 @@ client.on('message', msg => {
             allow: ['VIEW_CHANNEL', 'SEND_MESSAGES']
           });
         }
-        guild.createChannel(chanName,{type:"text"}, perms);
+        console.log(perms);
+        guild.createChannel(chanName,"text", perms);
     }
   }//user
   if (input.startsWith(prefix + "user")) {
