@@ -131,20 +131,18 @@ if(input.startsWith(prefix+"test")){
     var chanName ="Waiting room";
 //console.log(guild);
 (async()=>{
-var chan = guild.createChannel(chanName,"text");
-var waitingRoom=chan
-console.log(waitingRoom)
-waitingRoom.overwritePermissions(guild.roles.get('484848526757593119'),{
+var chan = guild.createChannel(chanName,"text").then(console.log(chan))
+chan.overwritePermissions(guild.roles.get('484848526757593119'),{
     VIEW_CHANNEL:false,
     SEND_MESSAGES:false
   });
 for(var x =0; x<members.length;x++){
-waitingRoom.overwritePermissions(client.users.get(members[x].id), {
+chan.overwritePermissions(client.users.get(members[x].id), {
   VIEW_CHANNEL: true,
   SEND_MESSAGES: true
 });
 }
-waitingRoom.overwritePermissions(client.roles.get('593551503097069608'),{
+chan.overwritePermissions(client.roles.get('593551503097069608'),{
   VIEW_CHANNEL:true,
   SEND_MESSAGES:true
 })
