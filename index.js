@@ -131,7 +131,7 @@ client.on('message', msg => {
   if (input.startsWith(prefix + "createchan")) {
     const authorId =msg.author.id;
     const guild =msg.guild;
-    const authorGM=guild.members.get(authorId);
+    const authorGM=guild.member.get(authorId);
     if(guild.id=='484508095469584384'){
     if(authorGM.hasPermision('MANAGE_ROLES')){
       var members = msg.mentions.members.array();
