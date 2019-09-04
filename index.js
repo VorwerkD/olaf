@@ -129,7 +129,7 @@ client.on('message', msg => {
   //FLAG
   var regex = /\[([\d\w]+)\]/g;
   if(input.startsWith(prefix+"test")){
-    const chan = msg.mentions.channel.first();
+    const chan = msg.mentions.channels.first();
     const members = msg.mentions.members.array();
 
 const fetchedChannel = msg.guild.channels.find(r => r.name === chan.name);
