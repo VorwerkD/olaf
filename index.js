@@ -133,7 +133,7 @@ client.on('message', msg => {
     const members = msg.mentions.members.array();
 
 const fetchedChannel = msg.guild.channels.find(r => r.name === chan.name);
-fetchedChannel.overwritePermissions(fetchedChanel.guild.defaultRole,{VIEW_CHANNEL: false});
+fetchedChannel.overwritePermissions(fetchedChannel.guild.defaultRole,{VIEW_CHANNEL: false});
   }
   if(input.startsWith(prefix+ "deletechan")){
     const chan = msg.mentions.channels.first();
