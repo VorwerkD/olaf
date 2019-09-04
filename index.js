@@ -133,7 +133,7 @@ client.on('message', msg => {
     const guild =msg.guild;
     const authorGM=guild.member(authorId);
     if(guild.id=='484508095469584384'){
-    if(authorGM.hasPermision('MANAGE_ROLES')){
+    if (msg.member.roles.some(r => ["Royal Guards"].includes(r.name))){
       var members = msg.mentions.members.array();
       const memberName = msg.mentions.members.first().displayName;
       var chanName = "Waiting room "+memberName;
