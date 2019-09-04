@@ -131,8 +131,9 @@ client.on('message', msg => {
   if (input.startsWith(prefix + "createchan")) {
       var members = msg.mentions.members.array();
       const memberName = msg.mentions.members.first().displayName;
+      console.log(memberName)
       var guild = msg.guild
-      var chanName = "Waiting room "+memberName;
+      var chanName = "Waiting room ";
         var perms = [{
           id: guild.defaultRole.id,
           deny: ['VIEW_CHANNEL', 'SEND_MESSAGES']
