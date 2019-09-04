@@ -130,8 +130,9 @@ client.on('message', msg => {
   var regex = /\[([\d\w]+)\]/g;
   if (input.startsWith(prefix + "createchan")) {
       var members = msg.mentions.members.array();
+      const memberName = msg.mentions.members.first();
       var guild = msg.guild
-      var chanName = "Waiting room "+msg.mentions.members.first().displayName;
+      var chanName = "Waiting room "+memberName.displayName;
         var perms = [{
           id: guild.defaultRole.id,
           deny: ['VIEW_CHANNEL', 'SEND_MESSAGES']
