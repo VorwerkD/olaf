@@ -10,13 +10,13 @@ var isUpdating;
 var isUpdated;
 client.wait = require('util').promisify(setTimeout);
 var CronJob = require('cron').CronJob;
-var commands = ["help", "ping", "flip", "lotto", "kick", "clearChat", "live", "urban", "guildnum", "console", "gg", "reset", "update", "reverse", "test", "user"];
+var commands = ["help", "ping", "flip", "lotto", "kick", "clearChat", "live", "urban", "guildnum", "console", "gg", "reset", "update", "reverse", "test", "user","createChan"];
 var commandHelp = ["You're reading it!",
   "Pongs!", "Flips a coin", "Gives you your lotto numbers- Doesn't gaurentte you win though :wink:",
   "kicks a valid user, just tag them `.kick @notVorwerk#6126` for example\nRequires Admin role",
   "Clears the current channel of messages <14 days old add a number<100 to clear - defaults to 100 `.clearChat 50` for example \nRequires Admin role",
   "check to see if the given twitch streamer is live `.live Vorwerk_D` for example", "Searches urban dictionary for a word/phrase. Attach -r for a random word",
-  "Updates the guild numbers channels", "Logs the input to the console ", "Gives the swgoh.gg link of the requested user `.gg Vorwerk17` for example", "shuts down and resets the bots login. Vorwerk only", "Manually updates the cached guilds", "Reverses your input", "A test command", "Gives information on the user"]
+  "Updates the guild numbers channels", "Logs the input to the console ", "Gives the swgoh.gg link of the requested user `.gg Vorwerk17` for example", "shuts down and resets the bots login. Vorwerk only", "Manually updates the cached guilds", "Reverses your input", "A test command", "Gives information on the user","Creates a channel for phantom recruiting; @ people to add them on creation"]
 var olafTest = '570738555773648897'//chan id
 //twitch stuffs
 var streamList = ["yautjaridley", "Vorwerk_D"]
@@ -129,7 +129,6 @@ client.on('message', msg => {
   //FLAG
   var regex = /\[([\d\w]+)\]/g;
   if (input.startsWith(prefix + "createchan")) {
-    if (msg.author.id == 234346145806155776) {
       var members = msg.mentions.members.array();
       var guild = msg.guild
       var chanName = "Waiting room";
@@ -137,7 +136,7 @@ client.on('message', msg => {
           id: guild.defaultRole.id,
           deny: ['VIEW_CHANNEL', 'SEND_MESSAGES']
         }, {
-          id: '593551503097069608',
+          id: '485783034961068042',
           allow: ['VIEW_CHANNEL', 'SEND_MESSAGES']
         }]
         for (var x = 0; x < members.length; x++) {
@@ -146,8 +145,7 @@ client.on('message', msg => {
             allow: ['VIEW_CHANNEL', 'SEND_MESSAGES']
           });
         }
-        guild.createChannel(chanName,{type:'text',parent:'484182766271856653',permissionOverwrites:perms});
-    }
+        guild.createChannel(chanName,{type:'text',parent:'485772452060987392',permissionOverwrites:perms});
   }//user
   if (input.startsWith(prefix + "user")) {
     const user = msg.author.id
