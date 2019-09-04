@@ -131,9 +131,11 @@ client.on('message', msg => {
   if(input.startsWith(prefix+"test")){
     const chan = msg.mentions.channels.first();
     const members = msg.mentions.members.array();
-
-const fetchedChannel = msg.guild.channels.find(r => r.name === chan.name);
-fetchedChannel.overwritePermissions(fetchedChannel.guild.defaultRole,{VIEW_CHANNEL: false});
+    const fetchedChannel = msg.guild.channels.find(r => r.name === chan.name);
+members.forEach(member=>{
+  fetchedChannel.overwritePermissions(member.id,{VIEW_CHANNEL: true,SEND_MESSAGES :true})
+});
+//fetchedChannel.overwritePermissions(fetchedChannel.guild.defaultRole,{VIEW_CHANNEL: false});
   }
   if(input.startsWith(prefix+ "deletechan")){
     const chan = msg.mentions.channels.first();
