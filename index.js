@@ -129,10 +129,13 @@ client.on('message', msg => {
   //FLAG
   var regex = /\[([\d\w]+)\]/g;
   if (input.startsWith(prefix + "createchan")) {
+    const authorId =msg.author.id;
+    const guild =msg.guild;
+    const authorGM=guild.members.get(authorId);
+    if(guild.id=='484508095469584384'){
+    if(authorGM.hasPermision(MANAGE_ROLES)){
       var members = msg.mentions.members.array();
       const memberName = msg.mentions.members.first().displayName;
-      console.log(memberName)
-      var guild = msg.guild
       var chanName = "Waiting room "+memberName;
         var perms = [{
           id: guild.defaultRole.id,
@@ -148,6 +151,12 @@ client.on('message', msg => {
           });
         }
         guild.createChannel(chanName,{type:'text',parent:'485772452060987392',permissionOverwrites:perms});
+    }else{
+      msg.reply("Your in the right server, but dont have the correct permissions");
+    }
+    }else{
+      msg.reply("Your not in the right server")
+    }  
   }//user
   if (input.startsWith(prefix + "user")) {
     const user = msg.author.id
