@@ -133,7 +133,7 @@ client.on('message', msg => {
       const memberName = msg.mentions.members.first().displayName;
       console.log(memberName)
       var guild = msg.guild
-      var chanName = "Waiting room ";
+      var chanName = "Waiting room "+memberName;
         var perms = [{
           id: guild.defaultRole.id,
           deny: ['VIEW_CHANNEL', 'SEND_MESSAGES']
