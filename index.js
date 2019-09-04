@@ -10,13 +10,13 @@ var isUpdating;
 var isUpdated;
 client.wait = require('util').promisify(setTimeout);
 var CronJob = require('cron').CronJob;
-var commands = ["help", "ping", "flip", "lotto", "kick", "clearChat", "live", "urban", "guildnum", "console", "gg", "reset", "update", "reverse", "test", "user","createchan","deletechan"];
+var commands = ["help", "ping", "flip", "lotto", "kick", "clearChat", "live", "urban", "guildnum", "console", "gg", "reset", "update", "reverse", "test", "user","createchan","deletechan","addtochannel"];
 var commandHelp = ["You're reading it!",
   "Pongs!", "Flips a coin", "Gives you your lotto numbers- Doesn't gaurentte you win though :wink:",
   "kicks a valid user, just tag them `.kick @notVorwerk#6126` for example\nRequires Admin role",
   "Clears the current channel of messages <14 days old add a number<100 to clear - defaults to 100 `.clearChat 50` for example \nRequires Admin role",
   "check to see if the given twitch streamer is live `.live Vorwerk_D` for example", "Searches urban dictionary for a word/phrase. Attach -r for a random word",
-  "Updates the guild numbers channels", "Logs the input to the console ", "Gives the swgoh.gg link of the requested user `.gg Vorwerk17` for example", "shuts down and resets the bots login. Vorwerk only", "Manually updates the cached guilds", "Reverses your input", "A test command", "Gives information on the user","Creates a channel for phantom recruiting; @ people to add them on creation","Deletes a channel that is mentioned"]
+  "Updates the guild numbers channels", "Logs the input to the console ", "Gives the swgoh.gg link of the requested user `.gg Vorwerk17` for example", "shuts down and resets the bots login. Vorwerk only", "Manually updates the cached guilds", "Reverses your input", "A test command", "Gives information on the user","Creates a channel for phantom recruiting; @ people to add them on creation","Deletes a channel that is mentioned","Adds tagged users to the tagged Channel `.addtochannel @vorwerk #waitingroom`"]
 var olafTest = '570738555773648897'//chan id
 //twitch stuffs
 var streamList = ["yautjaridley", "Vorwerk_D"]
@@ -128,15 +128,17 @@ client.on('message', msg => {
   */
   //FLAG
   var regex = /\[([\d\w]+)\]/g;
-  if(input.startsWith(prefix+"test")){
+  if(input.startsWith(prefix+"addtochannel")){
+    if(msg.member.roles.some(r=>["Royal Guards"].includes(r.name))){
     const chan = msg.mentions.channels.first();
     const members = msg.mentions.members.array();
     const fetchedChannel = msg.guild.channels.find(r => r.name === chan.name);
 members.forEach(member=>{
   fetchedChannel.overwritePermissions(member.id,{VIEW_CHANNEL: true,SEND_MESSAGES :true})
 });
-//fetchedChannel.overwritePermissions(fetchedChannel.guild.defaultRole,{VIEW_CHANNEL: false});
-  }
+    }else{
+      msg.reply("Sorry you do not have the correct permissions")
+    }}
   if(input.startsWith(prefix+ "deletechan")){
     const chan = msg.mentions.channels.first();
     if (msg.member.roles.some(r => ["Royal Guards"].includes(r.name))){
