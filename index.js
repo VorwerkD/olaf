@@ -138,7 +138,7 @@ client.on('message', msg => {
           id: guild.defaultRole.id,
           deny: ['VIEW_CHANNEL', 'SEND_MESSAGES']
         }, {
-          id: '485783034961068042',
+          id: '484848526757593119',
           allow: ['VIEW_CHANNEL', 'SEND_MESSAGES']
         }]
         for (var x = 0; x < members.length; x++) {
@@ -147,7 +147,7 @@ client.on('message', msg => {
             allow: ['VIEW_CHANNEL', 'SEND_MESSAGES']
           });
         }
-        guild.createChannel(chanName,{type:'text',parent:'485772452060987392',permissionOverwrites:perms});
+        guild.createChannel(chanName,{type:'text',parent:'484182766271856653',permissionOverwrites:perms});
   }//user
   if (input.startsWith(prefix + "user")) {
     const user = msg.author.id
