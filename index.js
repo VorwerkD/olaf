@@ -131,7 +131,7 @@ client.on('message', msg => {
   if(input.startsWith(prefix+ "deletechan")){
     const chan = msg.mentions.channels.first();
     if (msg.member.roles.some(r => ["Royal Guards"].includes(r.name))){
-const fetchedChannel = message.guild.channels.find(r => r.name === chan.name);
+const fetchedChannel = msg.guild.channels.find(r => r.name === chan.name);
     fetchedChannel.delete();
   }else{
     msg.reply("You do not have the correct permissions to use this!");
