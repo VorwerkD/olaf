@@ -140,10 +140,15 @@ client.on('message', msg => {
     if(msg.member.roles.some(r=>["Royal Guards"].includes(r.name))){
     const chan = msg.mentions.channels.first();
     const members = msg.mentions.members.array();
+    let outputString = "Down here!";
+  for(var x = 0; x<members.length;x++){
+    outputString +=" <@"+members[x].id+">";
+  }
     const fetchedChannel = msg.guild.channels.find(r => r.name === chan.name);
 members.forEach(member=>{
   fetchedChannel.overwritePermissions(member.id,{VIEW_CHANNEL: true,SEND_MESSAGES :true})
 });
+fetchedChannel.send(outputString);
     }else{
       msg.reply("Sorry you do not have the correct permissions")
     }}
@@ -162,6 +167,10 @@ const fetchedChannel = msg.guild.channels.find(r => r.name === chan.name);
     if(guild.id=='484508095469584384'){
     if (msg.member.roles.some(r => ["Royal Guards"].includes(r.name))){
       var members = msg.mentions.members.array();
+      let outputString = "Down here!";
+      for(var x = 0; x<members.length;x++){
+        outputString +=" <@"+members[x].id+">";
+      }
       const memberName = msg.mentions.members.first().displayName;
       var chanName = "Waiting room "+memberName;
         var perms = [{
@@ -178,6 +187,8 @@ const fetchedChannel = msg.guild.channels.find(r => r.name === chan.name);
           });
         }
         guild.createChannel(chanName,{type:'text',parent:'485772452060987392',permissionOverwrites:perms});
+        const fetchedChannel = msg.guild.channels.find(r => r.name === chan.name);
+        fetchedChannel.send(outputString);
     }else{
       msg.reply("Your in the right server, but dont have the correct permissions");
     }
