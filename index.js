@@ -38,8 +38,8 @@ const clientSecret = process.env.TWITCH_CLIENT_SECRET;
 const twitchClient = TwitchClient.withClientCredentials(clientId, clientSecret);
 //swgoh stuffs
 const ApiSwgohHelp = require('api-swgoh-help');
-var rosters = ["Name", "allyCode"]
-var names = ["Names"];
+const rosters = ["Name", "allyCode"]
+const names = ["Names"];
 var allianceUsers = [];
 var codes = [135718294, 466484534, 399663774, 618277879, 484271262, 922288553]
 var texts = ["filler",
@@ -128,6 +128,14 @@ client.on('message', msg => {
   */
   //FLAG
   var regex = /\[([\d\w]+)\]/g;
+  if(input.startsWith(prefix+"test")){
+  const members = msg.mentions.members.array();
+  let outputString = "Down here!";
+  for(var x = 0; x<members.length;x++){
+    outputString +=" <@"+members[x].id+">";
+  }
+  msg.channel.send(outputString);
+  }
   if(input.startsWith(prefix+"addtochannel")){
     if(msg.member.roles.some(r=>["Royal Guards"].includes(r.name))){
     const chan = msg.mentions.channels.first();
@@ -362,7 +370,6 @@ const fetchedChannel = msg.guild.channels.find(r => r.name === chan.name);
               name: client.user.username,
               icon_url: client.user.avatarURL
             },
-
             fields: [{
               name: JSON.word,
               value: out2
