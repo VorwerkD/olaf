@@ -188,8 +188,9 @@ const fetchedChannel = msg.guild.channels.find(r => r.name === chan.name);
         }
         (async () => {
       const fetchedChannel = guild.createChannel(chanName,{type:'text',parent:'485772452060987392',permissionOverwrites:perms});
+      fetchedChannel.send(outputString);
         })();
-        fetchedChannel.send(outputString);
+        
     }else{
       msg.reply("Your in the right server, but dont have the correct permissions");
     }
