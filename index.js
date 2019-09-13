@@ -149,6 +149,7 @@ members.forEach(member=>{
   fetchedChannel.overwritePermissions(member.id,{VIEW_CHANNEL: true,SEND_MESSAGES :true})
 });
 fetchedChannel.send(outputString);
+client.channels.get('485932045860732932').send(msg.author.username+" is adding members to "+chan.name);
     }else{
       msg.reply("Sorry you do not have the correct permissions")
     }}
@@ -157,7 +158,7 @@ fetchedChannel.send(outputString);
     if (msg.member.roles.some(r => ["Royal Guards"].includes(r.name))){
 const fetchedChannel = msg.guild.channels.find(r => r.name === chan.name);
     fetchedChannel.delete();
-    const recruitDiscussion = client.channels.get('485932045860732932').send(msg.author.username+" is deleting "+chan.name);
+    client.channels.get('485932045860732932').send(msg.author.username+" is deleting "+chan.name);
   }else{
     msg.reply("You do not have the correct permissions to use this!");
   }
@@ -190,6 +191,7 @@ const fetchedChannel = msg.guild.channels.find(r => r.name === chan.name);
         (async () => {
       let fetchedChannel = await guild.createChannel(chanName,{type:'text',parent:'485772452060987392',permissionOverwrites:perms});
       fetchedChannel.send(outputString);
+      client.channels.get('485932045860732932').send(msg.author.username+" is creating "+chanName);
         })();
         
     }else{
