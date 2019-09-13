@@ -157,6 +157,7 @@ fetchedChannel.send(outputString);
     if (msg.member.roles.some(r => ["Royal Guards"].includes(r.name))){
 const fetchedChannel = msg.guild.channels.find(r => r.name === chan.name);
     fetchedChannel.delete();
+    const recruitDiscussion = client.channels.get('485932045860732932').send(msg.author.username+" is deleting "+chan.name);
   }else{
     msg.reply("You do not have the correct permissions to use this!");
   }
