@@ -43,12 +43,12 @@ const names = ["Names"];
 var allianceUsers = [];
 var codes = [135718294, 466484534, 399663774, 618277879, 484271262, 922288553]
 var texts = ["filler",
-  "600 Tickets Daily\nTicket reset @ 6:30 PST\nDSTB- 45 :star:\nLSTB- 41 :star:\nGEOTB- 18 :star:",//rebellion
-  "600 Tickets Daily\nTicket reset @ 7:30 CST\nDSTB- 34 :star:\nLSTB- 37 :star:\nGEOTB- 13 :star:",//empire
-  "600 Tickets Daily\nTicket reset @ 6:30 CST\nDSTB- 41 :star:\nLSTB- 41 :star:\nGEOTB- 13 :star:",//havoc
-  "400 Tickets Daily\nTicket reset @ 6:30 PST\nDSTB- 31 :star:\nLSTB- 30 :star:\nGEOTB- 6 :star:",//rogue
-  "600 Tickets Daily\nTicket reset @ 6:30 EST\nDSTB- 43 :star: \nLSTB- 41 :star: \n GEOTB- 18 :star:",//order
-  "400 Tickets Daily\nTicket reset @ 6:30 EST\nDSTB- 30 :star: \nLSTB- 28 :star: \n GEOTB- ? :star:"]//uprising
+  "Led by <@386283126437183500>\n600 Tickets Daily\nTicket reset @ 6:30 PST\nDSTB- 45 :star:\nLSTB- 44 :star:\nGEOTB- 18 :star:\nHSTR: Launch at noon PST, 24 hr join\nHAAT: Launch at 8 pm PST, 23 hr join\nHPIT:Simmed",//rebellion
+  "Led by <@375883958405038091>\n600 Tickets Daily\nTicket reset @ 7:30 CST\nDSTB- 34 :star:\nLSTB- 37 :star:\nGEOTB- 13 :star:\nHSTR: Launch at 8pm CST, 22 hr join\nHAAT: Launch at 8pm CST, 24 hr join\nHPIT:Simmed",//empire
+  "Led by <@393192098758787073>\n600 Tickets Daily\nTicket reset @ 6:30 CST\nDSTB- 41 :star:\nLSTB- 41 :star:\nGEOTB- 13 :star:",//havoc
+  "Led by <@414535355354578949>\n400 Tickets Daily\nTicket reset @ 6:30 PST\nDSTB- 31 :star:\nLSTB- 30 :star:\nGEOTB- 6 :star:\nHAAT: Launch at 7pm PST, 24 hour join\nHPIT: 6pm PST, 24 hr join",//rogue
+  "Led by <@561197891310321674>\n600 Tickets Daily\nTicket reset @ 6:30 EST\nDSTB- 43 :star: \nLSTB- 42 :star: \n GEOTB- 18 :star:",//order
+  "Led by <@536922224511156225>\n400 Tickets Daily\nTicket reset @ 6:30 EST\nDSTB- 30 :star: \nLSTB- 28 :star: \n GEOTB- ? :star:\nHAAT: 8pm est, 24 hr join\nHPIT: 7pm est, 24 hr join"]//uprising
 var ggLink = ["filler",
   "\nhttps://swgoh.gg/g/35906/phantomrebellion/",
   "\nhttps://swgoh.gg/g/51323/phantomempire/",
