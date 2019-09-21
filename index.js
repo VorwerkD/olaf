@@ -46,7 +46,7 @@ var texts = ["filler",
   "Led by <@386283126437183500>\n600 Tickets Daily\nTicket reset @ 6:30 PST\nDSTB- 45 :star:\nLSTB- 44 :star:\nGEOTB- 18 :star:\nHSTR: Launch at noon PST, 24 hr join\nHAAT: Launch at 8 pm PST, 23 hr join\nHPIT:Simmed",//rebellion
   "Led by <@375883958405038091>\n600 Tickets Daily\nTicket reset @ 7:30 CST\nDSTB- 34 :star:\nLSTB- 37 :star:\nGEOTB- 13 :star:\nHSTR: Launch at 8pm CST, 22 hr join\nHAAT: Launch at 8pm CST, 24 hr join\nHPIT:Simmed",//empire
   "Led by <@393192098758787073>\n600 Tickets Daily\nTicket reset @ 6:30 CST\nDSTB- 41 :star:\nLSTB- 41 :star:\nGEOTB- 13 :star:",//havoc
-  "Led by <@414535355354578949>\n400 Tickets Daily\nTicket reset @ 6:30 PST\nDSTB- 31 :star:\nLSTB- 30 :star:\nGEOTB- 6 :star:\nHAAT: Launch at 7pm PST, 24 hour join\nHPIT: 6pm PST, 24 hr join",//rogue
+  "Led by <@414535355354578949>\n400 Tickets Daily\nTicket reset @ 6:30 PST\nDSTB- 31 :star:\nLSTB- 30 :star:\nGEOTB- 6 :star:\nHAAT: Launch at 7pm PST, 24 hour join\nHPIT: 6pm PST, 24 hr join\nHSTR: 8pm PST, 24 hr join (weekends only)",//rogue
   "Led by <@561197891310321674>\n600 Tickets Daily\nTicket reset @ 6:30 EST\nDSTB- 43 :star: \nLSTB- 42 :star: \n GEOTB- 18 :star:",//order
   "Led by <@536922224511156225>\n400 Tickets Daily\nTicket reset @ 6:30 EST\nDSTB- 30 :star: \nLSTB- 28 :star: \n GEOTB- ? :star:\nHAAT: 8pm est, 24 hr join\nHPIT: 7pm est, 24 hr join"]//uprising
 var ggLink = ["filler",
@@ -565,10 +565,10 @@ function guildNum() {
       }
       client.channels.get('485246576751673354').fetchMessage(mainChans[x]).then((msg) => {
         // Resolve promise
-        msg.edit(result[0].name + " -\n" + result[0].members + "/50 " + roundGp + "mil gp\n" + texts[x] + "\nHSTR:" + hstrCheck + ggLink[x] + "\nUpdated on " + dateString)
+        msg.edit(result[0].name + " -\n" + result[0].members + "/50 " + roundGp + "mil gp\n" + texts[x]  + ggLink[x] + "\nUpdated on " + dateString)
       });
       client.channels.get('595255366644924440').fetchMessage(recruitChans[x]).then((msg) => { // Resolve promise
-        msg.edit(result[0].name + " -\n" + result[0].members + "/50 " + roundGp + "mil gp\n" + texts[x] + "\nHSTR:" + hstrCheck + ggLink[x] + "\nUpdated on " + dateString)
+        msg.edit(result[0].name + " -\n" + result[0].members + "/50 " + roundGp + "mil gp\n" + texts[x] + ggLink[x] + "\nUpdated on " + dateString)
       });
       x += 1;
     }
