@@ -130,14 +130,13 @@ client.on('message', msg => {
   var regex = /\[([\d\w]+)\]/g;
   if(input.startsWith(prefix+"test")){
   (async () => {
-    for (x; x < codes.length;) {
       let payload = {
         allycode: '551875276',
         language: 'eng_us'
       }
       let { result, error, warning } = await swapi.fetchGuild(payload);
-      console.log(result)
-    }
+      console.log(result[0])
+    
   })();
   }
   if(input.startsWith(prefix+"addtochannel")){
