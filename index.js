@@ -134,12 +134,10 @@ client.on('message', msg => {
         allycode: '551875276',
         language: 'eng_us'
       }
-      let { result, error, warning } = await swapi.fetchGuild(payload);
+      let { result, error, warning } = await swapi.fetchPlayer(payload);
       console.log(result[0])
-      console.log("=======")
-      let { result2, error2, warning2 } = await swapi.fetchUnits(payload);
-      console.log(result2)
-    
+      console.log("=====")
+      console.log(result)   
   })();
   }
   if(input.startsWith(prefix+"addtochannel")){
