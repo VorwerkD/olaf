@@ -129,12 +129,16 @@ client.on('message', msg => {
   //FLAG
   var regex = /\[([\d\w]+)\]/g;
   if(input.startsWith(prefix+"test")){
-  const members = msg.mentions.members.array();
-  let outputString = "Down here!";
-  for(var x = 0; x<members.length;x++){
-    outputString +=" <@"+members[x].id+">";
-  }
-  msg.channel.send(outputString);
+  (async () => {
+    for (x; x < codes.length;) {
+      let payload = {
+        allycode: '551875276',
+        language: 'eng_us'
+      }
+      let { result, error, warning } = await swapi.fetchGuild(payload);
+      console.log(result)
+    }
+  })();
   }
   if(input.startsWith(prefix+"addtochannel")){
     if(msg.member.roles.some(r=>["Royal Guards"].includes(r.name))){
