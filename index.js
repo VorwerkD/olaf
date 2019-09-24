@@ -136,6 +136,9 @@ client.on('message', msg => {
       }
       let { result, error, warning } = await swapi.fetchGuild(payload);
       console.log(result[0])
+      console.log("=======")
+      let { result2, error, warning } = await swapi.fetchPlayer(payload);
+      console.log(result2[0])
     
   })();
   }
