@@ -478,7 +478,7 @@ client.login(token);
 //CRON JOBS
 
 //empire
-new CronJob('0 30 19 * * *', function() {
+new CronJob('0 30 18 * * *', function() {
 
   client.channels.get('485184288795656238').send("<@&485169730097774612> 1 hour to tickets! Thank you :smiley: ").catch(function(error) {
     client.users.get('234346145806155776').send(error);
@@ -486,7 +486,7 @@ new CronJob('0 30 19 * * *', function() {
 
 }, null, true, 'America/New_York');
 //phantom
-new CronJob('0 30 20 * * *', function() {
+new CronJob('0 30 19 * * *', function() {
 
   client.channels.get('483784255030296589').send("<@&483620584861859850> 1 hour to tickets! Thank you :smiley: ").catch(function(error) {
     client.users.get('234346145806155776').send(error);
