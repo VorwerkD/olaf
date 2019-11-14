@@ -130,14 +130,7 @@ client.on('message', msg => {
   //FLAG
   var regex = /\[([\d\w]+)\]/g;
   if(input.startsWith(prefix+"test")){
-  (async () => {
-      let payload = {
-        allycode: '551875276',
-        language: 'eng_us'
-      }
-      let { result, error, warning } = await swapi.fetchPlayer(payload);
-      console.log(result[0]) 
-  })();
+ msg.channel.reply(":miraSleep:");
   }
   if(input.startsWith(prefix+"addtochannel")){
     if(msg.member.roles.some(r=>["Royal Guards"].includes(r.name))){
