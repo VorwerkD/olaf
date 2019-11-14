@@ -130,7 +130,7 @@ client.on('message', msg => {
   //FLAG
   var regex = /\[([\d\w]+)\]/g;
   if(input.startsWith(prefix+"test")){
- msg.channel.send("<:DD:644573033188818966>");
+ msg.channel.send("<:DD:643666169965969419>");
   }
   if(input.startsWith(prefix+"addtochannel")){
     if(msg.member.roles.some(r=>["Royal Guards"].includes(r.name))){
