@@ -42,7 +42,7 @@ const ApiSwgohHelp = require('api-swgoh-help');
 const rosters = ["Name", "allyCode"]
 const names = ["Names"];
 var allianceUsers = [];
-var codes = [135718294, 466484534, 399663774, 618277879, 484271262, 922288553]
+var codes = [135718294, 418877148, 399663774, 618277879, 484271262, 922288553]
 var texts = ["filler",
   "Led by <@386283126437183500>\n600 Tickets Daily\nTicket reset @ 5:30 PST\nDSTB- 45 :star:\nLSTB- 44 :star:\nGEOTB- 20 :star:\nHSTR: Launch at noon PST, 24 hr join\nHAAT: Launch at 8pm PST, 23 hr join\nHPIT:Simmed",//rebellion
   "Led by <@375883958405038091>\n600 Tickets Daily\nTicket reset @ 6:30 CST\nDSTB- 43 :star:\nLSTB- 37 :star:\nGEOTB- 14 :star:\nHSTR: Launch at 8pm CST, 22 hr join\nHAAT: Launch at 8pm CST, 24 hr join\nHPIT:Simmed",//empire
