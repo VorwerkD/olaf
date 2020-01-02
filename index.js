@@ -47,9 +47,9 @@ var texts = ["filler",
   "Led by <@386283126437183500>\n600 Tickets Daily\nTicket reset @ 5:30 PST\nDS HOTH- 45 :star:\nLS HOTH- 44 :star:\nDS GEO- 20 :star:\nLS GEO- ?? :star:\nHSTR: Launch at noon PST, 24 hr join\nHAAT: Launch at 8pm PST, 23 hr join\nHPIT:Simmed",//rebellion
   "Led by <@375883958405038091>\n600 Tickets Daily\nTicket reset @ 6:30 CST\nDS HOTH- 43 :star:\nLS HOTH- 37 :star:\nDS GEO- 14 :star:\nLS GEO- 7 :star:\nHSTR: Launch at 8pm CST, 22 hr join\nHAAT: Launch at 8pm CST, 24 hr join\nHPIT:Simmed",//empire
   "Led by <@393192098758787073>\n600 Tickets Daily\nTicket reset @ 5:30 CST\nDS HOTH- 41 :star:\nLS HOTH- 41 :star:\nDS GEO- 18 :star:\nLS GEO- ?? :star:",//havoc
-  "Led by <@414535355354578949>\n400 Tickets Daily\nTicket reset @ 5:30 PST\nDS HOTH- 33 :star:\nLS HOTH- 30 :star:\nDS GEO- 9 :star:\nLS GEO- ?? :star:\nHAAT: Launch at 7pm PST, 24 hour join\nHPIT: 6pm PST, 24 hr join\nHSTR: 7pm PST, 24 hr join",//rogue
-  "Led by <@561197891310321674>\n600 Tickets Daily\nTicket reset @ 5:30 EST\nDS HOTH- 44 :star: \nLS HOTH- 43 :star: \n DS GEO- 19 :star:\nLS GEO- ?? :star:\nHSTR: Launch at 7pm EST, 24 hr join\nHAAT: Launch at 9pm EST, 24 hr join\nHPIT:Launch at 6pm EST",//order
-  "Led by <@536922224511156225>\n450 Tickets Daily\nTicket reset @ 5:30 EST\nDS HOTH- 37 :star: \nLS HOTH- 34 :star: \n DS GEO- ? :star:\nLS GEO- ?? :star:\nHAAT: 8pm est, 24 hr join\nHPIT: 7pm est, 24 hr join\nHSTR:Launch at 9pm EST, 24 hour join"]//uprising
+  "Led by <@414535355354578949>\n400 Tickets Daily\nTicket reset @ 5:30 PST\nDS HOTH- 33 :star:\nLS HOTH- 36 :star:\nDS GEO- 9 :star:\nLS GEO- ?? :star:\nHAAT: Launch at 7pm PST, 24 hour join\nHPIT: 6pm PST, 24 hr join\nHSTR: 7pm PST, 24 hr join",//rogue
+  "Led by <@561197891310321674>\n600 Tickets Daily\nTicket reset @ 5:30 EST\nDS HOTH- 44 :star: \nLS HOTH- 43 :star: \nDS GEO- 19 :star:\nLS GEO- ?? :star:\nHSTR: Launch at 7pm EST, 24 hr join\nHAAT: Launch at 9pm EST, 24 hr join\nHPIT:Launch at 6pm EST",//order
+  "Led by <@536922224511156225>\n450 Tickets Daily\nTicket reset @ 5:30 EST\nDS HOTH- 37 :star: \nLS HOTH- 34 :star: \nDS GEO- ? :star:\nLS GEO- ?? :star:\nHAAT: 8pm est, 24 hr join\nHPIT: 7pm est, 24 hr join\nHSTR:Launch at 9pm EST, 24 hour join"]//uprising
 var ggLink = ["filler",
   "\nhttps://swgoh.gg/g/35906/phantomrebellion/",
   "\nhttps://swgoh.gg/g/51323/phantomempire/",
