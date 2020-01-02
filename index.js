@@ -44,7 +44,7 @@ const names = ["Names"];
 var allianceUsers = [];
 var codes = [135718294, 418877148, 399663774, 618277879, 484271262, 193382128]
 var texts = ["filler",
-  "Led by <@386283126437183500>\n600 Tickets Daily\nTicket reset @ 5:30 PST\nDS HOTH- 45 :star:\nLS HOTH- 44 :star:\nDS GEO- 20 :star:\nLS GEO- ?? :star:\nHSTR: Launch at noon PST, 24 hr join\nHAAT: Launch at 8pm PST, 23 hr join\nHPIT:Simmed",//rebellion
+  "Led by <@386283126437183500>\n600 Tickets Daily\nTicket reset @ 5:30 PST\nDS HOTH- 45 :star:\nLS HOTH- 44 :star:\nDS GEO- 20 :star:\nLS GEO- 8 :star:\nHSTR: Launch at noon PST, 24 hr join\nHAAT: Launch at 8pm PST, 23 hr join\nHPIT:Simmed",//rebellion
   "Led by <@375883958405038091>\n600 Tickets Daily\nTicket reset @ 6:30 CST\nDS HOTH- 43 :star:\nLS HOTH- 37 :star:\nDS GEO- 14 :star:\nLS GEO- 7 :star:\nHSTR: Launch at 8pm CST, 22 hr join\nHAAT: Launch at 8pm CST, 24 hr join\nHPIT:Simmed",//empire
   "Led by <@393192098758787073>\n600 Tickets Daily\nTicket reset @ 5:30 CST\nDS HOTH- 41 :star:\nLS HOTH- 41 :star:\nDS GEO- 18 :star:\nLS GEO- ?? :star:",//havoc
   "Led by <@414535355354578949>\n400 Tickets Daily\nTicket reset @ 5:30 PST\nDS HOTH- 33 :star:\nLS HOTH- 36 :star:\nDS GEO- 9 :star:\nLS GEO- ?? :star:\nHAAT: Launch at 7pm PST, 24 hour join\nHPIT: 6pm PST, 24 hr join\nHSTR: 7pm PST, 24 hr join",//rogue
