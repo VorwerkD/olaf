@@ -11,13 +11,13 @@ var isUpdating;
 var isUpdated;
 client.wait = require('util').promisify(setTimeout);
 var CronJob = require('cron').CronJob;
-var commands = ["help", "ping", "flip", "lotto", "kick", "clearChat", "live", "urban", "guildnum", "console", "gg", "reset", "update", "reverse", "test", "user","createchannel","deletechannel","addtochannel"];
+var commands = ["help", "ping", "flip", "lotto", "kick", "clearChat", "live", "urban", "guildnum", "console",  "reset", "reverse", "test", "user","update","gg","createchannel","deletechannel","addtochannel"];
 var commandHelp = ["You're reading it!",
   "Pongs!", "Flips a coin", "Gives you your lotto numbers- Doesn't gaurentte you win though :wink:",
   "kicks a valid user, just tag them `.kick @notVorwerk#6126` for example\nRequires Admin role",
   "Clears the current channel of messages <14 days old add a number<100 to clear - defaults to 100 `.clearChat 50` for example \nRequires Admin role",
   "check to see if the given twitch streamer is live `.live Vorwerk_D` for example", "Searches urban dictionary for a word/phrase. Attach -r for a random word",
-  "Updates the guild numbers channels", "Logs the input to the console ", "Gives the swgoh.gg link of the requested user `.gg Vorwerk17` for example", "shuts down and resets the bots login. Vorwerk only", "Manually updates the cached guilds", "Reverses your input", "A test command", "Gives information on the user","Creates a channel for phantom recruiting; @ people to add them on creation","Deletes a channel that is mentioned","Adds tagged users to the tagged Channel"]
+  "Updates the guild numbers channels", "Logs the input to the console ",  "shuts down and resets the bots login. Vorwerk only", "Reverses your input", "A test command", "Gives information on the user", "Manually updates the cached guilds","Gives the swgoh.gg link of the requested user `.gg Vorwerk17` for example","Creates a channel for phantom recruiting; @ people to add them on creation","Deletes a channel that is mentioned","Adds tagged users to the tagged Channel"]
 var olafTest = '570738555773648897'//chan id
 //twitch stuffs
 var streamList = ["yautjaridley", "Vorwerk_D"]
@@ -44,11 +44,11 @@ const names = ["Names"];
 var allianceUsers = [];
 var codes = [135718294, 418877148, 399663774, 618277879, 484271262, 193382128]
 var texts = ["filler",
-  "Led by <@386283126437183500>\n600 Tickets Daily\nTicket reset @ 5:30 PST\nDS HOTH- 45 :star:\nLS HOTH- 44 :star:\nDS GEO- 20 :star:\nLS GEO- 8 :star:\nHSTR: Launch at noon PST, 24 hr join\nHAAT: Launch at 8pm PST, 23 hr join\nHPIT:Simmed",//rebellion
-  "Led by <@375883958405038091>\n600 Tickets Daily\nTicket reset @ 6:30 CST\nDS HOTH- 43 :star:\nLS HOTH- 37 :star:\nDS GEO- 14 :star:\nLS GEO- 7 :star:\nHSTR: Launch at 8pm CST, 22 hr join\nHAAT: Launch at 8pm CST, 24 hr join\nHPIT:Simmed",//empire
-  "Led by <@393192098758787073>\n600 Tickets Daily\nTicket reset @ 5:30 CST\nDS HOTH- 41 :star:\nLS HOTH- 41 :star:\nDS GEO- 18 :star:\nLS GEO- ?? :star:",//havoc
-  "Led by <@414535355354578949>\n400 Tickets Daily\nTicket reset @ 5:30 PST\nDS HOTH- 33 :star:\nLS HOTH- 36 :star:\nDS GEO- 9 :star:\nLS GEO- ?? :star:\nHAAT: Launch at 7pm PST, 24 hour join\nHPIT: 6pm PST, 24 hr join\nHSTR: 7pm PST, 24 hr join",//rogue
-  "Led by <@561197891310321674>\n600 Tickets Daily\nTicket reset @ 5:30 EST\nDS HOTH- 44 :star: \nLS HOTH- 43 :star: \nDS GEO- 19 :star:\nLS GEO- ?? :star:\nHSTR: Launch at 7pm EST, 24 hr join\nHAAT: Launch at 9pm EST, 24 hr join\nHPIT:Launch at 6pm EST",//order
+  "Led by <@386283126437183500>\n600 Tickets Daily\nTicket reset @ 5:30 PST\nDS HOTH- 45 :star:\nLS HOTH- 44 :star:\nDS GEO- 20 :star:\nLS GEO- 21 :star:\nHSTR: Launch at noon PST, 24 hr join\nHAAT: Launch at 8pm PST, 23 hr join\nHPIT:Simmed",//rebellion
+  "Led by <@375883958405038091>\n600 Tickets Daily\nTicket reset @ 6:30 CST\nDS HOTH- 43 :star:\nLS HOTH- 37 :star:\nDS GEO- 18 :star:\nLS GEO- 7 :star:\nHSTR: Launch at 8pm CST, 22 hr join\nHAAT: Launch at 8pm CST, 24 hr join\nHPIT:Simmed",//empire
+  "Led by <@393192098758787073>\n600 Tickets Daily\nTicket reset @ 5:30 CST\nDS HOTH- 41 :star:\nLS HOTH- 41 :star:\nDS GEO- 20 :star:\nLS GEO- ?? :star:",//havoc
+  "Led by <@414535355354578949>\n400 Tickets Daily\nTicket reset @ 5:30 PST\nDS HOTH- 33 :star:\nLS HOTH- 36 :star:\nDS GEO- 12 :star:\nLS GEO- ?? :star:\nHAAT: Launch at 7pm PST, 24 hour join\nHPIT: 6pm PST, 24 hr join\nHSTR: 7pm PST, 24 hr join",//rogue
+  "Led by <@561197891310321674>\n600 Tickets Daily\nTicket reset @ 5:30 EST\nDS HOTH- 44 :star: \nLS HOTH- 43 :star: \nDS GEO- 21 :star:\nLS GEO- ?? :star:\nHSTR: Launch at 7pm EST, 24 hr join\nHAAT: Launch at 9pm EST, 24 hr join\nHPIT:Launch at 6pm EST",//order
   "Led by <@536922224511156225>\n450 Tickets Daily\nTicket reset @ 5:30 EST\nDS HOTH- 37 :star: \nLS HOTH- 34 :star: \nDS GEO- ? :star:\nLS GEO- ?? :star:\nHAAT: 8pm est, 24 hr join\nHPIT: 7pm est, 24 hr join\nHSTR:Launch at 9pm EST, 24 hour join"]//uprising
 var ggLink = ["filler",
   "\nhttps://swgoh.gg/g/35906/phantomrebellion/",
@@ -442,10 +442,21 @@ const fetchedChannel = msg.guild.channels.find(r => r.name === chan.name);
       .setThumbnail(msg.author.avatarURL)
       .setTimestamp()
     //.setURL("https://discord.js.org/#/docs/main/indev/class/RichEmbed")
-    for (var x = 0; x < commands.length; x++) {
-      embed.addField(commands[x],
+    /*["You're reading it!",
+  "Pongs!", "Flips a coin", "Gives you your lotto numbers- Doesn't gaurentte you win though :wink:",
+  "kicks a valid user, just tag them `.kick @notVorwerk#6126` for example\nRequires Admin role",
+  "Clears the current channel of messages <14 days old add a number<100 to clear - defaults to 100 `.clearChat 50` for example \nRequires Admin role",
+  "check to see if the given twitch streamer is live `.live Vorwerk_D` for example", "Searches urban dictionary for a word/phrase. Attach -r for a random word",
+  "Updates the guild numbers channels", "Logs the input to the console ",  "shuts down and resets the bots login. Vorwerk only", "Reverses your input", "A test command", "Gives information on the user", "Manually updates the cached guilds","Gives the swgoh.gg link of the requested user `.gg Vorwerk17` for example","Creates a channel for phantom recruiting; @ people to add them on creation","Deletes a channel that is mentioned","Adds tagged users to the tagged Channel"]
+
+  embed.addField(commands[x],
         commandHelp[x])
-    }
+  */
+    
+      embed.addField("General",
+        "Help : You're reading it!\nPing : Pongs!\nFlip : Flips a coin!\nLotto : Gives you your lotto numbers- Doesn't gaurentte you win though :wink:\nUrban : Searches urban dictionary for a word/phrase. Attach -r for a random word\nReverse : Reverses your input\nLive : Check to see if the given twitch streamer is live `.live Vorwerk_D` for example\nUser : 
+  "Updates the guild numbers channels", "Logs the input to the console ",  "shuts down and resets the bots login. Vorwerk only", "Reverses your input", "A test command", "Gives information on the user")
+    
     embed.addField("Join Vorwerk's Server at:", " https://discord.gg/GUKXv7j")
     embed.addField("Invite this bot to other servers with:", "https://discordapp.com/oauth2/authorize?&client_id=523260461932740620&scope=bot&permissions=93250!")
     msg.channel.send({ embed });
