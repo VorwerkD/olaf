@@ -454,12 +454,12 @@ const fetchedChannel = msg.guild.channels.find(r => r.name === chan.name);
   */
     
       embed.addField("General",
-        "Help : You're reading it!\nPing : Pongs!\nFlip : Flips a coin!\nLotto : Gives you your lotto numbers- Doesn't gaurentte you win though :wink:\nUrban : Searches urban dictionary for a word/phrase. Attach -r for a random word\nReverse : Reverses your input\nLive : Check to see if the given twitch streamer is live `.live Vorwerk_D` for example\nUser : Gives information on the user",false)
+        "Help : You're reading it!\nPing : Pongs!\nFlip : Flips a coin!\nLotto : Gives you your lotto numbers- Doesn't gaurentte you win though :wink:\nUrban : Searches urban dictionary for a word/phrase. Attach -r for a random word\nReverse : Reverses your input\nLive : Check to see if the given twitch streamer is live `.live Vorwerk_D` for example\nUser : Gives information on the user",true)
         embed.addField("Moderation - Requires admin role",
-        "Kick : kicks a valid user, just tag them `.kick @notVorwerk#6126` for example\nRequires Admin role\nClearChat : Clears the current channel of messages <14 days old add a number<100 to clear - defaults to 100 `.clearChat 50` for example",false)
-        embed.addField("SWGOH","GuildNum : Updates the guild numbers channels\nUpdate : Manually updates the cached guilds\nGG : Gives the swgoh.gg link of the requested user `.gg Vorwerk17` for example\nCreateChan : Creates a channel for phantom recruiting; @ people to add them on creation\nDeleteChan : Deletes a channel that is mentioned\nAddToChan : Adds tagged users to the tagged Channel",false)
+        "Kick : kicks a valid user, just tag them `.kick @notVorwerk#6126` for example\nRequires Admin role\nClearChat : Clears the current channel of messages <14 days old add a number<100 to clear - defaults to 100 `.clearChat 50` for example",true)
+        embed.addField("SWGOH","GuildNum : Updates the guild numbers channels\nUpdate : Manually updates the cached guilds\nGG : Gives the swgoh.gg link of the requested user `.gg Vorwerk17` for example\nCreateChan : Creates a channel for phantom recruiting; @ people to add them on creation\nDeleteChan : Deletes a channel that is mentioned\nAddToChan : Adds tagged users to the tagged Channel",true)
         if(msg.author.id == 234346145806155776){
-        embed.addField("Bot Admin","Console : Logs the input to the console\nReset : resets the bots login\nTest : a test command",false)
+        embed.addField("Bot Admin","Console : Logs the input to the console\nReset : resets the bots login\nTest : a test command",true)
         }
     embed.addField("Join Vorwerk's Server at:", " https://discord.gg/GUKXv7j")
     embed.addField("Invite this bot to other servers with:", "https://discordapp.com/oauth2/authorize?&client_id=523260461932740620&scope=bot&permissions=93250!")
