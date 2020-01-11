@@ -454,8 +454,7 @@ const fetchedChannel = msg.guild.channels.find(r => r.name === chan.name);
   */
     
       embed.addField("General",
-        "Help : You're reading it!\nPing : Pongs!\nFlip : Flips a coin!\nLotto : Gives you your lotto numbers- Doesn't gaurentte you win though :wink:\nUrban : Searches urban dictionary for a word/phrase. Attach -r for a random word\nReverse : Reverses your input\nLive : Check to see if the given twitch streamer is live `.live Vorwerk_D` for example\nUser : 
-  "Updates the guild numbers channels", "Logs the input to the console ",  "shuts down and resets the bots login. Vorwerk only", "Reverses your input", "A test command", "Gives information on the user")
+        "Help : You're reading it!\nPing : Pongs!\nFlip : Flips a coin!\nLotto : Gives you your lotto numbers- Doesn't gaurentte you win though :wink:\nUrban : Searches urban dictionary for a word/phrase. Attach -r for a random word\nReverse : Reverses your input\nLive : Check to see if the given twitch streamer is live `.live Vorwerk_D` for example\nUser : Gives information on the user")
     
     embed.addField("Join Vorwerk's Server at:", " https://discord.gg/GUKXv7j")
     embed.addField("Invite this bot to other servers with:", "https://discordapp.com/oauth2/authorize?&client_id=523260461932740620&scope=bot&permissions=93250!")
