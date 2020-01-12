@@ -447,7 +447,7 @@ const fetchedChannel = msg.guild.channels.find(r => r.name === chan.name);
       embed.addField("General",
         "**Help** : You're reading it!\n**Ping** : Pongs!\n**Flip** : Flips a coin!\n**Lotto** : Gives you your lotto numbers- Doesn't gaurentte you win though :wink:\n**Urban** : Searches urban dictionary for a word/phrase. Attach -r for a random word\n**Reverse** : Reverses your input\n**Live** : Check to see if the given twitch streamer is live\n**User** : Gives information on the user",true)
         embed.addField("Moderation - Requires admin role",
-        "**Kick** : kicks a valid user, just tag them\n**ClearChat** : Clears the current channel of messages ",true)
+        "**Kick** : `kicks a valid user, just tag them`\n**ClearChat** : `Clears the current channel of messages`",true)
         embed.addField("SWGOH","**GuildNum** : Updates the guild numbers channels\n**Update** : Manually updates the cached guilds\n**GG** : Gives the swgoh.gg link of the requested user\n**CreateChan** : Creates a channel for phantom recruiting; @ people to add them on creation\n**DeleteChan** : Deletes a channel that is mentioned\n**AddToChan** : Adds tagged users to the tagged Channel",true)
         if(msg.author.id == 234346145806155776){
         embed.addField("Bot Admin","**Console** : Logs the input to the console\n**Reset** : resets the bots login\n**Test** : a test command",true)
