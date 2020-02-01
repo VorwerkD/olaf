@@ -5,6 +5,21 @@ const client = new Discord.Client();
 const FuzzySet = require('fuzzyset.js');
 const token = process.env.DISCORD_BOT_SECRET;
 var urban = require('urban');
+const { Client } = require('pg');
+
+const client = new Client({
+  connectionString: process.env.DATABASE_URL,
+  ssl: true,
+});
+client.connect();
+
+client.query('SELECT table_schema,table_name FROM information_schema.tables;', (err, res) => {
+  if (err) throw err;
+  for (let row of res.rows) {
+    console.log(JSON.stringify(row));
+  }
+  client.end();
+});
 var prefix = "."
 const fs = require('fs');
 var isUpdating;
