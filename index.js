@@ -552,7 +552,7 @@ function guildNum() {
       }//
       let { result, error, warning } = await swapi.fetchGuild(payload);
       console.log(result);
-      console.log(result.roster[0]);
+      console.log(result.roster);
       var guildGp = result[0].gp / 1000000
       var roundGp = guildGp.toFixed(1)
       
