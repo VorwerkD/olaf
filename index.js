@@ -6,7 +6,7 @@ const FuzzySet = require('fuzzyset.js');
 const token = process.env.DISCORD_BOT_SECRET;
 var urban = require('urban');
 const { Client } = require('pg');
-
+/*
 const client = new Client({
   connectionString: process.env.DATABASE_URL,
   ssl: true,
@@ -20,6 +20,7 @@ client.query('SELECT table_schema,table_name FROM information_schema.tables;', (
   }
   client.end();
 });
+*/
 var prefix = "."
 const fs = require('fs');
 var isUpdating;
