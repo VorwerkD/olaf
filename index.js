@@ -5,7 +5,7 @@ const client = new Discord.Client();
 const FuzzySet = require('fuzzyset.js');
 const token = process.env.DISCORD_BOT_SECRET;
 var urban = require('urban');
-const { Client } = require('pg');
+//const { Client } = require('pg');
 /*
 const client = new Client({
   connectionString: process.env.DATABASE_URL,
