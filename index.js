@@ -60,12 +60,12 @@ const names = ["Names"];
 var allianceUsers = [];
 var codes = [135718294, 418877148, 399663774, 618277879, 484271262, 582412773]
 var texts = ["filler",
-  "Led by <@386283126437183500>\n600 Tickets Daily\nTicket reset @ 5:30 PST\nDS HOTH- 45 :star:\nLS HOTH- 44 :star:\nDS GEO- 21 :star:\nLS GEO- 8 :star:\nHSTR: Launch at noon PST, 24 hr join\nHAAT: Launch at 8pm PST, 23 hr join\nHPIT:Simmed",//rebellion
+  "Led by <@386283126437183500>\n600 Tickets Daily\nTicket reset @ 5:30 PST\nDS HOTH- 45 :star:\nLS HOTH- 44 :star:\nDS GEO- 26 :star:\nLS GEO- 8 :star:\nHSTR: Launch at noon PST, 24 hr join\nHAAT: Launch at 8pm PST, 23 hr join\nHPIT:Simmed",//rebellion
   "Led by <@449995271305166878>\n600 Tickets Daily\nTicket reset @ 6:30 CST\nDS HOTH- 43 :star:\nLS HOTH- 37 :star:\nDS GEO- 18 :star:\nLS GEO- 8 :star:\nHSTR: Launch at 8pm CST, 22 hr join\nHAAT: Launch at 8pm CST, 24 hr join\nHPIT:Simmed",//empire
   "Led by <@393192098758787073>\n600 Tickets Daily\nTicket reset @ 5:30 CST\nDS HOTH- 41 :star:\nLS HOTH- 41 :star:\nDS GEO- 20 :star:\nLS GEO- 9 :star:",//havoc
-  "Led by <@414535355354578949>\n400 Tickets Daily\nTicket reset @ 5:30 PST\nDS HOTH- 33 :star:\nLS HOTH- 36 :star:\nDS GEO- 12 :star:\nLS GEO- ?? :star:\nHAAT: Launch at 7pm PST, 24 hour join\nHPIT: 6pm PST, 24 hr join\nHSTR: 7pm PST, 24 hr join",//rogue
-  "Led by <@561197891310321674>\n600 Tickets Daily\nTicket reset @ 5:30 EST\nDS HOTH- 44 :star: \nLS HOTH- 43 :star: \nDS GEO- 21 :star:\nLS GEO- 9 :star:\nHSTR: Launch at 7pm EST, 24 hr join\nHAAT: Launch at 9pm EST, 24 hr join\nHPIT:Launch at 6pm EST",//order
-  "Led by <@604489911248355353>\n450 Tickets Daily\nTicket reset @ 5:30 EST\nDS HOTH- 37 :star: \nLS HOTH- 34 :star: \nDS GEO- ? :star:\nLS GEO- ?? :star:\nHAAT: 8pm est, 24 hr join\nHPIT: 7pm est, 24 hr join\nHSTR:Launch at 9pm EST, 24 hour join"]//uprising
+  "Led by <@414535355354578949>\n400 Tickets Daily\nTicket reset @ 5:30 PST\nDS HOTH- 33 :star:\nLS HOTH- 36 :star:\nDS GEO- 12 :star:\nLS GEO- ?? :star:\nHAAT: Launch at 7pm PST, 24 hour join\nHPIT: Simmed, 24 hr join\nHSTR: 7pm PST, 24 hr join",//rogue
+  "Led by <@561197891310321674>\n600 Tickets Daily\nTicket reset @ 5:30 EST\nDS HOTH- 44 :star: \nLS HOTH- 43 :star: \nDS GEO- 22 :star:\nLS GEO- 9 :star:\nHSTR: Launch at 7pm EST, 24 hr join\nHAAT: Launch at 9pm EST, 24 hr join\nHPIT:Launch at 6pm EST",//order
+  "Led by <@604489911248355353>\n450 Tickets Daily\nTicket reset @ 5:30 EST\nDS HOTH- 37 :star: \nLS HOTH- 34 :star: \nDS GEO- 9 :star:\nLS GEO- ?? :star:\nHAAT: 8pm est, 24 hr join\nHPIT: Simmed, 24 hr join\nHSTR:Launch at 9pm EST, 24 hour join"]//uprising
 var ggLink = ["filler",
   "\nhttps://swgoh.gg/g/35906/phantomrebellion/",
   "\nhttps://swgoh.gg/g/51323/phantomempire/",
@@ -486,7 +486,7 @@ client.login(token);
 
 //CRON JOBS
 
-//empire
+/*empire
 new CronJob('0 30 18 * * *', function() {
 
   client.channels.get('485184288795656238').send("<@&485169730097774612> 1 hour to tickets! Thank you :smiley: ").catch(function(error) {
@@ -494,6 +494,7 @@ new CronJob('0 30 18 * * *', function() {
   });
 
 }, null, true, 'America/New_York');
+*/
 //phantom
 new CronJob('0 30 19 * * *', function() {
 
