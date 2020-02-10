@@ -272,6 +272,10 @@ const fetchedChannel = msg.guild.channels.find(r => r.name === chan.name);
       var matchedArray = getNames(res, names);
       if (matchedArray.length == 0) {
         msg.channel.send("No user found, please input or mention a valid user");
+        res.replace(/-/g,'');
+        var match = res.match(/(\d+)/);
+        console.log(match);
+
       }
       for (var x = 0; x < matchedArray.length; x++) {
         if (matchedArray[x].startsWith("redo")) {
