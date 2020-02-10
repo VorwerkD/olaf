@@ -269,6 +269,7 @@ const fetchedChannel = msg.guild.channels.find(r => r.name === chan.name);
       for (var x = 0; x < newArr.length; x += 2) {
         names.push(newArr[x]);
       }
+      console.log(res);
       var matchedArray = getNames(res, names);
       if (matchedArray.length == 0) {
         msg.channel.send("No user found, please input or mention a valid user");
