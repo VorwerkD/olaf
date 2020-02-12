@@ -140,7 +140,7 @@ client.on('message', msg => {
   //FLAG
   var regex = /\[([\d\w]+)\]/g;
   if(input.startsWith(prefix+"test")){
- msg.channel.send("@here");
+ msg.channel.send("<@&593551503097069608> test");
   }
   if(input.startsWith(prefix+"addtochannel")){
     if(msg.member.roles.some(r=>["Royal Guards"].includes(r.name))){
@@ -549,7 +549,12 @@ new CronJob('*/2 * * * *', function() {
         }
       }
       else if (stream != null) {
-        client.channels.get(streamChan[x]).send(stream.displayName + " is live! They're playing " + stream.game + " at " + stream.url)
+        if(streamList[x]=='yautjaridley'){
+          client.channels.get(streamChan[x]).send("<@&550184470565748740> "+stream.displayName + " is live! They're playing " + stream.game + " at " + stream.url)
+        } else{
+          client.channels.get(streamChan[x]).send(stream.displayName + " is live! They're playing " + stream.game + " at " + stream.url)
+        }
+        
       }
     }
   })();
