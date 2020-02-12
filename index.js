@@ -100,7 +100,7 @@ client.on('ready', () => {
 //join messages
 client.on('guildMemberAdd', member => {
   if (member.guild.id == '484182766271856651') {
-    member.guild.channels.get('567116459684397076').send("Welcome to Vorwerks Bot testing server " + member + ". Enjoy your stay.\nPing Vorwerk if you need help with something.");
+    member.guild.channels.get('567116459684397076').send("Welcome to "+member.guild.name+" " + member + ". Enjoy your stay.\nPing Vorwerk if you need help with something.");
     if (!member.bot) {
       member.addRole('484848526757593119');/*
     (async() =>{
@@ -537,7 +537,18 @@ new CronJob('*/2 * * * *', function() {
   (async () => {
     for (var x = 0; x < streamList.length; x += 1) {
       const stream = await checkLive(streamList[x]);
-      if (stream != null) {
+      if(streamList[x]=='Vorwerk_D')
+      {
+        if(stream == null)
+        {
+          client.channels.get('676955393145962496').bulkDelete(1);
+        }
+        else if ( stream != null ){
+          client.channels.get('676955393145962496').send("@everyone"+stream.displayName +" is live! They're playing "+stream.game+" at "+stream.url)
+
+        }
+      }
+      else if (stream != null) {
         client.channels.get(streamChan[x]).send(stream.displayName + " is live! They're playing " + stream.game + " at " + stream.url)
       }
     }
