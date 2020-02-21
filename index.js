@@ -151,11 +151,15 @@ client.on('messageReactionAdd', (messageReaction, user) => {
         }}
 });
 client.on('messageReactionRemove', (reaction, user) => {
-  if(reaction.emoji.id=='643666169965969419'){
-  reaction.message.guild.fetchMember(user.id).then(member=> {
+  async () => {
+    let messageReaction = reaction; 
+      if(messageReaction.emoji.id=='643666169965969419'){
+  messageReaction.message.guild.fetchMember(user.id).then(member=> {
     member.removeRole('680209821743841348');
   });
       }
+        }();
+  
 });
 //messages
 client.on('message', msg => {
