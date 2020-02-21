@@ -590,7 +590,7 @@ new CronJob('*/2 * * * *', function() {
           client.channels.get('676955393145962496').bulkDelete(1);
         }
         else if ( stream != null ){
-          client.channels.get('676955393145962496').send("@everyone"+stream.displayName +" is live! They're playing "+stream.game+" at "+stream.url)
+          client.channels.get('676955393145962496').send("<@&680209821743841348>"+stream.displayName +" is live! They're playing "+stream.game+" at "+stream.url)
 
         }
       }
