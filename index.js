@@ -144,23 +144,19 @@ client.on('raw', packet => {
 client.on('messageReactionAdd', (messageReaction, user) => {
         let tempMessage = messageReaction.message, emoji = messageReaction.emoji;
       if( tempMessage.id == '680209739304534016'){
-        console.log("Found message")
         if (emoji.id == '643666169965969419') {
-          console.log("Found Emoji")
                 tempMessage.guild.fetchMember(user.id).then(member => {
-                  console.log("adding role")
                         member.addRole('680209821743841348');
                 });
         }}
 });
 client.on('messageReactionRemove', (messageReaction, user) => {
-        let message = messageReaction.message, emoji = messageReaction.emoji;
-      if( message.id == '680209739304534016'){
-        if (emoji.name == '✅') {
-                message.guild.fetchMember(user.id).then(member => {
+        let tempMessage = messageReaction.message;
+      if( tempMessage.id == '680209739304534016'){
+                tempMessage.guild.fetchMember(user.id).then(member => {
                         member.removeRole('680209821743841348');
-                });
-        }}
+        });
+      }
 });
 //messages
 client.on('message', msg => {
