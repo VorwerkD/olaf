@@ -119,12 +119,12 @@ client.on('guildMemberRemove', member => {
 });
 //Reactions
 client.on('messageReactionAdd', (reaction, user) => {
-        let message = reaction.message, emoji = reaction.emoji;
-      if( message.id == '680209739304534016'){
+        let tempMessage = reaction.message, emoji = reaction.emoji;
+      if( tempMessage.id == '680209739304534016'){
         console.log("Found message")
-        if (emoji.name == '✅') {
+        if (emoji.id == '643666169965969419') {
           console.log("Found Emoji")
-                message.guild.fetchMember(user.id).then(member => {
+                tempMessage.guild.fetchMember(user.id).then(member => {
                   console.log("adding role")
                         member.addRole('680209821743841348');
                 });
