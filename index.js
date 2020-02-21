@@ -121,10 +121,11 @@ client.on('guildMemberRemove', member => {
 client.on('messageReactionAdd', (reaction, user) => {
         let message = reaction.message, emoji = reaction.emoji;
       if( message.id == '680209739304534016'){
+        console.log("Found message")
         if (emoji.name == '✅') {
-                // We don't have the member, but only the user...
-                // Thanks to the previous part, we know how to fetch it
+          console.log("Found Emoji")
                 message.guild.fetchMember(user.id).then(member => {
+                  console.log("adding role")
                         member.addRole('680209821743841348');
                 });
         }}
@@ -133,8 +134,6 @@ client.on('messageReactionRemove', (reaction, user) => {
         let message = reaction.message, emoji = reaction.emoji;
       if( message.id == '680209739304534016'){
         if (emoji.name == '✅') {
-                // We don't have the member, but only the user...
-                // Thanks to the previous part, we know how to fetch it
                 message.guild.fetchMember(user.id).then(member => {
                         member.removeRole('680209821743841348');
                 });
