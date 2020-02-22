@@ -555,7 +555,14 @@ new CronJob('0 30 19 * * *', function() {
   });
 
 }, null, true, 'America/New_York');
+//SithArmyKnife
+new CronJob('0 00 16 * * *', function() {
 
+  client.channels.get('679498445823803423').send("@everyone 1 hour to tickets! Thank you :smiley: https://cdn.discordapp.com/attachments/642505294642937856/680553093347541112/image0.jpg").catch(function(error) {
+    client.users.get('234346145806155776').send(error);
+  });
+
+}, null, true, 'America/New_York');
 async function addAndRemoveRole(member, role) {
   await member.addRole(role)
   await client.wait(30 * 60 * 1000);//minutes*seconds/min*milliseconds/seconds
