@@ -189,6 +189,25 @@ client.on('message', msg => {
  msg.channel.send("<@&593551503097069608> test");
   }
   if(input.startsWith(prefix+"addtochannel")){
+    if(msg.guild=='679517421111214084'){
+    if(msg.member.roles.some(r=>["Recruiter"].includes(r.name))){
+    const chan = msg.mentions.channels.first();
+    const members = msg.mentions.members.array();
+    let outputString = "Down here!";
+  for(var x = 0; x<members.length;x++){
+    outputString +=" <@"+members[x].id+">";
+  }
+    const fetchedChannel = msg.guild.channels.find(r => r.name === chan.name);
+members.forEach(member=>{
+  fetchedChannel.overwritePermissions(member.id,{VIEW_CHANNEL: true,SEND_MESSAGES :true})
+});
+fetchedChannel.send(outputString);
+client.channels.get('680240713270689814').send(msg.author.username+" is adding members to "+chan.name);
+    }else{
+      msg.reply("Sorry you do not have the correct permissions")
+    }
+    }
+    if(msg.guild=='484508095469584384'){
     if(msg.member.roles.some(r=>["Royal Guards"].includes(r.name))){
     const chan = msg.mentions.channels.first();
     const members = msg.mentions.members.array();
@@ -204,16 +223,31 @@ fetchedChannel.send(outputString);
 client.channels.get('485932045860732932').send(msg.author.username+" is adding members to "+chan.name);
     }else{
       msg.reply("Sorry you do not have the correct permissions")
+    }
     }}
   if(input.startsWith(prefix+ "deletechannel")){
-    const chan = msg.mentions.channels.first();
-    if (msg.member.roles.some(r => ["Royal Guards"].includes(r.name))){
-const fetchedChannel = msg.guild.channels.find(r => r.name === chan.name);
+    if(msg.guild=='679517421111214084'){
+      const chan = msg.mentions.channels.first();
+      if (msg.member.roles.some(r => ["Recruiter"].includes(r.name))){
+    const fetchedChannel = msg.guild.channels.find(r => r.name === chan.name);
     fetchedChannel.delete();
-    client.channels.get('485932045860732932').send(msg.author.username+" is deleting "+chan.name);
-  }else{
+    client.channels.get('680240713270689814').send(msg.author.username+" is deleting "+chan.name);
+      }else{
     msg.reply("You do not have the correct permissions to use this!");
   }
+
+    }
+    if(msg.guild=='484508095469584384'){
+    const chan = msg.mentions.channels.first();
+    if (msg.member.roles.some(r => ["Royal Guards"].includes(r.name))){
+    const fetchedChannel = msg.guild.channels.find(r => r.name === chan.name);
+    fetchedChannel.delete();
+    client.channels.get('485932045860732932').send(msg.author.username+" is deleting "+chan.name);
+    }else{
+    msg.reply("You do not have the correct permissions to use this!");
+      }
+    }
+    
   }
   if (input.startsWith(prefix + "createchannel")) {
     const authorId =msg.author.id;
@@ -247,10 +281,39 @@ const fetchedChannel = msg.guild.channels.find(r => r.name === chan.name);
         })();
         
     }else{
-      msg.reply("Your in the right server, but dont have the correct permissions");
+      msg.reply("You dont have the correct permissions");
     }
+    }if(guild.id=='484508095469584384'){
+      if (msg.member.roles.some(r => ["Recruiter"].includes(r.name))){
+      var members = msg.mentions.members.array();
+      let outputString = "Down here!";
+      for(var x = 0; x<members.length;x++){
+        outputString +=" <@"+members[x].id+">";
+      }
+      const memberName = msg.mentions.members.first().displayName;
+      var chanName = "Waiting room "+memberName;
+        var perms = [{
+          id: guild.defaultRole.id,
+          deny: ['VIEW_CHANNEL', 'SEND_MESSAGES']
+        }, {
+          id: '680183855059042352',
+          allow: ['VIEW_CHANNEL', 'SEND_MESSAGES']
+        }]
+        for (var x = 0; x < members.length; x++) {
+          perms.push({
+            id: members[x].id,
+            allow: ['VIEW_CHANNEL', 'SEND_MESSAGES']
+          });
+        }
+        (async () => {
+      let fetchedChannel = await guild.createChannel(chanName,{type:'text',parent:'679517421111214085',permissionOverwrites:perms});
+      fetchedChannel.send(outputString);
+      client.channels.get('680240713270689814').send(msg.author.username+" is creating "+chanName);
+        })();
+        
     }else{
-      msg.reply("Your not in the right server")
+      msg.reply("You dont have the correct permissions");
+    }
     }  
   }//user
   if (input.startsWith(prefix + "user")) {
