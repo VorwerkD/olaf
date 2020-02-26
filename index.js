@@ -283,7 +283,7 @@ client.channels.get('485932045860732932').send(msg.author.username+" is adding m
     }else{
       msg.reply("You dont have the correct permissions");
     }
-    }if(guild.id=='484508095469584384'){
+    }if(guild.id=='679517421111214084'){
       if (msg.member.roles.some(r => ["Recruiter"].includes(r.name))){
       var members = msg.mentions.members.array();
       let outputString = "Down here!";
