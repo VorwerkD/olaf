@@ -226,7 +226,7 @@ client.channels.get('485932045860732932').send(msg.author.username+" is adding m
     }
     }}
   if(input.startsWith(prefix+ "deletechannel")){
-    if(msg.guild=='679517421111214084'){
+    if(msg.guild.id=='679517421111214084'){
       const chan = msg.mentions.channels.first();
       if (msg.member.roles.some(r => ["Recruiter"].includes(r.name))){
     const fetchedChannel = msg.guild.channels.find(r => r.name === chan.name);
@@ -237,7 +237,7 @@ client.channels.get('485932045860732932').send(msg.author.username+" is adding m
   }
 
     }
-    if(msg.guild=='484508095469584384'){
+    if(msg.guild.id=='484508095469584384'){
     const chan = msg.mentions.channels.first();
     if (msg.member.roles.some(r => ["Royal Guards"].includes(r.name))){
     const fetchedChannel = msg.guild.channels.find(r => r.name === chan.name);
