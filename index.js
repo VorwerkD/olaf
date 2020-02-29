@@ -189,7 +189,7 @@ client.on('message', msg => {
  msg.channel.send("<@&593551503097069608> test");
   }
   if(input.startsWith(prefix+"addtochannel")){
-    if(msg.guild=='679517421111214084'){
+    if(msg.guild.id=='679517421111214084'){
     if(msg.member.roles.some(r=>["Recruiter"].includes(r.name))){
     const chan = msg.mentions.channels.first();
     const members = msg.mentions.members.array();
@@ -207,7 +207,7 @@ client.channels.get('680240713270689814').send(msg.author.username+" is adding m
       msg.reply("Sorry you do not have the correct permissions")
     }
     }
-    if(msg.guild=='484508095469584384'){
+    if(msg.guild.id=='484508095469584384'){
     if(msg.member.roles.some(r=>["Royal Guards"].includes(r.name))){
     const chan = msg.mentions.channels.first();
     const members = msg.mentions.members.array();
