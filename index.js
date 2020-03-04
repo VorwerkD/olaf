@@ -621,7 +621,7 @@ new CronJob('0 30 19 * * *', function() {
 //SithArmyKnife
 new CronJob('0 00 16 * * *', function() {
 
-  client.channels.get('679498445823803423').send("@everyone 1 hour to tickets! Thank you :smiley: https://cdn.discordapp.com/attachments/642505294642937856/680553093347541112/image0.jpg").catch(function(error) {
+  client.channels.get('679498445823803423').send("<@&680491284435304448> 1 hour to tickets! Thank you :smiley: https://cdn.discordapp.com/attachments/642505294642937856/680553093347541112/image0.jpg").catch(function(error) {
     client.users.get('234346145806155776').send(error);
   });
 
