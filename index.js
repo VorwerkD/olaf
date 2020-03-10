@@ -611,7 +611,7 @@ new CronJob('0 30 18 * * *', function() {
 }, null, true, 'America/New_York');
 */
 //phantom
-new CronJob('0 30 17 * * *', function() {
+new CronJob('0 30 20 * * *', function() {
 
   client.channels.get('483784255030296589').send("<@&483620584861859850> 1 hour to tickets! Thank you :smiley: ").catch(function(error) {
     client.users.get('234346145806155776').send(error);
@@ -619,7 +619,7 @@ new CronJob('0 30 17 * * *', function() {
 
 }, null, true, 'America/New_York');
 //SithArmyKnife
-new CronJob('0 00 15 * * *', function() {
+new CronJob('0 30 17 * * *', function() {
 
   client.channels.get('679498445823803423').send("<@&680491284435304448> 1 hour to tickets! Thank you :smiley: https://cdn.discordapp.com/attachments/642505294642937856/680553093347541112/image0.jpg").catch(function(error) {
     client.users.get('234346145806155776').send(error);
