@@ -63,11 +63,11 @@ var allianceUsers = [];
 var codes = [135718294, 418877148, 399663774, 618277879, 484271262, 582412773]
 var texts = ["filler",
   "Led by <@386283126437183500>\n600 Tickets Daily\nTicket reset @ 5:30 PST\nDS HOTH- 45 :star:\nLS HOTH- 45 :star:\nDS GEO- 26 :star:\nLS GEO- 8 :star:\nHSTR: Launch at 6pm PST, 24 hr join\nHAAT: Launch at 8pm PST, 23 hr join\nHPIT:Simmed",//rebellion
-  "Led by <@449995271305166878>\n600 Tickets Daily\nTicket reset @ 6:30 CST\nDS HOTH- 43 :star:\nLS HOTH- 37 :star:\nDS GEO- 18 :star:\nLS GEO- 8 :star:\nHSTR: Launch at 8pm CST, 22 hr join\nHAAT: Launch at 8pm CST, 24 hr join\nHPIT:Simmed",//empire
-  "Led by <@393192098758787073>\n600 Tickets Daily\nTicket reset @ 5:30 CST\nDS HOTH- 41 :star:\nLS HOTH- 44 :star:\nDS GEO- 20 :star:\nLS GEO- 9 :star:",//havoc
-  "Led by <@414535355354578949>\n400 Tickets Daily\nTicket reset @ 5:30 PST\nDS HOTH- 33 :star:\nLS HOTH- 39 :star:\nDS GEO- 12 :star:\nLS GEO- ?? :star:\nHAAT: Launch at 7pm PST, 24 hour join\nHPIT: Simmed, 24 hr join\nHSTR: 7pm PST, 24 hr join",//rogue
-  "Led by <@561197891310321674>\n600 Tickets Daily\nTicket reset @ 5:30 EST\nDS HOTH- 44 :star: \nLS HOTH- 43 :star: \nDS GEO- 22 :star:\nLS GEO- 9 :star:\nHSTR: Launch at 7pm EST, 24 hr join\nHAAT: Launch at 9pm EST, 24 hr join\nHPIT:Launch at 6pm EST",//order
-  "Led by <@604489911248355353>\n450 Tickets Daily\nTicket reset @ 5:30 EST\nDS HOTH- 37 :star: \nLS HOTH- 34 :star: \nDS GEO- 9 :star:\nLS GEO- ?? :star:\nHAAT: 8pm est, 24 hr join\nHPIT: Simmed, 24 hr join\nHSTR:Launch at 9pm EST, 24 hour join"]//uprising
+  "Led by <@449995271305166878>\n600 Tickets Daily\nTicket reset @ 7:30 CST\nDS HOTH- 43 :star:\nLS HOTH- 37 :star:\nDS GEO- 18 :star:\nLS GEO- 8 :star:\nHSTR: Launch at 9pm CST, 22 hr join\nHAAT: Launch at 9pm CST, 24 hr join\nHPIT:Simmed",//empire
+  "Led by <@137343307553439744>\n600 Tickets Daily\nTicket reset @ 5:30 CST\nDS HOTH- 41 :star:\nLS HOTH- 44 :star:\nDS GEO- 20 :star:\nLS GEO- 9 :star:",//havoc
+  "Led by <@414535355354578949>\n400 Tickets Daily\nTicket reset @ 6:30 PST\nDS HOTH- 33 :star:\nLS HOTH- 39 :star:\nDS GEO- 12 :star:\nLS GEO- ?? :star:\nHAAT: Launch at 8pm PST, 24 hour join\nHPIT: Simmed, 24 hr join\nHSTR: 8pm PST, 24 hr join",//rogue
+  "Led by <@561197891310321674>\n600 Tickets Daily\nTicket reset @ 6:30 EST\nDS HOTH- 44 :star: \nLS HOTH- 43 :star: \nDS GEO- 26 :star:\nLS GEO- 9 :star:\nHSTR: Launch at 7pm EST, 24 hr join\nHAAT: Launch at 9pm EST, 24 hr join\nHPIT:Launch at 7pm EST",//order
+  "Led by <@604489911248355353>\n450 Tickets Daily\nTicket reset @ 6:30 EST\nDS HOTH- 38 :star: \nLS HOTH- 35 :star: \nDS GEO- 11 :star:\nLS GEO- ?? :star:\nHAAT: 8pm est, 24 hr join\nHPIT: Simmed, 24 hr join\nHSTR:Launch at 9pm EST, 24 hour join"]//uprising
 var ggLink = ["filler",
   "\nhttps://swgoh.gg/g/35906/phantomrebellion/",
   "\nhttps://swgoh.gg/g/51323/phantomempire/",
@@ -611,7 +611,7 @@ new CronJob('0 30 18 * * *', function() {
 }, null, true, 'America/New_York');
 */
 //phantom
-new CronJob('0 30 19 * * *', function() {
+new CronJob('0 30 17 * * *', function() {
 
   client.channels.get('483784255030296589').send("<@&483620584861859850> 1 hour to tickets! Thank you :smiley: ").catch(function(error) {
     client.users.get('234346145806155776').send(error);
@@ -619,9 +619,18 @@ new CronJob('0 30 19 * * *', function() {
 
 }, null, true, 'America/New_York');
 //SithArmyKnife
-new CronJob('0 00 16 * * *', function() {
+new CronJob('0 00 15 * * *', function() {
 
   client.channels.get('679498445823803423').send("<@&680491284435304448> 1 hour to tickets! Thank you :smiley: https://cdn.discordapp.com/attachments/642505294642937856/680553093347541112/image0.jpg").catch(function(error) {
+    client.users.get('234346145806155776').send(error);
+  });
+
+}, null, true, 'America/New_York');
+
+//havoc
+new CronJob('0 30 18 * * *', function() {
+
+  client.channels.get('586379177331261470').send("<@&586291147169857556> 1 hour to tickets! Thank you :smiley: ").catch(function(error) {
     client.users.get('234346145806155776').send(error);
   });
 
