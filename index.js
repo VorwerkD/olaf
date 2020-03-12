@@ -25,7 +25,7 @@ client.query('SELECT table_schema,table_name FROM information_schema.tables;', (
 });
 */
 
-const client = new tmi.Client({
+const tmiclient = new tmi.Client({
 	options: { debug: true },
 	connection: {
 		secure: true,
@@ -37,9 +37,9 @@ const client = new tmi.Client({
 	},
 	channels: [ 'Vorwerk_D' ]
 });
-client.on('message', onMessageHandler);
-client.on('connected', onConnectedHandler);
-client.connect();
+tmiclient.on('message', onMessageHandler);
+tmiclient.on('connected', onConnectedHandler);
+tmiclient.connect();
 
 function onMessageHandler (target, context, msg, self) {
   if (self) { return; } // Ignore messages from the bot
@@ -49,7 +49,7 @@ function onMessageHandler (target, context, msg, self) {
 
   // If the command is known, let's execute it
   if (commandName === '!test') {
-    client.say(target, `Test`);
+    tmiclient.say(target, `Test`);
     console.log(`* Executed ${commandName} command`);
   } else {
     console.log(`* Unknown command ${commandName}`);
