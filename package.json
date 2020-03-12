@@ -9,6 +9,7 @@
     "overwatch-stats-api": "1.0.6",
     "cron": "1.7.1",
     "twitch": "2.2.6",
-    "fuzzyset.js": "0.0.8"
+    "fuzzyset.js": "0.0.8",
+    "tmi.js": "^1.2.1"
   }
 }
