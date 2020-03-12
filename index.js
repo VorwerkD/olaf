@@ -33,9 +33,9 @@ const tmiclient = new tmi.Client({
 	},
 	identity: {
 		username: 'vorwerkBot',
-		password: 'oauth:tbt2y6g7bkrv6amo4lvh6wu169itax'
+		password: 'oauth:e4ws5k4uau1uf9we8y24vk0p4q38x4'
 	},
-	channels: [ 'fyu_ree' ]
+	channels: [ 'vorwerk_d' ]
 });
 tmiclient.on('message', onMessageHandler);
 tmiclient.on('connected', onConnectedHandler);
