@@ -35,7 +35,7 @@ const tmiclient = new tmi.Client({
 		username: 'vorwerkBot',
 		password: 'oauth:tbt2y6g7bkrv6amo4lvh6wu169itax'
 	},
-	channels: [ 'Vorwerk_D' ]
+	channels: [ 'fyu_ree' ]
 });
 tmiclient.on('message', onMessageHandler);
 tmiclient.on('connected', onConnectedHandler);
@@ -48,8 +48,8 @@ function onMessageHandler (target, context, msg, self) {
   const commandName = msg.trim();
 
   // If the command is known, let's execute it
-  if (commandName === '!test') {
-    tmiclient.say(target, `Test`);
+  if (commandName === 'see') {
+    tmiclient.say(target, `This is dumb`);
     console.log(`* Executed ${commandName} command`);
   } else {
     console.log(`* Unknown command ${commandName}`);
