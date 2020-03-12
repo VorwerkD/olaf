@@ -6,6 +6,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const FuzzySet = require('fuzzyset.js');
 const token = process.env.DISCORD_BOT_SECRET;
+const tmi = require('tmi.js');
 var urban = require('urban');
 //const { Client } = require('pg');
 /*
@@ -23,6 +24,41 @@ client.query('SELECT table_schema,table_name FROM information_schema.tables;', (
   client.end();
 });
 */
+
+const client = new tmi.Client({
+	options: { debug: true },
+	connection: {
+		secure: true,
+		reconnect: true
+	},
+	identity: {
+		username: 'vorwerkBot',
+		password: 'oauth:tbt2y6g7bkrv6amo4lvh6wu169itax'
+	},
+	channels: [ 'Vorwerk_D' ]
+});
+client.on('message', onMessageHandler);
+client.on('connected', onConnectedHandler);
+client.connect();
+
+function onMessageHandler (target, context, msg, self) {
+  if (self) { return; } // Ignore messages from the bot
+
+  // Remove whitespace from chat message
+  const commandName = msg.trim();
+
+  // If the command is known, let's execute it
+  if (commandName === '!test') {
+    client.say(target, `Test`);
+    console.log(`* Executed ${commandName} command`);
+  } else {
+    console.log(`* Unknown command ${commandName}`);
+  }
+}
+function onConnectedHandler (addr, port) {
+  console.log(`* Connected to ${addr}:${port}`);
+}
+
 var prefix = "."
 const fs = require('fs');
 var isUpdating;
@@ -635,6 +671,16 @@ new CronJob('0 30 18 * * *', function() {
   });
 
 }, null, true, 'America/New_York');
+
+//uprising
+new CronJob('0 30 17 * * *', function() {
+
+  client.channels.get('603264824461492224 ').send("<@&603261421857538049> 1 hour to tickets! Thank you :smiley: ").catch(function(error) {
+    client.users.get('234346145806155776').send(error);
+  });
+
+}, null, true, 'America/New_York');
+
 async function addAndRemoveRole(member, role) {
   await member.addRole(role)
   await client.wait(30 * 60 * 1000);//minutes*seconds/min*milliseconds/seconds
