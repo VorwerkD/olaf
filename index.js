@@ -73,9 +73,10 @@ var commandHelp = ["You're reading it!",
   "check to see if the given twitch streamer is live", "Searches urban dictionary for a word/phrase. Attach -r for a random word",
   "Updates the guild numbers channels", "Logs the input to the console ",  "shuts down and resets the bots login. Vorwerk only", "Reverses your input", "A test command", "Gives information on the user", "Manually updates the cached guilds","Gives the swgoh.gg link of the requested user","Creates a channel for phantom recruiting; @ people to add them on creation","Deletes a channel that is mentioned","Adds tagged users to the tagged Channel"]
 var olafTest = '570738555773648897'//chan id
+var boysChan = '694347738988412978'
 //twitch stuffs
-var streamList = ["yautjaridley", "Vorwerk_D","cptbroskiz"]//",TheLegendOfMemo"
-var streamChan = ["547923999552700436", olafTest,"395666733513441281"]//,olafTest
+var streamList = ["yautjaridley", "Vorwerk_D","cptbroskiz","lasko_us","Lighttripleking"]//",TheLegendOfMemo"
+var streamChan = ["547923999552700436", olafTest,boysChan,boysChan,boysChan]//,olafTest
 var daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 var months = ["January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 var activities = ["\nBefore Reset: Complete Arena Battles\nAfter Reset: Spend Cantina Energy",
@@ -222,7 +223,7 @@ client.on('message', msg => {
   //FLAG
   var regex = /\[([\d\w]+)\]/g;
   if(input.startsWith(prefix+"test")){
- msg.channel.send("<@&593551503097069608> test");
+ msg.channel.send("@everyone");
   }
   if(input.startsWith(prefix+"addtochannel")){
     if(msg.guild.id=='679517421111214084'){
@@ -722,7 +723,10 @@ new CronJob('*/2 * * * *', function() {
       else if (stream != null) {
         if(streamList[x]=='yautjaridley'){
           client.channels.get(streamChan[x]).send("<@&550184470565748740> "+stream.displayName + " is live! They're playing " + stream.game + " at " + stream.url)
-        } else{
+        }else if(streamChan[x]==boysChan){
+           client.channels.get(streamChan[x]).send("@everyone"+stream.displayName + " is live! They're playing " + stream.game + " at " + stream.url)
+        }
+        else{
           client.channels.get(streamChan[x]).send(stream.displayName + " is live! They're playing " + stream.game + " at " + stream.url)
         }
         
