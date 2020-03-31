@@ -74,8 +74,8 @@ var commandHelp = ["You're reading it!",
   "Updates the guild numbers channels", "Logs the input to the console ",  "shuts down and resets the bots login. Vorwerk only", "Reverses your input", "A test command", "Gives information on the user", "Manually updates the cached guilds","Gives the swgoh.gg link of the requested user","Creates a channel for phantom recruiting; @ people to add them on creation","Deletes a channel that is mentioned","Adds tagged users to the tagged Channel"]
 var olafTest = '570738555773648897'//chan id
 //twitch stuffs
-var streamList = ["yautjaridley", "Vorwerk_D"]//",TheLegendOfMemo"
-var streamChan = ["547923999552700436", olafTest]//,olafTest
+var streamList = ["yautjaridley", "Vorwerk_D","cptbroskiz"]//",TheLegendOfMemo"
+var streamChan = ["547923999552700436", olafTest,"395666733513441281"]//,olafTest
 var daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 var months = ["January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 var activities = ["\nBefore Reset: Complete Arena Battles\nAfter Reset: Spend Cantina Energy",
