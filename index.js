@@ -75,8 +75,8 @@ var commandHelp = ["You're reading it!",
 var olafTest = '570738555773648897'//chan id
 var boysChan = '694347738988412978'
 //twitch stuffs
-var streamList = ["yautjaridley", "Vorwerk_D","cptbroskiz","lasko_us","Lighttripleking"]//",TheLegendOfMemo"
-var streamChan = ["547923999552700436", olafTest,boysChan,boysChan,boysChan]//,olafTest
+var streamList = ["yautjaridley", "Vorwerk_D","cptbroskiz","lasko_us","Lighttripleking","flight23white"]//",TheLegendOfMemo"
+var streamChan = ["547923999552700436", olafTest,boysChan,boysChan,boysChan,boysChan]//,olafTest
 var daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 var months = ["January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 var activities = ["\nBefore Reset: Complete Arena Battles\nAfter Reset: Spend Cantina Energy",
