@@ -74,9 +74,10 @@ var commandHelp = ["You're reading it!",
   "Updates the guild numbers channels", "Logs the input to the console ",  "shuts down and resets the bots login. Vorwerk only", "Reverses your input", "A test command", "Gives information on the user", "Manually updates the cached guilds","Gives the swgoh.gg link of the requested user","Creates a channel for phantom recruiting; @ people to add them on creation","Deletes a channel that is mentioned","Adds tagged users to the tagged Channel"]
 var olafTest = '570738555773648897'//chan id
 var boysChan = '694347738988412978'
+var vorwerkChan = '676955393145962496'
 //twitch stuffs
-var streamList = ["yautjaridley", "Vorwerk_D","cptbroskiz","lasko_us","Lighttripleking","flight23white"]//",TheLegendOfMemo"
-var streamChan = ["547923999552700436", olafTest,boysChan,boysChan,boysChan,boysChan]//,olafTest
+var streamList = ["yautjaridley", "Vorwerk_D","cptbroskiz","lasko_us","Lighttripleking","flight23white","Vorwerk_D"]//",TheLegendOfMemo"
+var streamChan = ["547923999552700436", vorwerkChan,boysChan,boysChan,boysChan,boysChan,boysChan]//,olafTest
 var daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 var months = ["January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 var activities = ["\nBefore Reset: Complete Arena Battles\nAfter Reset: Spend Cantina Energy",
@@ -709,19 +710,11 @@ new CronJob('*/2 * * * *', function() {
   (async () => {
     for (var x = 0; x < streamList.length; x += 1) {
       const stream = await checkLive(streamList[x]);
-      if(streamList[x]=='Vorwerk_D')
+      if(x==2)
       {
-        if(stream == null)
-        {
-          client.channels.get('676955393145962496').bulkDelete(1);
-        }
-        else if ( stream != null ){
           client.channels.get('676955393145962496').send("<@&680209821743841348>"+stream.displayName +" is live! They're playing "+stream.game+" at "+stream.url)
-
-        }
       }
-      else if (stream != null) {
-        if(streamList[x]=='yautjaridley'){
+        else if(streamList[x]=='yautjaridley'){
           client.channels.get(streamChan[x]).send("<@&550184470565748740> "+stream.displayName + " is live! They're playing " + stream.game + " at " + stream.url)
         }else if(streamChan[x]==boysChan){
            client.channels.get(streamChan[x]).send("@everyone"+stream.displayName + " is live! They're playing " + stream.game + " at " + stream.url)
@@ -730,7 +723,7 @@ new CronJob('*/2 * * * *', function() {
           client.channels.get(streamChan[x]).send(stream.displayName + " is live! They're playing " + stream.game + " at " + stream.url)
         }
         
-      }
+      
     }
   })();
 }, null, true, 'America/New_York');
