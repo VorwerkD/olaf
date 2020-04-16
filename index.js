@@ -710,10 +710,9 @@ new CronJob('*/2 * * * *', function() {
   (async () => {
     for (var x = 0; x < streamList.length; x += 1) {
       const stream = await checkLive(streamList[x]);
-      if(x==2)
-      {
-          client.channels.get('676955393145962496').send("<@&680209821743841348>"+stream.displayName +" is live! They're playing "+stream.game+" at "+stream.url)
-      }
+      if(streamList[x]=='Vorwerk_D'){
+          client.channels.get(streamChan[x]).send("<@&680209821743841348> "+stream.displayName + " is live! They're playing " + stream.game + " at " + stream.url)
+        }
         else if(streamList[x]=='yautjaridley'){
           client.channels.get(streamChan[x]).send("<@&550184470565748740> "+stream.displayName + " is live! They're playing " + stream.game + " at " + stream.url)
         }else if(streamChan[x]==boysChan){
