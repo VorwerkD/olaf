@@ -726,8 +726,9 @@ new CronJob('*/2 * * * *', function() {
            client.channels.get(streamChan[x]).send("@everyone"+stream.displayName + " is live! They're playing " + stream.game + " at " + stream.url)
         }
         else{
+          if(stream!=null){
           client.channels.get(streamChan[x]).send(stream.displayName + " is live! They're playing " + stream.game + " at " + stream.url)
-        }
+        }}
         
       
     }
