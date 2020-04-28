@@ -677,12 +677,19 @@ new CronJob('0 30 18 * * *', function() {
 //uprising
 new CronJob('0 30 17 * * *', function() {
 
+  client.channels.get('641094942659444769 ').send("<@&636767322748485652> 1 hour to tickets! Thank you :smiley: ").catch(function(error) {
+    client.users.get('234346145806155776').send(error);
+  });
+
+}, null, true, 'America/New_York');
+//dragon champions
+new CronJob('0 30 20 * * *', function() {
+
   client.channels.get('603264824461492224 ').send("<@&603261421857538049> 1 hour to tickets! Thank you :smiley: ").catch(function(error) {
     client.users.get('234346145806155776').send(error);
   });
 
 }, null, true, 'America/New_York');
-
 async function addAndRemoveRole(member, role) {
   await member.addRole(role)
   await client.wait(30 * 60 * 1000);//minutes*seconds/min*milliseconds/seconds
@@ -741,6 +748,7 @@ new CronJob('0 */5 * * * * ', function() {
 new CronJob('0 30 6 * * *', function() {
   dailyEvents('614475604871348224');
 }, null, true, 'America/New_York');
+
 
 function guildNum() {
   var x = 0;
