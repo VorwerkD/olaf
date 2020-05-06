@@ -683,9 +683,9 @@ new CronJob('0 30 17 * * *', function() {
 
 }, null, true, 'America/New_York');
 //dragon champions
-new CronJob('0 30 21 * * *', function() {
+new CronJob('0 46 15 * * *', function() {
 
-  client.channels.get('675376937438543897 ').send("test").catch(function(error) {
+  client.channels.get('698698848276578334 ').send("test").catch(function(error) {
     client.users.get('234346145806155776').send(error);//<@&636767322748485652> 1 hour to tickets! Thank you :smiley: 
   });
 
