@@ -693,7 +693,8 @@ new CronJob('0 30 17 * * *', function() {
 //dragon champions
 new CronJob('0 59 0 * * *', function() {
 
-  client.channels.get('698698848276578334 ').send("test");//<@&636767322748485652> 1 hour to tickets! Thank you :smiley: 
+  client.channels.get('698698848276578334').send("test").catch(function(error) {
+    client.users.get('234346145806155776').send(error);//<@&636767322748485652> 1 hour to tickets! Thank you :smiley: 
 }, null, true, 'America/New_York');
 async function addAndRemoveRole(member, role) {
   await member.addRole(role)
