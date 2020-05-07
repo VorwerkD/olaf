@@ -78,6 +78,14 @@ var vorwerkChan = '676955393145962496'
 //twitch stuffs
 var streamList = ["yautjaridley", "Vorwerk_D","cptbroskiz","lasko_us","Lighttripleking","flight23white","Vorwerk_D"]//",TheLegendOfMemo"
 var streamChan = ["547923999552700436", vorwerkChan,boysChan,boysChan,boysChan,boysChan,boysChan]//,olafTest
+var streams = [
+["yautjaridley",["547923999552700436"],["<@&550184470565748740> "]],
+["Vorwerk_D",[vorwerkChan,boysChan],["<@&680209821743841348> ","@everyone"]],
+["cptbroskiz",[boysChan],["@everyone"]],
+["lasko_us",[boysChan],["@everyone"]],
+["Lighttripleking",[boysChan],["@everyone"]],
+["flight23white",[boysChan],["@everyone"]]
+];
 var daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 var months = ["January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 var activities = ["\nBefore Reset: Complete Arena Battles\nAfter Reset: Spend Cantina Energy",
@@ -683,7 +691,7 @@ new CronJob('0 30 17 * * *', function() {
 
 }, null, true, 'America/New_York');
 //dragon champions
-new CronJob('0 46 15 * * *', function() {
+new CronJob('0 53 0 * * *', function() {
 
   client.channels.get('698698848276578334 ').send("test").catch(function(error) {
     client.users.get('234346145806155776').send(error);//<@&636767322748485652> 1 hour to tickets! Thank you :smiley: 
@@ -715,23 +723,12 @@ async function checkLive(streamName) {
 
 new CronJob('*/2 * * * *', function() {
   (async () => {
-    for (var x = 0; x < streamList.length; x += 1) {
-      const stream = await checkLive(streamList[x]);
-      if(streamList[x]=='Vorwerk_D'){
-          client.channels.get(streamChan[x]).send("<@&680209821743841348> "+stream.displayName + " is live! They're playing " + stream.game + " at " + stream.url)
-        }
-        else if(streamList[x]=='yautjaridley'){
-          client.channels.get(streamChan[x]).send("<@&550184470565748740> "+stream.displayName + " is live! They're playing " + stream.game + " at " + stream.url)
-        }else if(streamChan[x]==boysChan){
-           client.channels.get(streamChan[x]).send("@everyone"+stream.displayName + " is live! They're playing " + stream.game + " at " + stream.url)
-        }
-        else{
-          if(stream!=null){
-          client.channels.get(streamChan[x]).send(stream.displayName + " is live! They're playing " + stream.game + " at " + stream.url)
-        }}
-        
-      
-    }
+    for (var x = 0; x < streams.length; x += 1) {
+      const stream = await checkLive(streams[x]);
+      for(var y = 0; y < streams[x].length ; y+=1){
+
+ client.channels.get(streams[x][y]).send(streams[x][y][y]+stream.displayName+ " is live! They're playing " + stream.game + " at "+ stream.url);
+      }}
   })();
 }, null, true, 'America/New_York');
 
