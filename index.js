@@ -109,9 +109,9 @@ var allianceUsers = [];
 var codes = [135718294, 418877148, 399663774, 618277879, 484271262, 582412773]
 var texts = ["filler",
   "Led by <@386283126437183500>\n600 Tickets Daily\nTicket reset @ 5:30 PST\nDS HOTH- 45 :star:\nLS HOTH- 45 :star:\nDS GEO- 26 :star: 16 Wat shards <:watshard:709573349579161705>\nLS GEO- 9 :star:\nHSTR: Launch at 6pm PST, 24 hr join\nHAAT: Launch at 8pm PST, 23 hr join\nHPIT:Simmed",//rebellion
-  "Led by <@449995271305166878>\n600 Tickets Daily\nTicket reset @ 7:30 CST\nDS HOTH- 43 :star:\nLS HOTH- 37 :star:\nDS GEO- 20 :star: 20 Wat shards <:watshard:709573349579161705>\nLS GEO- 9 :star:\nHSTR: Launch at 8pm CST, 22 hr join\nHAAT: Launch at 8pm CST, 24 hr join\nHPIT:Simmed",//empire
+  "Led by <@375883958405038091>\n600 Tickets Daily\nTicket reset @ 7:30 CST\nDS HOTH- 43 :star:\nLS HOTH- 37 :star:\nDS GEO- 20 :star: 20 Wat shards <:watshard:709573349579161705>\nLS GEO- 9 :star:\nHSTR: Launch at 8pm CST, 22 hr join\nHAAT: Launch at 8pm CST, 24 hr join\nHPIT:Simmed",//empire
   "Led by <@137343307553439744>\n600 Tickets Daily\nTicket reset @ 5:30 CST\nDS HOTH- 41 :star:\nLS HOTH- 44 :star:\nDS GEO- 21 :star: 17 Wat shards <:watshard:709573349579161705>\nLS GEO- 10 :star:",//havoc
-  "Led by <@414535355354578949>\n400 Tickets Daily\nTicket reset @ 6:30 PST\nDS HOTH- 33 :star:\nLS HOTH- 39 :star:\nDS GEO- 14 :star:\nLS GEO- 7 :star:\nHAAT: Launch at 8pm PST, 24 hour join\nHPIT: Simmed, 24 hr join\nHSTR: 8pm PST, 24 hr join",//rogue
+  "Led by <@414535355354578949>\n400 Tickets Daily\nTicket reset @ 6:30 PST\nDS HOTH- 33 :star:\nLS HOTH- 39 :star:\nDS GEO- 16 :star: 5 Wat shards<:watshard:709573349579161705>\nLS GEO- 7 :star:\nHAAT: Launch at 8pm PST, 24 hour join\nHPIT: Simmed, 24 hr join\nHSTR: 8pm PST, 24 hr join",//rogue
   "Led by <@561197891310321674>\n600 Tickets Daily\nTicket reset @ 6:30 EST\nDS HOTH- 44 :star: \nLS HOTH- 43 :star: \nDS GEO- 27 :star: 35 Wat shards <:watshard:709573349579161705>\nLS GEO- 10 :star: 2 KAM shards\nHSTR: Launch at 7pm EST, 24 hr join\nHAAT: Launch at 9pm EST, 24 hr join\nHPIT:Launch at 7pm EST",//order
   "Led by <@604489911248355353>\n450 Tickets Daily\nTicket reset @ 6:30 EST\nDS HOTH- 38 :star: \nLS HOTH- 35 :star: \nDS GEO- 14 :star: 10 Wat shards <:watshard:709573349579161705>\nLS GEO- ?? :star:\nHAAT: 8pm est, 24 hr join\nHPIT: Simmed, 24 hr join\nHSTR:Launch at 9pm EST, 24 hour join"]//uprising
 var ggLink = ["filler",
@@ -718,8 +718,8 @@ async function checkLive(streamName) {
     return null;
   }
 }
-
-new CronJob('*/2 * * * *', function() {
+/*
+new CronJob('/2 * * * *', function() {//put a *before/
   (async () => {
     for (var x = 0; x < streams.length; x += 1) {
       const stream = await checkLive(streams[x]);
@@ -729,7 +729,7 @@ new CronJob('*/2 * * * *', function() {
       }}
   })();
 }, null, true, 'America/New_York');
-
+*/
 //'0 0 */3 * * '
 new CronJob('0 0 3 * * * ', function() {
   guildNum();
