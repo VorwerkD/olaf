@@ -48,8 +48,8 @@ function onMessageHandler (target, context, msg, self) {
   const commandName = msg.trim();
 
   // If the command is known, let's execute it
-  if (commandName === 'see') {
-    tmiclient.say(target, `This is dumb`);
+  if (commandName === '!discord') {
+    tmiclient.say(target, `https://discord.gg/GUKXv7j`);
     console.log(`* Executed ${commandName} command`);
   } else {
     console.log(`* Unknown command ${commandName}`);
