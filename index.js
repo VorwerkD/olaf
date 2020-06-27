@@ -33,7 +33,7 @@ const tmiclient = new tmi.Client({
 	},
 	identity: {
 		username: 'vorwerkBot',
-		password: 'oauth:e4ws5k4uau1uf9we8y24vk0p4q38x4'
+		password: process.env.DISCORD_BOT_SECRET
 	},
 	channels: [ 'vorwerk_d' ]
 });
