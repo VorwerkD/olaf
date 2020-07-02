@@ -139,11 +139,12 @@ client.on('ready', () => {
   });
   console.log("servers:")
   client.guilds.forEach((guild) => {
-    console.log(" - " + guild.name)
+    console.log(" - " + guild.name +" "+ guild.id)
   });
   (async () => {
     update();
   })();
+  //var gallows = client.guilds. 
 });
 //join messages
 client.on('guildMemberAdd', member => {
