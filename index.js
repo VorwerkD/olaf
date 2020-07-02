@@ -144,7 +144,7 @@ client.on('ready', () => {
   (async () => {
     update();
   })();
-  var gallows = client.guilds.get("679517421111214084").leave
+  client.guilds.get("679517421111214084").leave();
 });
 //join messages
 client.on('guildMemberAdd', member => {
