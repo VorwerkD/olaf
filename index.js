@@ -139,12 +139,12 @@ client.on('ready', () => {
   });
   console.log("servers:")
   client.guilds.forEach((guild) => {
-    console.log(" - " + guild.name +" "+ guild.id)
+    console.log(" - " + guild.name)
   });
   (async () => {
     update();
   })();
-  client.guilds.get("679517421111214084").leave();
+  
 });
 //join messages
 client.on('guildMemberAdd', member => {
