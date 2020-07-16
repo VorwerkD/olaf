@@ -805,8 +805,7 @@ function update() {
         language: 'eng_us'
       }
       let { result, error, warning } = await swapi.fetchGuild(payload);
-        console.log("error: "+error);
-        console.log("warning: "+warning);
+        console.log("payload1");
       result.forEach(player => {
         for (var x = 0; x < player.roster.length; x++) {
           var name = player.roster[x].name.toLowerCase()
@@ -821,8 +820,7 @@ function update() {
         language: 'eng_us'
       }
       let { result2, error2, warning2 } = await swapi.fetchGuild(payload2);
-        console.log("error: "+error2);
-        console.log("warning: "+warning2);
+        console.log("payload2");
       result2.forEach(player => {
         for (var x = 0; x < player.roster.length; x++) {
           var name = player.roster[x].name.toLowerCase()
@@ -837,8 +835,7 @@ function update() {
         language: 'eng_us'
       }
       let { result3, error3, warning3 } = await swapi.fetchGuild(payload3);
-        console.log("error: "+error33);
-        console.log("warning: "+warning);
+        console.log("playload3");
       result3.forEach(player => {
         for (var x = 0; x < player.roster.length; x++) {
           var name = player.roster[x].name.toLowerCase()
