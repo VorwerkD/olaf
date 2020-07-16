@@ -820,10 +820,10 @@ function update() {
         allycode: codes.slice(2,4),
         language: 'eng_us'
       }
-      let { result, error, warning } = await swapi.fetchGuild(payload2);
-        console.log("error: "+error);
-        console.log("warning: "+warning);
-      result.forEach(player => {
+      let { result2, error2, warning2 } = await swapi.fetchGuild(payload2);
+        console.log("error: "+error2);
+        console.log("warning: "+warning2);
+      result2.forEach(player => {
         for (var x = 0; x < player.roster.length; x++) {
           var name = player.roster[x].name.toLowerCase()
           var code = player.roster[x].allyCode
@@ -836,10 +836,10 @@ function update() {
         allycode: codes.slice(-2,0),
         language: 'eng_us'
       }
-      let { result, error, warning } = await swapi.fetchGuild(payload3);
-        console.log("error: "+error);
+      let { result3, error3, warning3 } = await swapi.fetchGuild(payload3);
+        console.log("error: "+error33);
         console.log("warning: "+warning);
-      result.forEach(player => {
+      result3.forEach(player => {
         for (var x = 0; x < player.roster.length; x++) {
           var name = player.roster[x].name.toLowerCase()
           var code = player.roster[x].allyCode
