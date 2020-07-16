@@ -76,8 +76,8 @@ var olafTest = '570738555773648897'//chan id
 var boysChan = '694347738988412978'
 var vorwerkChan = '676955393145962496'
 //twitch stuffs
-var streamList = ["yautjaridley", "Vorwerk_D","cptbroskiz","lasko_us","Lighttripleking","flight23white","Vorwerk_D"]//",TheLegendOfMemo"
-var streamChan = ["547923999552700436", vorwerkChan,boysChan,boysChan,boysChan,boysChan,boysChan]//,olafTest
+var streamList = ["yautjaridley", "Vorwerk_D","cptbroskiz","lasko_us","Lighttripleking","flight23white","Vorwerk_D"]
+var streamChan = ["547923999552700436", vorwerkChan,boysChan,boysChan,boysChan,boysChan,boysChan]
 var streams = [
 ["yautjaridley",["547923999552700436"],["<@&550184470565748740> "]],
 ["Vorwerk_D",[vorwerkChan,boysChan],["<@&680209821743841348> ","@everyone"]],
@@ -101,7 +101,7 @@ const TwitchClient = require('twitch').default;
 const clientId = process.env.TWITCH_CLIENT_ID;
 const clientSecret = process.env.TWITCH_CLIENT_SECRET;
 const twitchClient = TwitchClient.withClientCredentials(clientId, clientSecret);
-//swgoh stuffs
+
 const ApiSwgohHelp = require('api-swgoh-help');
 const rosters = ["Name", "allyCode"]
 const names = ["Names"];
@@ -774,7 +774,8 @@ function guildNum() {
       })
       var guildGp = result[0].gp / 1000000
       var roundGp = guildGp.toFixed(1)
-      
+      var avgGp = result[0].gp / result[0].members;
+      console.log("avg GP : "+avgGp);
       client.channels.get('485246576751673354').fetchMessage(mainChans[x]).then((msg) => {
         // Resolve promise
         msg.edit(result[0].name + " -\n" + result[0].members + "/50 " + roundGp + "mil gp\n" + texts[x]  + ggLink[x] + "\nUpdated on " + dateString)
@@ -800,11 +801,44 @@ function update() {
     console.log("UPDATING");
     (async () => {
       let payload = {
-        allycode: codes,
+        allycode: codes.slice(0,2),
         language: 'eng_us'
       }
       let { result, error, warning } = await swapi.fetchGuild(payload);
-        console.log(result);
+        console.log("error: "+error);
+        console.log("warning: "+warning);
+      result.forEach(player => {
+        for (var x = 0; x < player.roster.length; x++) {
+          var name = player.roster[x].name.toLowerCase()
+          var code = player.roster[x].allyCode
+          rosters.push(name);
+          rosters.push(code);
+          names.push(name);
+        }
+      })
+      let payload = {
+        allycode: codes.slice(2,4),
+        language: 'eng_us'
+      }
+      let { result, error, warning } = await swapi.fetchGuild(payload);
+        console.log("error: "+error);
+        console.log("warning: "+warning);
+      result.forEach(player => {
+        for (var x = 0; x < player.roster.length; x++) {
+          var name = player.roster[x].name.toLowerCase()
+          var code = player.roster[x].allyCode
+          rosters.push(name);
+          rosters.push(code);
+          names.push(name);
+        }
+      })
+      let payload = {
+        allycode: codes.slice(-2,0),
+        language: 'eng_us'
+      }
+      let { result, error, warning } = await swapi.fetchGuild(payload);
+        console.log("error: "+error);
+        console.log("warning: "+warning);
       result.forEach(player => {
         for (var x = 0; x < player.roster.length; x++) {
           var name = player.roster[x].name.toLowerCase()
