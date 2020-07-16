@@ -830,6 +830,7 @@ function update() {
           names.push(name);
         }
       })
+      console.log(codes[4]+"|"+codes[5]);
       var newCodes = codes[4];
       newCodes.push(codes[5]);
       let payload3 = {
@@ -837,7 +838,7 @@ function update() {
         language: 'eng_us'
       }
       let { result3, error3, warning3 } = await swapi.fetchGuild(payload3);
-        console.log("playload3");
+        console.log("payload3");
       result3.forEach(player => {
         for (var x = 0; x < player.roster.length; x++) {
           var name = player.roster[x].name.toLowerCase()
