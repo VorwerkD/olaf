@@ -804,7 +804,7 @@ function update() {
         language: 'eng_us'
       }
       let { result, error, warning } = await swapi.fetchGuild(payload);
-
+        console.log(result);
       result.forEach(player => {
         for (var x = 0; x < player.roster.length; x++) {
           var name = player.roster[x].name.toLowerCase()
