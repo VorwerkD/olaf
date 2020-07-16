@@ -816,11 +816,11 @@ function update() {
           names.push(name);
         }
       })
-      let payload = {
+      let payload2 = {
         allycode: codes.slice(2,4),
         language: 'eng_us'
       }
-      let { result, error, warning } = await swapi.fetchGuild(payload);
+      let { result, error, warning } = await swapi.fetchGuild(payload2);
         console.log("error: "+error);
         console.log("warning: "+warning);
       result.forEach(player => {
@@ -832,11 +832,11 @@ function update() {
           names.push(name);
         }
       })
-      let payload = {
+      let payload3 = {
         allycode: codes.slice(-2,0),
         language: 'eng_us'
       }
-      let { result, error, warning } = await swapi.fetchGuild(payload);
+      let { result, error, warning } = await swapi.fetchGuild(payload3);
         console.log("error: "+error);
         console.log("warning: "+warning);
       result.forEach(player => {
