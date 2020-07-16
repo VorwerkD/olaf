@@ -830,8 +830,10 @@ function update() {
           names.push(name);
         }
       })
+      var newCodes = codes[5];
+      newCodes.push(codes[6]);
       let payload3 = {
-        allycode: codes.slice(-2,0),
+        allycode:newCodes,
         language: 'eng_us'
       }
       let { result3, error3, warning3 } = await swapi.fetchGuild(payload3);
