@@ -800,6 +800,7 @@ function update() {
     isUpdating = true;
     console.log("UPDATING");
     (async () => {
+      console.log(codes[0]+"|"+codes[1]);
       let payload = {
         allycode: codes.slice(0,2),
         language: 'eng_us'
@@ -815,6 +816,7 @@ function update() {
           names.push(name);
         }
       })
+      console.log(codes[2]+"|"+codes[3]);
       let payload2 = {
         allycode: codes.slice(2,4),
         language: 'eng_us'
