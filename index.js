@@ -830,8 +830,8 @@ function update() {
           names.push(name);
         }
       })
-      var newCodes = codes[5];
-      newCodes.push(codes[6]);
+      var newCodes = codes[4];
+      newCodes.push(codes[5]);
       let payload3 = {
         allycode:newCodes,
         language: 'eng_us'
