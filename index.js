@@ -107,6 +107,9 @@ const rosters = ["Name", "allyCode"]
 const names = ["Names"];
 var allianceUsers = [];
 var codes = [135718294, 418877148, 399663774, 618277879, 484271262, 582412773]
+var codes1 =[135718294, 418877148];
+var codes2 =[399663774, 618277879];
+var codes3 = [484271262, 582412773];
 var texts = ["filler",
   "Led by <@386283126437183500>\n600 Tickets Daily\nTicket reset @ 5:30 PST\nDS HOTH- 45 :star:\nLS HOTH- 45 :star:\nDS GEO- 26 :star: 22 Wat shards <:watshard:709573349579161705>\nLS GEO- 10 :star:\nHSTR: Launch at 6pm PST, 24 hr join\nHAAT: Launch at 8pm PST, 23 hr join\nHPIT:Simmed",//rebellion
   "Led by <@375883958405038091>\n600 Tickets Daily\nTicket reset @ 7:30 CST\nDS HOTH- 43 :star:\nLS HOTH- 37 :star:\nDS GEO- 20 :star: 20 Wat shards <:watshard:709573349579161705>\nLS GEO- 9 :star:\nHSTR: Launch at 8pm CST, 22 hr join\nHAAT: Launch at 8pm CST, 24 hr join\nHPIT:Simmed",//empire
@@ -796,18 +799,18 @@ function update() {
       isUpdated = false;
     }
   })();
+  
   if (!isUpdating && !isUpdated) {
     isUpdating = true;
     console.log("UPDATING");
     (async () => {
-      console.log(codes[0]+"|"+codes[1]);
-      let payload = {
-        allycode: codes.slice(0,2),
+      let payload1 = {
+        allycode: codes1
         language: 'eng_us'
       }
-      let { result, error, warning } = await swapi.fetchGuild(payload);
+      let { result1, error1, warning1 } = await swapi.fetchGuild(payload1);
         console.log("payload1");
-      result.forEach(player => {
+      result1.forEach(player => {
         for (var x = 0; x < player.roster.length; x++) {
           var name = player.roster[x].name.toLowerCase()
           var code = player.roster[x].allyCode
@@ -816,9 +819,10 @@ function update() {
           names.push(name);
         }
       })
-      console.log(codes[2]+"|"+codes[3]);
+    })();
+    (async () => {
       let payload2 = {
-        allycode: codes.slice(2,4),
+        allycode: codes2
         language: 'eng_us'
       }
       let { result2, error2, warning2 } = await swapi.fetchGuild(payload2);
@@ -832,11 +836,10 @@ function update() {
           names.push(name);
         }
       })
-      console.log(codes[4]+"|"+codes[5]);
-      var newCodes = codes[4];
-      newCodes.push(codes[5]);
+    })();
+    (async () => {
       let payload3 = {
-        allycode:newCodes,
+        allycode: codes3
         language: 'eng_us'
       }
       let { result3, error3, warning3 } = await swapi.fetchGuild(payload3);
@@ -850,6 +853,9 @@ function update() {
           names.push(name);
         }
       })
+    })();
+    (async () => {
+      
       var file = fs.createWriteStream('array.txt');
       file.on('error', function(err) { /* error handling */ });
       for (var x = 0; x < rosters.length; x++) {
