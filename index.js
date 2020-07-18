@@ -804,6 +804,7 @@ function update() {
     isUpdating = true;
     console.log("UPDATING");
     (async () => {
+    (async () => {
       let payload1 = {
         allycode: codes1,
         language: 'eng_us'
@@ -854,7 +855,7 @@ function update() {
         }
       })
     })();
-    (async () => {
+    
       
       var file = fs.createWriteStream('array.txt');
       file.on('error', function(err) { /* error handling */ });
