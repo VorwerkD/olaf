@@ -805,7 +805,7 @@ function update() {
     console.log("UPDATING");
     (async () => {
       let payload1 = {
-        allycode: codes1
+        allycode: codes1,
         language: 'eng_us'
       }
       let { result1, error1, warning1 } = await swapi.fetchGuild(payload1);
@@ -822,7 +822,7 @@ function update() {
     })();
     (async () => {
       let payload2 = {
-        allycode: codes2
+        allycode: codes2,
         language: 'eng_us'
       }
       let { result2, error2, warning2 } = await swapi.fetchGuild(payload2);
@@ -839,7 +839,7 @@ function update() {
     })();
     (async () => {
       let payload3 = {
-        allycode: codes3
+        allycode: codes3,
         language: 'eng_us'
       }
       let { result3, error3, warning3 } = await swapi.fetchGuild(payload3);
