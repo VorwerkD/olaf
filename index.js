@@ -111,12 +111,12 @@ var codes1 =[135718294, 418877148];
 var codes2 =[399663774, 618277879];
 var codes3 = [484271262, 582412773];
 var texts = ["filler",
-  "Led by <@386283126437183500>\n600 Tickets Daily\nTicket reset @ 5:30 PST\nDS HOTH- 45 :star:\nLS HOTH- 45 :star:\nDS GEO- 26 :star: 22 Wat shards <:watshard:709573349579161705>\nLS GEO- 10 :star:\nHSTR: Launch at 6pm PST, 24 hr join\nHAAT: Launch at 8pm PST, 23 hr join\nHPIT:Simmed",//rebellion
-  "Led by <@375883958405038091>\n600 Tickets Daily\nTicket reset @ 7:30 CST\nDS HOTH- 43 :star:\nLS HOTH- 37 :star:\nDS GEO- 20 :star: 20 Wat shards <:watshard:709573349579161705>\nLS GEO- 9 :star:\nHSTR: Launch at 8pm CST, 22 hr join\nHAAT: Launch at 8pm CST, 24 hr join\nHPIT:Simmed",//empire
+  "Led by <@386283126437183500>\n600 Tickets Daily\nTicket reset @ 5:30 PST\nDS HOTH- 45 :star:\nLS HOTH- 45 :star:\nDS GEO- 26 :star: 24 Wat shards <:watshard:709573349579161705>\nLS GEO- 10 :star:\nHSTR: Launch at 6pm PST, 24 hr join\nHAAT: Launch at 8pm PST, 23 hr join\nHPIT:Simmed",//rebellion
+  "Led by <@375883958405038091>\n600 Tickets Daily\nTicket reset @ 7:30 CST\nDS HOTH- 43 :star:\nLS HOTH- 37 :star:\nDS GEO- 23 :star: 20 Wat shards <:watshard:709573349579161705>\nLS GEO- 9 :star: 1 KAM shard\nHSTR: Launch at 8pm CST, 22 hr join\nHAAT: Launch at 8pm CST, 24 hr join\nHPIT:Simmed",//empire
   "Led by <@137343307553439744>\n600 Tickets Daily\nTicket reset @ 5:30 CST\nDS HOTH- 41 :star:\nLS HOTH- 44 :star:\nDS GEO- 23 :star: 22 Wat shards <:watshard:709573349579161705>\nLS GEO- 10 :star:",//havoc
-  "Led by <@414535355354578949>\n400 Tickets Daily\nTicket reset @ 6:30 PST\nDS HOTH- 33 :star:\nLS HOTH- 39 :star:\nDS GEO- 16 :star: 5 Wat shards<:watshard:709573349579161705>\nLS GEO- 7 :star:\nHAAT: Launch at 8pm PST, 24 hour join\nHPIT: Simmed, 24 hr join\nHSTR: 8pm PST, 24 hr join",//rogue
-  "Led by <@561197891310321674>\n600 Tickets Daily\nTicket reset @ 6:30 EST\nDS HOTH- 44 :star: \nLS HOTH- 43 :star: \nDS GEO- 28 :star: 39 Wat shards <:watshard:709573349579161705>\nLS GEO- 12 :star: 3 KAM shards\nHSTR: Launch at 7pm EST, 24 hr join\nHAAT: Launch at 9pm EST, 24 hr join\nHPIT:Launch at 7pm EST",//order
-  "Led by <@604489911248355353>\n450 Tickets Daily\nTicket reset @ 6:30 EST\nDS HOTH- 38 :star: \nLS HOTH- 35 :star: \nDS GEO- 14 :star: 10 Wat shards <:watshard:709573349579161705>\nLS GEO- 7 :star:\nHAAT: 8pm est, 24 hr join\nHPIT: Simmed, 24 hr join\nHSTR:Launch at 9pm EST, 24 hour join"]//uprising
+  "Led by <@414535355354578949>\n400 Tickets Daily\nTicket reset @ 6:30 PST\nDS HOTH- 33 :star:\nLS HOTH- 39 :star:\nDS GEO- 17 :star: 6 Wat shards<:watshard:709573349579161705>\nLS GEO- 7 :star:\nHAAT: Launch at 8pm PST, 24 hour join\nHPIT: Simmed, 24 hr join\nHSTR: 8pm PST, 24 hr join",//rogue
+  "Led by <@561197891310321674>\n600 Tickets Daily\nTicket reset @ 6:30 EST\nDS HOTH- 44 :star: \nLS HOTH- 43 :star: \nDS GEO- 29 :star: 42 Wat shards <:watshard:709573349579161705>\nLS GEO- 13 :star: 3 KAM shards\nHSTR: Launch at 7pm EST, 24 hr join\nHAAT: Launch at 9pm EST, 24 hr join\nHPIT:Launch at 7pm EST",//order
+  "Led by <@604489911248355353>\n450 Tickets Daily\nTicket reset @ 6:30 EST\nDS HOTH- 38 :star: \nLS HOTH- 35 :star: \nDS GEO- 18 :star: 10 Wat shards <:watshard:709573349579161705>\nLS GEO- 7 :star:\nHAAT: 8pm est, 24 hr join\nHPIT: Simmed, 24 hr join\nHSTR:Launch at 9pm EST, 24 hour join"]//uprising
 var ggLink = ["filler",
   "\nhttps://swgoh.gg/g/35906/phantomrebellion/",
   "\nhttps://swgoh.gg/g/51323/phantomempire/",
