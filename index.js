@@ -215,6 +215,11 @@ client.on('messageReactionRemove', (reaction, user) => {
     member.removeRole('680209821743841348');
   });
       }
+      if(messageReaction.emoji=='🌷'){
+  messageReaction.message.guild.fetchMember(user.id).then(member=> {
+    member.removeRole('749637495703994388');
+  });
+      }
         })();
   
 });
