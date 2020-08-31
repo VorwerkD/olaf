@@ -199,8 +199,7 @@ client.on('messageReactionAdd', (messageReaction, user) => {
                         member.addRole('680209821743841348');
                 });
         }}
-        if( tempMessage.id == '749638317401964648'){
-          console.log("test");
+        if( tempMessage.id == '750068014275362838'){
         if (emoji == '🌷') {
                 tempMessage.guild.fetchMember(user.id).then(member => {
                         member.addRole('749637495703994388');
