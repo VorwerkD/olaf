@@ -799,6 +799,7 @@ function guildNum() {
 }
 
 function update() {
+  return;
   (async () => {
     const data = await fs.readFileSync('array.txt', 'utf8');
     if (!data.includes(',')) {
