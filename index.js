@@ -199,6 +199,12 @@ client.on('messageReactionAdd', (messageReaction, user) => {
                         member.addRole('680209821743841348');
                 });
         }}
+        if( tempMessage.id == '749638317401964648'){
+        if (emoji.id == '🌷') {
+                tempMessage.guild.fetchMember(user.id).then(member => {
+                        member.addRole('749637495703994388');
+                });
+        }}
 });
 client.on('messageReactionRemove', (reaction, user) => {
   (async () => {
