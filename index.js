@@ -679,14 +679,6 @@ new CronJob('0 30 20 * * *', function() {
   });
 
 }, null, true, 'America/New_York');
-//SithArmyKnife
-new CronJob('0 30 17 * * *', function() {
-
-  client.channels.get('679498445823803423').send("<@&680491284435304448> 1 hour to tickets! Thank you :smiley: https://cdn.discordapp.com/attachments/642505294642937856/680553093347541112/image0.jpg").catch(function(error) {
-    client.users.get('234346145806155776').send(error);
-  });
-
-}, null, true, 'America/New_York');
 
 //havoc
 new CronJob('0 30 18 * * *', function() {
