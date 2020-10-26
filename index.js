@@ -199,10 +199,54 @@ client.on('messageReactionAdd', (messageReaction, user) => {
                         member.addRole('680209821743841348');
                 });
         }}
-        if( tempMessage.id == '749638317401964648'){
+        if( tempMessage.id == '770329266444435457'){
         if (emoji == '🌷') {
                 tempMessage.guild.fetchMember(user.id).then(member => {
                         member.addRole('749637495703994388');
+                });
+        }if (emoji == '🖌️') {
+                tempMessage.guild.fetchMember(user.id).then(member => {
+                        member.addRole('770323827783630879');
+                });
+        }if (emoji == '🎮') {
+                tempMessage.guild.fetchMember(user.id).then(member => {
+                        member.addRole('770323901645324368');
+                });
+        }if (emoji == '🤓') {
+                tempMessage.guild.fetchMember(user.id).then(member => {
+                        member.addRole('770323941046091818');
+                });
+        }if (emoji == '🔫') {
+                tempMessage.guild.fetchMember(user.id).then(member => {
+                        member.addRole('770324002228011089');
+                });
+        }if (emoji == '💣') {
+                tempMessage.guild.fetchMember(user.id).then(member => {
+                        member.addRole('770324045035733042');
+                });
+        }if (emoji == '🟨') {
+                tempMessage.guild.fetchMember(user.id).then(member => {
+                        member.addRole('770324102194921542');
+                });
+        }if (emoji == '👽') {
+                tempMessage.guild.fetchMember(user.id).then(member => {
+                        member.addRole('770324126115037194');
+                });
+        }if (emoji == '👻') {
+                tempMessage.guild.fetchMember(user.id).then(member => {
+                        member.addRole('770324180658552873');
+                });
+        }if (emoji == '🍔') {
+                tempMessage.guild.fetchMember(user.id).then(member => {
+                        member.addRole('770324226905079908');
+                });
+        }if (emoji == '️️️️❤️') {
+                tempMessage.guild.fetchMember(user.id).then(member => {
+                        member.addRole('770324260258316308');
+                });
+        }if (emoji.id == '️️️️770326879713886208') {
+                tempMessage.guild.fetchMember(user.id).then(member => {
+                        member.addRole('770326487156785271');
                 });
         }}
 });
@@ -217,6 +261,50 @@ client.on('messageReactionRemove', (reaction, user) => {
       if(messageReaction.emoji=='🌷'){
   messageReaction.message.guild.fetchMember(user.id).then(member=> {
     member.removeRole('749637495703994388');
+  });
+      }if(messageReaction.emoji=='🖌️'){
+  messageReaction.message.guild.fetchMember(user.id).then(member=> {
+    member.removeRole('770323827783630879');
+  });
+      }if(messageReaction.emoji=='🎮'){
+  messageReaction.message.guild.fetchMember(user.id).then(member=> {
+    member.removeRole('770323901645324368');
+  });
+      }if(messageReaction.emoji=='🤓'){
+  messageReaction.message.guild.fetchMember(user.id).then(member=> {
+    member.removeRole('770323941046091818');
+  });
+      }if(messageReaction.emoji=='🔫'){
+  messageReaction.message.guild.fetchMember(user.id).then(member=> {
+    member.removeRole('770324002228011089');
+  });
+      }if(messageReaction.emoji=='💣'){
+  messageReaction.message.guild.fetchMember(user.id).then(member=> {
+    member.removeRole('770324045035733042');
+  });
+      }if(messageReaction.emoji=='🟨'){
+  messageReaction.message.guild.fetchMember(user.id).then(member=> {
+    member.removeRole('770324102194921542');
+  });
+      }if(messageReaction.emoji=='👽'){
+  messageReaction.message.guild.fetchMember(user.id).then(member=> {
+    member.removeRole('770324126115037194');
+  });
+      }if(messageReaction.emoji=='👻'){
+  messageReaction.message.guild.fetchMember(user.id).then(member=> {
+    member.removeRole('770324180658552873');
+  });
+      }if(messageReaction.emoji=='🍔'){
+  messageReaction.message.guild.fetchMember(user.id).then(member=> {
+    member.removeRole('770324226905079908');
+  });
+      }if(messageReaction.emoji=='❤️'){
+  messageReaction.message.guild.fetchMember(user.id).then(member=> {
+    member.removeRole('770324260258316308');
+  });
+      }if(messageReaction.emoji.id=='770326879713886208'){
+  messageReaction.message.guild.fetchMember(user.id).then(member=> {
+    member.removeRole('770326487156785271');
   });
       }
         })();
