@@ -429,7 +429,7 @@ client.channels.get('485932045860732932').send(msg.author.username+" is adding m
           });
         }
         (async () => {
-      let fetchedChannel = await guild.createChannel(chanName,{type:'text',parent:'485772452060987392',permissionOverwrites:perms});
+      let fetchedChannel = await guild.channels.create(chanName,{type:'text',parent:'485772452060987392',permissionOverwrites:perms});
       fetchedChannel.send(outputString);
       client.channels.get('485932045860732932').send(msg.author.username+" is creating "+chanName);
         })();
