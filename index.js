@@ -403,10 +403,9 @@ client.channels.get('485932045860732932').send(msg.author.username+" is adding m
   if (input.startsWith(prefix + "createchannel")) {
     const authorId =msg.author.id;
     const guild =msg.guild;
-    const msgAuth = msg.member; 
-    const authRoles = msgAuth.roles;
+  
     if(guild.id=='484508095469584384'){
-    if (authRoles.some(r => ["Royal Guards"].includes(r.name))){
+    if (msg.member.roles.cache.has('485783034961068042')){
       var members = msg.mentions.members.array();
       let outputString = "Down here!";
       for(var x = 0; x<members.length;x++){
