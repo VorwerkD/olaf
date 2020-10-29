@@ -142,7 +142,7 @@ client.on('ready', () => {
     type: 'LISTENING'
   });
   console.log("servers:")
-  client.guilds.forEach((guild) => {
+  client.guilds.cache.forEach((guild) => {
     console.log(" - " + guild.name)
   });
   (async () => {
@@ -174,7 +174,7 @@ client.on('raw', packet => {
     // Grab the channel to check the message from
     const channel = client.channels.get(packet.d.channel_id);
     // There's no need to emit if the message is cached, because the event will fire anyway for that
-    if (channel.messages.has(packet.d.message_id)) return;
+    if (channel.messages.cache.has(packet.d.message_id)) return;
     // Since we have confirmed the message is not cached, let's fetch it
     channel.fetchMessage(packet.d.message_id).then(message => {
         // Emojis can have identifiers of name:id format, so we have to account for that case as well
@@ -182,13 +182,13 @@ client.on('raw', packet => {
         // This gives us the reaction we need to emit the event properly, in top of the message object
         const reaction = message.reactions.get(emoji);
         // Adds the currently reacting user to the reaction's users collection.
-        if (reaction) reaction.users.set(packet.d.user_id, client.users.get(packet.d.user_id));
+        if (reaction) reaction.users.cache.set(packet.d.user_id, client.users.cache.get(packet.d.user_id));
         // Check which type of event it is before emitting
         if (packet.t === 'MESSAGE_REACTION_ADD') {
-            client.emit('messageReactionAdd', reaction, client.users.get(packet.d.user_id));
+            client.emit('messageReactionAdd', reaction, client.users.cache.get(packet.d.user_id));
         }
         if (packet.t === 'MESSAGE_REACTION_REMOVE') {
-            client.emit('messageReactionRemove', reaction, client.users.get(packet.d.user_id));
+            client.emit('messageReactionRemove', reaction, client.users.cache.get(packet.d.user_id));
         }
     });
 });
@@ -342,7 +342,7 @@ client.on('message', msg => {
     if(msg.guild.id=='679517421111214084'){
     if(msg.member.roles.some(r=>["Recruiter"].includes(r.name))){
     const chan = msg.mentions.channels.first();
-    const members = msg.mentions.members.array();
+    const members = msg.mentions.members.cache.array();
     let outputString = "Down here!";
   for(var x = 0; x<members.length;x++){
     outputString +=" <@"+members[x].id+">";
@@ -362,7 +362,7 @@ client.channels.get('680240713270689814').send(msg.author.username+" is adding m
   
     if(msg.member.roles.some(r=>["Royal Guards"].includes(r.name))){
     const chan = msg.mentions.channels.first();
-    const members = msg.mentions.members.array();
+    const members = msg.mentions.members.cache.array();
     let outputString = "Down here!";
   for(var x = 0; x<members.length;x++){
     outputString +=" <@"+members[x].id+">";
@@ -408,12 +408,12 @@ client.channels.get('485932045860732932').send(msg.author.username+" is adding m
   
     if(guild.id=='484508095469584384'){
     if (msg.member.roles.cache.has('485783034961068042')){
-      var members = msg.mentions.members.array();
+      var members = msg.mentions.members.cache.array();
       let outputString = "Down here!";
       for(var x = 0; x<members.length;x++){
         outputString +=" <@"+members[x].id+">";
       }
-      const memberName = msg.mentions.members.first().displayName;
+      const memberName = msg.mentions.members.cache.first().displayName;
       var chanName = "Waiting room "+memberName;
         var perms = [{
           id: guild.defaultRole.id,
@@ -439,12 +439,12 @@ client.channels.get('485932045860732932').send(msg.author.username+" is adding m
     }
     }if(guild.id=='679517421111214084'){
       if (msg.member.roles.some(r => ["Recruiter"].includes(r.name))){
-      var members = msg.mentions.members.array();
+      var members = msg.mentions.members.cache.array();
       let outputString = "Down here!";
       for(var x = 0; x<members.length;x++){
         outputString +=" <@"+members[x].id+">";
       }
-      const memberName = msg.mentions.members.first().displayName;
+      const memberName = msg.mentions.members.cache.first().displayName;
       var chanName = "Waiting room "+memberName;
         var perms = [{
           id: guild.defaultRole.id,
@@ -513,7 +513,7 @@ client.channels.get('485932045860732932').send(msg.author.username+" is adding m
   GG COMMAND
   */
   if (input.startsWith(prefix + "gg")) {
-    const member = msg.mentions.members.first();
+    const member = msg.mentions.members.cache.first();
     var res = ""
     if (member == null) {
       res = input.substring(4);
@@ -607,7 +607,7 @@ client.channels.get('485932045860732932').send(msg.author.username+" is adding m
   if (input.startsWith(prefix + "kick")) {
     if (!msg.member.roles.some(r => ["Admin"].includes(r.name)))
       return msg.reply("Sorry, you don't have permissions to use this!");
-    const member = msg.mentions.members.first()
+    const member = msg.mentions.members.cache.first()
 
     if (!member) {
       return msg.reply(`Who are you trying to kick? You must mention a user.`)
@@ -768,7 +768,7 @@ new CronJob('0 30 18 * * *', function() {
 new CronJob('0 30 20 * * *', function() {
 
   client.channels.get('483784255030296589').send("<@&483620584861859850> 1 hour to tickets! Thank you :smiley: ").catch(function(error) {
-    client.users.get('234346145806155776').send(error);
+    client.users.cache.get('234346145806155776').send(error);
   });
 
 }, null, true, 'America/New_York');
@@ -777,7 +777,7 @@ new CronJob('0 30 20 * * *', function() {
 new CronJob('0 30 18 * * *', function() {
 
   client.channels.get('586379177331261470').send("<@&586291147169857556> 1 hour to tickets! Thank you :smiley: ").catch(function(error) {
-    client.users.get('234346145806155776').send(error);
+    client.users.cache.get('234346145806155776').send(error);
   });
 
 }, null, true, 'America/New_York');
@@ -786,14 +786,14 @@ new CronJob('0 30 18 * * *', function() {
 new CronJob('0 30 17 * * *', function() {
 
   client.channels.get('641094942659444769 ').send("<@&636767322748485652> 1 hour to tickets! Thank you :smiley: ").catch(function(error) {
-    client.users.get('234346145806155776').send(error);
+    client.users.cache.get('234346145806155776').send(error);
   });
 
 }, null, true, 'America/New_York');
 //dragon champions
 new CronJob('0 30 20 * * *', function() {
 
-  client.channels.get('675376937438543897').send("<@&636767322748485652> 1 hour to tickets! Thank you :smiley:").catch(function(error){ client.users.get('234346145806155776').send(error); });
+  client.channels.get('675376937438543897').send("<@&636767322748485652> 1 hour to tickets! Thank you :smiley:").catch(function(error){ client.users.cache.get('234346145806155776').send(error); });
    
 }, null, true, 'America/New_York');
 async function addAndRemoveRole(member, role) {
