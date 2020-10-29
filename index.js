@@ -416,7 +416,7 @@ client.channels.get('485932045860732932').send(msg.author.username+" is adding m
       const memberName = msg.mentions.members.first().displayName;
       var chanName = "Waiting room "+memberName;
         var perms = [{
-          id: guild.defaultRole.id,
+          id: guild.roles.cache.everyone.id,
           deny: ['VIEW_CHANNEL', 'SEND_MESSAGES']
         }, {
           id: '485783034961068042',
@@ -447,7 +447,7 @@ client.channels.get('485932045860732932').send(msg.author.username+" is adding m
       const memberName = msg.mentions.members.first().displayName;
       var chanName = "Waiting room "+memberName;
         var perms = [{
-          id: guild.defaultRole.id,
+          id: guild.roles.cache.everyone.id,
           deny: ['VIEW_CHANNEL', 'SEND_MESSAGES']
         }, {
           id: '680183855059042352',
