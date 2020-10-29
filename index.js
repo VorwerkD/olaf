@@ -413,7 +413,7 @@ client.channels.get('485932045860732932').send(msg.author.username+" is adding m
       for(var x = 0; x<members.length;x++){
         outputString +=" <@"+members[x].id+">";
       }
-      const memberName = msg.mentions.members.cache.first().displayName;
+      const memberName = msg.mentions.members.first().displayName;
       var chanName = "Waiting room "+memberName;
         var perms = [{
           id: guild.defaultRole.id,
