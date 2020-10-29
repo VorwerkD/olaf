@@ -357,6 +357,8 @@ client.channels.get('680240713270689814').send(msg.author.username+" is adding m
     }
     }
     if(msg.guild.id=='484508095469584384'){
+
+  
     if(msg.member.roles.some(r=>["Royal Guards"].includes(r.name))){
     const chan = msg.mentions.channels.first();
     const members = msg.mentions.members.array();
@@ -401,8 +403,10 @@ client.channels.get('485932045860732932').send(msg.author.username+" is adding m
   if (input.startsWith(prefix + "createchannel")) {
     const authorId =msg.author.id;
     const guild =msg.guild;
+    const msgAuth = msg.member; 
+    const authRoles = msgAuth.roles;
     if(guild.id=='484508095469584384'){
-    if (msg.member.roles.some(r => ["Royal Guards"].includes(r.name))){
+    if (authRoles.some(r => ["Royal Guards"].includes(r.name))){
       var members = msg.mentions.members.array();
       let outputString = "Down here!";
       for(var x = 0; x<members.length;x++){
