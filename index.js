@@ -137,6 +137,7 @@ const swapi = new ApiSwgohHelp({
 //Bot Logged in
 client.on('ready', () => {
   console.log("logged in as : " + client.user.username);
+  console.log(Discord.version);
   client.user.setActivity(prefix + 'help', {
     type: 'LISTENING'
   });
@@ -401,7 +402,7 @@ client.channels.get('485932045860732932').send(msg.author.username+" is adding m
     
   }
   if (input.startsWith(prefix + "createchannel")) {
-    console.log(Discord.version);
+    
     const authorId =msg.author.id;
     const guild =msg.guild;
   
