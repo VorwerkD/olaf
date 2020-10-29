@@ -172,7 +172,7 @@ client.on('raw', packet => {
     // We don't want this to run on unrelated packets
     if (!['MESSAGE_REACTION_ADD', 'MESSAGE_REACTION_REMOVE'].includes(packet.t)) return;
     // Grab the channel to check the message from
-    const channel = client.channels.get(packet.d.channel_id);
+    const channel = client.channels.cache.get(packet.d.channel_id);
     // There's no need to emit if the message is cached, because the event will fire anyway for that
     if (channel.messages.cache.has(packet.d.message_id)) return;
     // Since we have confirmed the message is not cached, let's fetch it
@@ -182,7 +182,7 @@ client.on('raw', packet => {
         // This gives us the reaction we need to emit the event properly, in top of the message object
         const reaction = message.reactions.get(emoji);
         // Adds the currently reacting user to the reaction's users collection.
-        if (reaction) reaction.users.cache.set(packet.d.user_id, client.users.cache.get(packet.d.user_id));
+        if (reaction) reaction.users.set(packet.d.user_id, client.users.cache.get(packet.d.user_id));
         // Check which type of event it is before emitting
         if (packet.t === 'MESSAGE_REACTION_ADD') {
             client.emit('messageReactionAdd', reaction, client.users.cache.get(packet.d.user_id));
@@ -342,7 +342,7 @@ client.on('message', msg => {
     if(msg.guild.id=='679517421111214084'){
     if(msg.member.roles.some(r=>["Recruiter"].includes(r.name))){
     const chan = msg.mentions.channels.first();
-    const members = msg.mentions.members.cache.array();
+    const members = msg.mentions.members.array();
     let outputString = "Down here!";
   for(var x = 0; x<members.length;x++){
     outputString +=" <@"+members[x].id+">";
@@ -362,7 +362,7 @@ client.channels.get('680240713270689814').send(msg.author.username+" is adding m
   
     if(msg.member.roles.some(r=>["Royal Guards"].includes(r.name))){
     const chan = msg.mentions.channels.first();
-    const members = msg.mentions.members.cache.array();
+    const members = msg.mentions.members.array();
     let outputString = "Down here!";
   for(var x = 0; x<members.length;x++){
     outputString +=" <@"+members[x].id+">";
@@ -408,7 +408,7 @@ client.channels.get('485932045860732932').send(msg.author.username+" is adding m
   
     if(guild.id=='484508095469584384'){
     if (msg.member.roles.cache.has('485783034961068042')){
-      var members = msg.mentions.members.cache.array();
+      var members = msg.mentions.members.array();
       let outputString = "Down here!";
       for(var x = 0; x<members.length;x++){
         outputString +=" <@"+members[x].id+">";
@@ -439,12 +439,12 @@ client.channels.get('485932045860732932').send(msg.author.username+" is adding m
     }
     }if(guild.id=='679517421111214084'){
       if (msg.member.roles.some(r => ["Recruiter"].includes(r.name))){
-      var members = msg.mentions.members.cache.array();
+      var members = msg.mentions.members.array();
       let outputString = "Down here!";
       for(var x = 0; x<members.length;x++){
         outputString +=" <@"+members[x].id+">";
       }
-      const memberName = msg.mentions.members.cache.first().displayName;
+      const memberName = msg.mentions.members.first().displayName;
       var chanName = "Waiting room "+memberName;
         var perms = [{
           id: guild.defaultRole.id,
@@ -513,7 +513,7 @@ client.channels.get('485932045860732932').send(msg.author.username+" is adding m
   GG COMMAND
   */
   if (input.startsWith(prefix + "gg")) {
-    const member = msg.mentions.members.cache.first();
+    const member = msg.mentions.members.first();
     var res = ""
     if (member == null) {
       res = input.substring(4);
@@ -607,7 +607,7 @@ client.channels.get('485932045860732932').send(msg.author.username+" is adding m
   if (input.startsWith(prefix + "kick")) {
     if (!msg.member.roles.some(r => ["Admin"].includes(r.name)))
       return msg.reply("Sorry, you don't have permissions to use this!");
-    const member = msg.mentions.members.cache.first()
+    const member = msg.mentions.members.first()
 
     if (!member) {
       return msg.reply(`Who are you trying to kick? You must mention a user.`)
