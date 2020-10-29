@@ -406,7 +406,7 @@ client.channels.get('485932045860732932').send(msg.author.username+" is adding m
     const guild =msg.guild;
   
     if(guild.id=='484508095469584384'){
-    if (message.member.roles.cache.has('485783034961068042')){
+    if (msg.member.roles.cache.has('485783034961068042')){
       var members = msg.mentions.members.array();
       let outputString = "Down here!";
       for(var x = 0; x<members.length;x++){
