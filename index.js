@@ -153,7 +153,7 @@ client.on('ready', () => {
 //join messages
 client.on('guildMemberAdd', member => {
   if (member.guild.id == '484182766271856651') {
-    member.guild.channels.get('567116459684397076').send("Welcome to "+member.guild.name+" " + member + ". Enjoy your stay.\nPing Vorwerk if you need help with something.");
+    member.guild.channels.cache.find('567116459684397076').send("Welcome to "+member.guild.name+" " + member + ". Enjoy your stay.\nPing Vorwerk if you need help with something.");
     if (!member.bot) {
       member.addRole('484848526757593119');/*
     (async() =>{
@@ -352,7 +352,7 @@ members.forEach(member=>{
   fetchedChannel.overwritePermissions(member.id,{VIEW_CHANNEL: true,SEND_MESSAGES :true})
 });
 fetchedChannel.send(outputString);
-client.channels.get('680240713270689814').send(msg.author.username+" is adding members to "+chan.name);
+client.channels.cache.find('680240713270689814').send(msg.author.username+" is adding members to "+chan.name);
     }else{
       msg.reply("Sorry you do not have the correct permissions")
     }
@@ -372,7 +372,7 @@ members.forEach(member=>{
   fetchedChannel.overwritePermissions(member.id,{VIEW_CHANNEL: true,SEND_MESSAGES :true})
 });
 fetchedChannel.send(outputString);
-client.channels.get('485932045860732932').send(msg.author.username+" is adding members to "+chan.name);
+client.channels.cache.find('485932045860732932').send(msg.author.username+" is adding members to "+chan.name);
     }else{
       msg.reply("Sorry you do not have the correct permissions")
     }
@@ -383,7 +383,7 @@ client.channels.get('485932045860732932').send(msg.author.username+" is adding m
       if (msg.member.roles.some(r => ["Recruiter"].includes(r.name))){
     const fetchedChannel = msg.guild.channels.cache.find(r => r.name === chan.name);
     fetchedChannel.delete();
-    client.channels.get('680240713270689814').send(msg.author.username+" is deleting "+chan.name);
+    client.channels.cache.find('680240713270689814').send(msg.author.username+" is deleting "+chan.name);
       }else{
     msg.reply("You do not have the correct permissions to use this!");
   }
@@ -394,7 +394,7 @@ client.channels.get('485932045860732932').send(msg.author.username+" is adding m
     if (msg.member.roles.cache.has('485783034961068042')){
     const fetchedChannel = msg.guild.channels.cache.find(r => r.name === chan.name);
     fetchedChannel.delete();
-    client.channels.get('485932045860732932').send(msg.author.username+" is deleting "+chan.name);
+    client.channels.cache.find('485932045860732932').send(msg.author.username+" is deleting "+chan.name);
     }else{
     msg.reply("You do not have the correct permissions to use this!");
       }
@@ -431,7 +431,7 @@ client.channels.get('485932045860732932').send(msg.author.username+" is adding m
         (async () => {
       let fetchedChannel = await guild.channels.create(chanName,{type:'text',parent:'485772452060987392',permissionOverwrites:perms});
       fetchedChannel.send(outputString);
-      client.channels.get('485932045860732932').send(msg.author.username+" is creating "+chanName);
+      client.channels.cache.find('485932045860732932').send(msg.author.username+" is creating "+chanName);
         })();
         
     }else{
@@ -462,7 +462,7 @@ client.channels.get('485932045860732932').send(msg.author.username+" is adding m
         (async () => {
       let fetchedChannel = await guild.createChannel(chanName,{type:'text',parent:'679517421111214085',permissionOverwrites:perms});
       fetchedChannel.send(outputString);
-      client.channels.get('680240713270689814').send(msg.author.username+" is creating "+chanName);
+      client.channels.cache.find('680240713270689814').send(msg.author.username+" is creating "+chanName);
         })();
         
     }else{
@@ -767,7 +767,7 @@ new CronJob('0 30 18 * * *', function() {
 //phantom
 new CronJob('0 30 20 * * *', function() {
 
-  client.channels.get('483784255030296589').send("<@&483620584861859850> 1 hour to tickets! Thank you :smiley: ").catch(function(error) {
+  client.channels.cache.find('483784255030296589').send("<@&483620584861859850> 1 hour to tickets! Thank you :smiley: ").catch(function(error) {
     client.users.cache.get('234346145806155776').send(error);
   });
 
@@ -776,7 +776,7 @@ new CronJob('0 30 20 * * *', function() {
 //havoc
 new CronJob('0 30 18 * * *', function() {
 
-  client.channels.get('586379177331261470').send("<@&586291147169857556> 1 hour to tickets! Thank you :smiley: ").catch(function(error) {
+  client.channels.cache.find('586379177331261470').send("<@&586291147169857556> 1 hour to tickets! Thank you :smiley: ").catch(function(error) {
     client.users.cache.get('234346145806155776').send(error);
   });
 
@@ -785,7 +785,7 @@ new CronJob('0 30 18 * * *', function() {
 //uprising
 new CronJob('0 30 17 * * *', function() {
 
-  client.channels.get('641094942659444769 ').send("<@&636767322748485652> 1 hour to tickets! Thank you :smiley: ").catch(function(error) {
+  client.channels.cache.find('641094942659444769 ').send("<@&636767322748485652> 1 hour to tickets! Thank you :smiley: ").catch(function(error) {
     client.users.cache.get('234346145806155776').send(error);
   });
 
@@ -793,7 +793,7 @@ new CronJob('0 30 17 * * *', function() {
 //dragon champions
 new CronJob('0 30 20 * * *', function() {
 
-  client.channels.get('675376937438543897').send("<@&636767322748485652> 1 hour to tickets! Thank you :smiley:").catch(function(error){ client.users.cache.get('234346145806155776').send(error); });
+  client.channels.cache.find('675376937438543897').send("<@&636767322748485652> 1 hour to tickets! Thank you :smiley:").catch(function(error){ client.users.cache.get('234346145806155776').send(error); });
    
 }, null, true, 'America/New_York');
 async function addAndRemoveRole(member, role) {
@@ -875,11 +875,11 @@ function guildNum() {
       var roundGp = guildGp.toFixed(1)
       var avgGp = result[0].gp / result[0].members;
       console.log("avg GP : "+avgGp);
-      client.channels.get('485246576751673354').fetchMessage(mainChans[x]).then((msg) => {
+      client.channels.cache.find('485246576751673354').fetchMessage(mainChans[x]).then((msg) => {
         // Resolve promise
         msg.edit(result[0].name + " -\n" + result[0].members + "/50 " + roundGp + "mil gp\n" + texts[x]  + ggLink[x] + "\nUpdated on " + dateString)
       });
-      client.channels.get('595255366644924440').fetchMessage(recruitChans[x]).then((msg) => { // Resolve promise
+      client.channels.cache.find('595255366644924440').fetchMessage(recruitChans[x]).then((msg) => { // Resolve promise
         msg.edit(result[0].name + " -\n" + result[0].members + "/50 " + roundGp + "mil gp\n" + texts[x] + ggLink[x] + "\nUpdated on " + dateString)
       });
       x += 1;
@@ -1069,7 +1069,7 @@ function dailyEvents(chanID) {
     for (var z = 0; z < liveEvents.length; z++) {
       embed.addField(liveEvents[z], liveEventsDes[z])
     }
-    client.channels.get(chanID).send({ embed })
+    client.channels.cache.find(chanID).send({ embed })
   })();
 }
 
