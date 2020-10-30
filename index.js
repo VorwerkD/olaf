@@ -340,14 +340,14 @@ client.on('message', msg => {
   }
   if(input.startsWith(prefix+"addtochannel")){
     if(msg.guild.id=='679517421111214084'){
-    if(msg.member.roles.some(r=>["Recruiter"].includes(r.name))){
+    if(msg.member.roles.cache.has('485783034961068042')){
     const chan = msg.mentions.channels.first();
     const members = msg.mentions.members.array();
     let outputString = "Down here!";
   for(var x = 0; x<members.length;x++){
     outputString +=" <@"+members[x].id+">";
   }
-    const fetchedChannel = msg.guild.channels.find(r => r.name === chan.name);
+    const fetchedChannel = msg.guild.channels.cache.find(r => r.name === chan.name);
 members.forEach(member=>{
   fetchedChannel.overwritePermissions(member.id,{VIEW_CHANNEL: true,SEND_MESSAGES :true})
 });
@@ -360,7 +360,7 @@ client.channels.get('680240713270689814').send(msg.author.username+" is adding m
     if(msg.guild.id=='484508095469584384'){
 
   
-    if(msg.member.roles.some(r=>["Royal Guards"].includes(r.name))){
+    if(msg.member.roles.cache.has('485783034961068042')){
     const chan = msg.mentions.channels.first();
     const members = msg.mentions.members.array();
     let outputString = "Down here!";
@@ -391,7 +391,7 @@ client.channels.get('485932045860732932').send(msg.author.username+" is adding m
     }
     if(msg.guild.id=='484508095469584384'){
     const chan = msg.mentions.channels.first();
-    if (msg.member.roles.some(r => ["Royal Guards"].includes(r.name))){
+    if (msg.member.roles.cache.has('485783034961068042')){
     const fetchedChannel = msg.guild.channels.find(r => r.name === chan.name);
     fetchedChannel.delete();
     client.channels.get('485932045860732932').send(msg.author.username+" is deleting "+chan.name);
